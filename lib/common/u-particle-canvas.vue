@@ -94,7 +94,7 @@ const ParticleCanvas = Base.extend({
                         // 画线
                         this.ctx.beginPath();
                         this.ctx.lineWidth = ratio / 2;
-                        this.ctx.strokeStyle = 'rgba(100,100,100,' + (ratio + 0.2) + ')';
+                        this.ctx.strokeStyle = 'rgba(80,80,80,' + (ratio + 0.2) + ')';
                         this.ctx.moveTo(dot.x, dot.y);
                         this.ctx.lineTo(d2.x, d2.y);
                         this.ctx.stroke();
@@ -113,7 +113,5 @@ export default ParticleCanvas;
 </script>
 
 <style module>
-.root {
-
-}
+.root {}
 </style>
