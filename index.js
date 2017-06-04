@@ -4,8 +4,10 @@ Vue.use(VueRouter);
 
 // Install common components
 import { installComponents } from './lib/utils';
+import Logo from './lib/specific/s-logo.vue';
+import Container from './lib/specific/s-container.vue';
 import ParticleCanvas from './lib/common/u-particle-canvas.vue';
-installComponents([ParticleCanvas]);
+installComponents([Logo, Container, ParticleCanvas]);
 
 import routes from './views/routes';
 const router = new VueRouter({ mode: 'history', routes });

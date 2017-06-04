@@ -1,1 +1,5 @@
 @import 'u-base.vue/global.css';
+
+$z-index-background: 0;
+$z-index-base: 5;
+$box-shadow-base: 0 0 4px rgba(0,0,0,0.2);

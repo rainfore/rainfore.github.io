@@ -1,7 +1,10 @@
 <template>
-<article :class="$style.root">
-    <router-view></router-view>
-</article>
+<div>
+    <div :class="$style.background"></div>
+    <article :class="$style.article">
+        <router-view></router-view>
+    </article>
+</div>
 </template>
 
 <script>
@@ -11,26 +14,29 @@ export default {
             content: undefined,
         };
     },
-    // watch: {
-    //     $route: {
-    //         immediate: true,
-    //         handler($route) {
-    //             if ($route.params.article === 'Mac查看端口占用情况') {
-    //                 require(['./查看端口占用情况.md'], (content) => {
-    //                     this.content = content;
-    //                 });
-    //             }
-    //         },
-    //     },
-    // },
 };
 </script>
 
 <style module>
-.root {
-    width: 960px;
-    background: rgba(255,255,255,0.8);
-    margin: 0 auto;
+.background {
+    position: absolute;
+    z-index: $z-index-background;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: url(/public/Yosemite.jpg) no-repeat;
+    background-size: cover;
+}
+
+.article {
+    position: relative;
+    z-index: $z-index-base;
+    width: 760px;
+    min-height: 400px;
+    background: white;
+    margin: 40px auto;
+    margin-top: 120px;
     padding: 20px;
+    box-shadow: $box-shadow-base;
 }
 </style>

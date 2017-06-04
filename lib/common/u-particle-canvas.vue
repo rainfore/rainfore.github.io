@@ -1,5 +1,5 @@
 <template>
-    <canvas ref="canvas" class="$style.root"></canvas>
+    <canvas ref="canvas" class="$style.root" @mousemove="onMouseMove" @mouseout="onMouseOut"></canvas>
 </template>
 
 <script>
@@ -15,13 +15,13 @@ const ParticleCanvas = Base.extend({
         const $canvas = this.$refs.canvas;
 
         this.onResize = this.onResize.bind(this);
-        this.onMouseMove = this.onMouseMove.bind(this);
-        this.onMouseout = this.onMouseOut.bind(this);
+        // this.onMouseMove = this.onMouseMove.bind(this);
+        // this.onMouseout = this.onMouseOut.bind(this);
         this.animate = this.animate.bind(this);
 
         window.addEventListener('resize', this.onResize);
-        window.addEventListener('mousemove', this.onMouseMove);
-        window.addEventListener('mouseout', this.onMouseOut);
+        // window.addEventListener('mousemove', this.onMouseMove);
+        // window.addEventListener('mouseout', this.onMouseOut);
         this.onResize();
 
         this.warea = { x: null, y: null, max: 20000 };
@@ -39,8 +39,8 @@ const ParticleCanvas = Base.extend({
     },
     destroyed() {
         window.removeEventListener('resize', this.onResize);
-        window.removeEventListener('mousemove', this.onMouseMove);
-        window.removeEventListener('mouseout', this.onMouseOut);
+        // window.removeEventListener('mousemove', this.onMouseMove);
+        // window.removeEventListener('mouseout', this.onMouseOut);
     },
     methods: {
         onResize() {
@@ -94,7 +94,7 @@ const ParticleCanvas = Base.extend({
                         // 画线
                         this.ctx.beginPath();
                         this.ctx.lineWidth = ratio / 2;
-                        this.ctx.strokeStyle = 'rgba(80,80,80,' + (ratio + 0.2) + ')';
+                        this.ctx.strokeStyle = 'rgba(0,0,0,' + (ratio + 0.2) + ')';
                         this.ctx.moveTo(dot.x, dot.y);
                         this.ctx.lineTo(d2.x, d2.y);
                         this.ctx.stroke();

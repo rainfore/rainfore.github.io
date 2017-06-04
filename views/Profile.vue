@@ -11,14 +11,6 @@ export default {
 </script>
 
 <style module>
-body {
-    margin: 0;
-}
-
-.root {
-
-}
-
 .header {
     background: #ccc;
     width: 600px;
