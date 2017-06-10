@@ -37,7 +37,7 @@ body {
 .root {}
 
 .canvas {
-    position: absolute;
+    position: fixed;
     z-index: $z-index-background;
     top: 0;
     opacity: 0.4;
@@ -55,6 +55,7 @@ body {
 }
 
 .wrapper {
+    position: relative;
     width: 900px;
     margin: 0 auto;
 }

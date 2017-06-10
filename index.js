@@ -11,5 +11,9 @@ installComponents([Logo, Container, ParticleCanvas]);
 
 import routes from './views/routes';
 const router = new VueRouter({ mode: 'history', routes });
+router.beforeEach((to, from, next) => {
+    document.title = to.meta.title || '乌瑟尔的世界';
+    next();
+});
 
 new Vue({ router }).$mount('#app');

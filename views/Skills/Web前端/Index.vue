@@ -1,6 +1,6 @@
 <template>
 <div>
-    <div :class="$style.background"></div>
+    <div :class="$style.header"></div>
     <article :class="$style.article">
         <router-view></router-view>
     </article>
@@ -18,14 +18,16 @@ export default {
 </script>
 
 <style module>
-.background {
-    position: fixed;
-    z-index: $z-index-background;
-    top: 0;
+.header {
+    /*position: absolute;
+    z-index: $z-index-background;*/
+    position: relative;
+    z-index: 4;
     width: 100%;
-    height: 100%;
-    background: url(/public/Yosemite.jpg) no-repeat;
-    background-size: cover;
+    height: 360px;
+    background: #f7f1e3 url(/public/fed.jpg) center center no-repeat;
+    background-size: auto 100%;
+    box-shadow: $box-shadow-base;
 }
 
 .article {
@@ -35,7 +37,6 @@ export default {
     min-height: 400px;
     background: white;
     margin: 40px auto;
-    margin-top: 120px;
     padding: 20px;
     box-shadow: $box-shadow-base;
 }

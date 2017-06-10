@@ -12,8 +12,10 @@ export default {
 
 <style module>
 .root {
+    position: absolute;
+    left: 0;
+    top: 0;
     display: block;
-    float: left;
     background: black;
 }
 
