@@ -7,6 +7,7 @@ export default [
         { path: 'Skills', component: (resolve) => require(['lib/specific/s-empty.vue'], resolve), children: [
             { path: '', component: (resolve) => require(['./Skills/List.vue'], resolve) },
             { path: encodeURIComponent('Web前端'), component: (resolve) => require(['./Skills/Web前端/Index.vue'], resolve), meta: { navShadowHidden: true }, children: [
+                { path: encodeURIComponent('中文网页字体的最佳选择'), component: (resolve) => require(['./Skills/Web前端/中文网页字体的最佳选择.md'], resolve) },
                 { path: encodeURIComponent('JavaScript中正则表达式的应用'), component: (resolve) => require(['./Skills/Web前端/JavaScript中正则表达式的应用.md'], resolve) },
             ] },
             { path: 'Mac', component: (resolve) => require(['./Skills/Mac/Index.vue'], resolve), children: [
