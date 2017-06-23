@@ -20,12 +20,12 @@
         </div>
         <h2 :class="$style.h2" color="dark">技术分享</h2>
         <ul :class="$style.list">
-            <li :class="$style['list-item']"><a :class="$style.a" target="_blank" href="https://www.zhihu.com/question/24558375/answer/139920107">Web前端的工业化时代</a></li>
-            <li :class="$style['list-item']"><a :class="$style.a" target="_blank" href="http://rainfore.me/Shares/%E5%87%A0%E7%A7%8D%E6%A1%86%E6%9E%B6%E5%AF%B9%E6%AF%94/%E5%87%A0%E7%A7%8D%E6%A1%86%E6%9E%B6%E5%AF%B9%E6%AF%94.pdf">几种框架对比</a></li>
+            <li :class="$style['list-item']"><a :class="$style.a" target="_blank" href="http://localhost/Skills/Coding/Web%E5%89%8D%E7%AB%AF/20161030%20-%20%E7%BD%91%E6%98%93%E8%9C%82%E5%B7%A2%E7%9A%84%E5%B7%A5%E4%B8%9A%E5%8C%96%E5%89%8D%E7%AB%AF%E6%9E%B6%E6%9E%84/index.html">网易蜂巢的工业化前端架构</a></li>
+            <li :class="$style['list-item']"><a :class="$style.a" target="_blank" href="http://rainfore.me/Shares/几种框架对比/几种框架对比.pdf">几种框架对比</a></li>
             <li :class="$style['list-item']"><a :class="$style.a" target="_blank" href="https://github.com/vusion/eslint-config/blob/master/README.zh-CN.md">我的ESLint代码规范</a></li>
             <li :class="$style['list-item']"><a :class="$style.a" target="_blank" href="http://rainfore.me/Shares/拖拽那些事儿/index.pdf">拖拽那些事儿</a></li>
             <li :class="$style['list-item']"><a :class="$style.a" target="_blank" href="http://rainfore.me/Memories/%E7%82%B9%E6%BB%B4/20160131%20-%20%E7%BB%88%E7%BB%93%E8%80%85%E2%80%94%E2%80%94%E7%BD%91%E6%98%93%E8%9C%82%E5%B7%A2WebTerminal%E7%9A%84%E5%BC%80%E5%8F%91%E5%8E%86%E7%A8%8B/index.html">终结者-WebTerminal的开发历程</a></li>
-            <li :class="$style['list-item']"><a :class="$style.a" target="_blank" href="http://rainfore.me/Shares/Regular%20UI的设计与思考">Regular UI的设计与思考</a></li>
+            <li :class="$style['list-item']"><a :class="$style.a" target="_blank" href="http://rainfore.me/Shares/Regular%20UI库的设计与思考">Regular UI的设计与思考</a></li>
             <li :class="$style['list-item']"><a :class="$style.a" target="_blank" href="http://rainfore.me/Shares/Regular组件设计/index.pdf">Regular组件设计</a></li>
             <li :class="$style['list-item']"><a :class="$style.a" target="_blank" href="http://rainfore.me/Skills/Coding/Web%E5%89%8D%E7%AB%AF/20151220%20-%20%E4%B8%AD%E6%96%87%E7%BD%91%E9%A1%B5%E5%AD%97%E4%BD%93%E7%9A%84%E6%9C%80%E4%BD%B3%E9%80%89%E6%8B%A9/index.html">中文网页字体的最佳选择</a></li>
             <li :class="$style['list-item']"><a :class="$style.a" target="_blank" href="http://rainfore.me/Skills/Coding/Web%E5%89%8D%E7%AB%AF/20150310%20-%20Source%20Map%E8%AF%A6%E8%A7%A3/index.html">Source Map详解</a></li>
@@ -45,9 +45,8 @@
     <article :class="$style.right">
         <header :class="$style.header">
             <h1 :class="$style.h1">赵雨森</h1>
-            <div>2014年本科毕业，在网易工作，3年前端开发经验，1年带团队经验。</div>
-            <div>致力于整合组件生态，解决前端工程化问题，创造基于Vue的IDE，减少前端与设计工作的耗散。</div>
-            <div>目前职级：资深前端工程师；期待薪资：20k~25k</div>
+            <div>2014年本科毕业，网易资深前端工程师，3年前端开发经验，1年带领团队经验。</div>
+            <div>致力于整合组件生态，解决前端工程化问题，打造一款<a :class="$style.a" target="_blank" href="https://github.com/vusion/vusion">前端IDE</a>，减少前端与设计之间的耗散。</div>
         </header>
         <h2 :class="$style.h2">工作经历</h2>
         <div :class="$style.timeline"><span :class="$style.date">2014 年 11 月 - 2015 年 11 月</span><div :class="$style.cell" pull="right">网易 - 杭州研究院 - 前端技术部</div></div>
@@ -63,12 +62,12 @@
         <div :class="$style.timeline"><span :class="$style.date">2015 年 11 月 - 至今</span><div :class="$style.cell" pull="right">网易 - 杭州研究院 - 云计算平台产品部</div></div>
         <h3 :class="$style.h3">网易蜂巢（<a :class="$style.a" target="_blank" href="https://c.163.com">c.163.com</a>）</h3>
         <ul :class="$style.list">
-            <li :class="$style['list-item']">带领团队对整个系统的前端架构进行重构优化，减少冗余代码、压缩大型图片、添加ESLint代码检查、添加Babel编译、前端自动化测试等</li>
+            <li :class="$style['list-item']">带领团队对整个系统的前端架构进行重构优化，减少冗余代码、压缩大型图片、调整项目结构、优化部署流程、添加ESLint代码检查、添加Babel编译、添加前端自动化测试等</li>
             <li :class="$style['list-item']">组织团队定期开展CodeReview和组内分享会</li>
             <li :class="$style['list-item']">负责总览页面、NCR、RDS、数据库助手、NOS、APM、账户安全等多个大型模块的开发</li>
             <li :class="$style['list-item']">负责通用组件库的整理和维护，从Regular UI（见下文）扩展到Cloud UI</li>
             <li :class="$style['list-item']">负责WebTerminal的开发，使用sh.js和WebSocket，期间研究过拖拽等复杂功能</li>
-            <li :class="$style['list-item']">使用Regular+SVG开发监控图表，使用D3开发拓扑图</li>
+            <li :class="$style['list-item']">使用原生的SVG开发监控图表，使用D3库开发拓扑图</li>
             <li :class="$style['list-item']">统一表单验证流程，优化自动化生产图标流程</li>
         </ul>
         <h3 :class="$style.h3">ICP 备案系统（<a :class="$style.a" target="_blank" href="https://icp.c.163.com">icp.c.163.com</a>）</h3>
@@ -93,8 +92,8 @@
         </ul>
         <h3 :class="$style.h3">Vusion（<a :class="$style.a" target="_blank" href="https://github.com/vusion/vusion">github.com/vusion/vusion</a>）</h3>
         <ul :class="$style.list">
-            <li :class="$style['list-item']">本人研究前端架构的最新成果，基于Vue，贡献于Vue，结合CSSModule等功能</li>
-            <li :class="$style['list-item']">总结前端工业化架构理论：模块化、组件化、规范化、⾃动化</li>
+            <li :class="$style['list-item']">本人研究前端架构的最新成果，理念是：基于Vue，贡献于Vue</li>
+            <li :class="$style['list-item']">总结了一套工业化前端架构理论：模块化、组件化、规范化、⾃动化</li>
             <li :class="$style['list-item']">Vusion CLI + Vusion UI + Vusion IDE，最终形态是打造一款Vue的IDE与UI Library公共平台</li>
         </ul>
         <h2 :class="$style.h2">专业技能<small>知道 &lt; 了解 &lt; 熟悉/熟练 &lt; 掌握 &lt; 精通</small></h2>
@@ -107,7 +106,8 @@
             <li :class="$style['list-item']">熟悉Node.js，能熟练编写各种前端工具；了解Express，接触过SQL和ORM，有少量后端经验</li>
             <li :class="$style['list-item']">掌握正则表达式，做过一些代码编译工作，如Markdown、CSS、JSDoc等</li>
             <li :class="$style['list-item']">熟悉Electron；使用过TypeScript和Flow；研究过ESLint各种rules</li>
-            <li :class="$style['list-item']">熟悉SVG，了解Canvas，知道WebGL；精通PS，熟悉Flash，了解Android</li>
+            <li :class="$style['list-item']">熟悉SVG，了解Canvas，知道WebGL</li>
+            <li :class="$style['list-item']">精通PS，熟悉Flash和Sketch，了解Android</li>
         </ul>
     </article>
 </div>
@@ -165,30 +165,30 @@ em {
 .left {
     width: 28%;
     background: $brand-dark;
-    padding: 0.8cm 0.5cm;
+    padding: 0.72cm 0.5cm;
     color: white;
 }
 
 .right {
     width: 72%;
-    padding: 0.8cm;
+    padding: 0.72cm;
 }
 
 .photo {
     display: block;
-    padding: 0.3cm 0;
+    /*padding: 0.3cm 0;*/
 }
 
 .photo-img {
     display: block;
-    height: 98px;
+    height: 102px;
     border: 3px solid white;
 }
 
 .header {
     background: #eee;
-    margin: 0 -0.8cm;
-    padding: 0.3cm 0.8cm 0.3cm;
+    margin: 0 -0.72cm;
+    padding: 0.3cm 0.72cm 0.3cm;
 }
 
 .h1 {
@@ -247,7 +247,7 @@ em {
     width: 6px;
     height: 6px;
     background: $brand-primary;
-    margin: 1px 6px 1px 0;
+    margin: 1px 6px 2px 0;
 }
 
 .p {
@@ -306,7 +306,7 @@ em {
     display: block;
     width: 140px;
     margin: 1em auto;
-    margin-top: 8.5em;
+    margin-top: 10.2em;
 }
 
 .qrcode + p {

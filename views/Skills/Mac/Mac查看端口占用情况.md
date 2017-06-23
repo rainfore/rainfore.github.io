@@ -13,3 +13,9 @@ lsof -i tcp:9000
 ```
 
 注意：是系统根目录，而不是用户目录。
+
+$$
+f(x) = \int_{-\infty}^\infty
+    \hat f(\xi)\,e^{2 \pi i \xi x}
+    \,d\xi
+$$

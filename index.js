@@ -6,8 +6,11 @@ Vue.use(VueRouter);
 import { installComponents } from './lib/utils';
 import Logo from './lib/specific/s-logo.vue';
 import Container from './lib/specific/s-container.vue';
+import Article from './lib/specific/s-article.vue';
 import ParticleCanvas from './lib/common/u-particle-canvas.vue';
-installComponents([Logo, Container, ParticleCanvas]);
+import Navbar from './lib/common/u-navbar.vue';
+import NavbarItem from './lib/common/u-navbar-item.vue';
+installComponents([Logo, Container, Article, ParticleCanvas, Navbar, NavbarItem]);
 
 import routes from './views/routes';
 const router = new VueRouter({ mode: 'history', routes });

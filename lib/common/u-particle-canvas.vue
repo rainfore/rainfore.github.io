@@ -34,7 +34,6 @@ const ParticleCanvas = Base.extend({
             this.dots.push({ x, y, xa, ya, max: 6000 });
         }
 
-        this.ctx = $canvas.getContext('2d');
         this.animate();
     },
     destroyed() {
@@ -57,8 +56,11 @@ const ParticleCanvas = Base.extend({
         },
         animate() {
             const $canvas = this.$refs.canvas;
+            if (!$canvas)
+                return;
 
-            this.ctx.clearRect(0, 0, $canvas.width, $canvas.height);
+            const context = $canvas.getContext('2d');
+            context.clearRect(0, 0, $canvas.width, $canvas.height);
 
             // 将鼠标坐标添加进去，产生一个用于比对距离的点数组
             const ndots = [this.warea].concat(this.dots);
@@ -70,7 +72,7 @@ const ParticleCanvas = Base.extend({
                 dot.xa *= (dot.x > $canvas.width || dot.x < 0) ? -1 : 1;
                 dot.ya *= (dot.y > $canvas.height || dot.y < 0) ? -1 : 1;
                 // 绘制点
-                this.ctx.fillRect(dot.x - 0.5, dot.y - 0.5, 1, 1);
+                context.fillRect(dot.x - 0.5, dot.y - 0.5, 1, 1);
                 // 循环比对粒子间的距离
                 for (let i = 0; i < ndots.length; i++) {
                     const d2 = ndots[i];
@@ -92,12 +94,12 @@ const ParticleCanvas = Base.extend({
                         // 计算距离比
                         ratio = (d2.max - dis) / d2.max;
                         // 画线
-                        this.ctx.beginPath();
-                        this.ctx.lineWidth = ratio / 2;
-                        this.ctx.strokeStyle = 'rgba(0,0,0,' + (ratio + 0.2) + ')';
-                        this.ctx.moveTo(dot.x, dot.y);
-                        this.ctx.lineTo(d2.x, d2.y);
-                        this.ctx.stroke();
+                        context.beginPath();
+                        context.lineWidth = ratio / 2;
+                        context.strokeStyle = 'rgba(0,0,0,' + (ratio + 0.2) + ')';
+                        context.moveTo(dot.x, dot.y);
+                        context.lineTo(d2.x, d2.y);
+                        context.stroke();
                     }
                 }
                 // 将已经计算过的粒子从数组中删除

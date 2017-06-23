@@ -1,15 +1,15 @@
 <template>
 <div :class="$style.root">
     <u-particle-canvas :class="$style.canvas"></u-particle-canvas>
-    <nav :class="$style.navbar">
+    <nav :class="$style.nav" :shadow-hidden="navShadowHidden">
         <div :class="$style.wrapper">
             <s-logo></s-logo>
-            <ul :class="$style.nav">
-                <li :class="$style['nav-item']"><a>首页</a></li>
-                <li :class="$style['nav-item']"><a>Web前端</a></li>
-                <li :class="$style['nav-item']"><a>摄影</a></li>
-                <li :class="$style['nav-item']"><a>分享</a></li>
-            </ul>
+            <u-navbar>
+                <u-navbar-item to="/" exact>首页</u-navbar-item>
+                <u-navbar-item to="/Skills/Web前端">Web前端</u-navbar-item>
+                <u-navbar-item to="/test">摄影</u-navbar-item>
+                <u-navbar-item to="/test2">分享</u-navbar-item>
+            </u-navbar>
         </div>
     </nav>
     <div :class="$style.header"></div>
@@ -24,6 +24,11 @@
 <script>
 export default {
     name: 's-container',
+    computed: {
+        navShadowHidden() {
+            return this.$route.matched.some((route) => route.meta.navShadowHidden);
+        },
+    },
 };
 </script>
 
@@ -31,7 +36,13 @@ export default {
 body {
     margin: 0;
     background: #f5f7f9;
+    color: #363636;
     text-rendering: geometricPrecision;
+}
+
+::selection {
+    color: #fff;
+    background: rgba(210, 47, 37, 0.7);
 }
 
 .root {}
@@ -43,41 +54,26 @@ body {
     opacity: 0.4;
 }
 
-.navbar {
+.nav {
     position: relative;
     z-index: $z-index-base;
     font-family: Cinzel, serif;
     text-transform: lowercase;
     border-top: 2px solid black;
     background: white;
+    color: black;
     height:66px;
     box-shadow: $box-shadow-base;
+}
+
+.nav[shadow-hidden] {
+    box-shadow: none;
 }
 
 .wrapper {
     position: relative;
     width: 900px;
     margin: 0 auto;
-}
-
-.nav {
-    float: right;
-}
-
-.nav-item {
-    display: inline-block;
-}
-
-.nav-item a {
-    display: inline-block;
-    line-height: 62px;
-    padding: 0 20px;
-    text-align: center;
-    transition: all .2s;
-}
-
-.nav-item a:hover {
-    color: #d22f25;
 }
 
 .header {

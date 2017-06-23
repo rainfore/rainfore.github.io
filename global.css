@@ -1,5 +1,10 @@
 @import 'u-base.vue/global.css';
 
+$brand-primary: #d22f25;
+
 $z-index-background: 0;
 $z-index-base: 5;
+$z-index-logo: 10;
 $box-shadow-base: 0 0 4px rgba(0,0,0,0.2);
+
+$border-color-light: #f0f0f0;

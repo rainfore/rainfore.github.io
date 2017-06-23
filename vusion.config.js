@@ -1,4 +1,5 @@
 const path = require('path');
+const hljs = require('highlight.js');
 
 module.exports = {
     assetsPath: './lib/assets',
@@ -22,7 +23,23 @@ module.exports = {
         module: {
             EXTENDS: true,
             rules: [
-                { test: /\.md$/, loader: 'vue-markdown-loader' },
+                { test: /\.md$/, loader: 'vue-markdown-loader', options: {
+                    langPrefix: 'lang-',
+                    html: true,
+                    linkify: true,
+                    highlight(str, lang) {
+                        if (lang && hljs.getLanguage(lang)) {
+                            try {
+                                return hljs.highlight(lang, str).value;
+                            } catch (__) {}
+                        }
+
+                        return ''; // use external default escaping
+                    },
+                    use: [
+                        require('markdown-it-katex'),
+                    ],
+                } },
                 'EXTENDS',
             ],
         },

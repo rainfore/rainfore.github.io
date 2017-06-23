@@ -1,15 +1,10 @@
 <template>
-<div :class="$style.root">
-test
-</div>
+<s-article></s-article>
 </template>
 
 <script>
-export default {
-
-};
+export default {};
 </script>
 
 <style module>
-
 </style>

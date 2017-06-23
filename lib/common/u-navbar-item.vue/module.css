@@ -1,0 +1,16 @@
+.root {
+    display: inline-block;
+    cursor: pointer;
+    line-height: 62px;
+    padding: 0 20px;
+    text-align: center;
+    transition: all .2s;
+}
+
+.root:hover {
+    color: #d22f25;
+}
+
+.root[selected] {
+    color: #d22f25;
+}
