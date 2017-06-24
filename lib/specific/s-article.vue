@@ -23,6 +23,7 @@ export default {
     background: white;
     margin: 40px auto;
     padding: 40px;
+    padding-bottom: 60px;
     box-shadow: $box-shadow-base;
 }
 
@@ -31,12 +32,14 @@ export default {
 }
 
 .root h1 {
-    font-size: 36px;
-    line-height: 42px;
+    text-align: center;
+    font-size: 26px;
+    line-height: 36px;
+    margin: 1em 0 1.2em;
 }
 
 .root h2 {
-    font-size: 24px;
+    font-size: 20px;
     line-height: 30px;
 }
 
@@ -81,14 +84,18 @@ export default {
 }
 
 .root ins {
-    text-decoration: none;
-    background: #ffa;
-    color: #444;
+    text-decoration: underline;
 }
 
 .root mark {
     background: #ffa;
     color: #444;
+}
+
+.root hr {
+    border: none;
+    border-top: 1px solid #eee;
+    margin: 1em 0;
 }
 
 .root small { font-size: 80%; }
@@ -175,5 +182,31 @@ export default {
 
 .root ul {
     list-style: disc;
+    padding-left: 2em;
+}
+
+.root :global(.contains-task-list) {
+    list-style: none;
+    padding: 0;
+}
+
+.root ol {
+    list-style: decimal;
+    padding-left: 2em;
+}
+
+.root table {
+    /*width: 100%;*/
+    margin: 1em auto;
+    font-size: 13px;
+}
+
+.root th, .root td {
+    border: 1px solid $border-color-base;
+    padding: 0 4px;
+}
+
+.root muted {
+    color: #999;
 }
 </style>

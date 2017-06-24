@@ -9,6 +9,7 @@ export default [
             { path: encodeURIComponent('Web前端'), component: (resolve) => require(['./Skills/Web前端/Index.vue'], resolve), meta: { navShadowHidden: true }, children: [
                 { path: encodeURIComponent('中文网页字体的最佳选择'), component: (resolve) => require(['./Skills/Web前端/中文网页字体的最佳选择.md'], resolve) },
                 { path: encodeURIComponent('JavaScript中正则表达式的应用'), component: (resolve) => require(['./Skills/Web前端/JavaScript中正则表达式的应用.md'], resolve) },
+                { path: encodeURIComponent('几款Markdown的JS解析器对比'), component: (resolve) => require(['./Skills/Web前端/几款Markdown的JS解析器对比/index.md'], resolve) },
             ] },
             { path: 'Mac', component: (resolve) => require(['./Skills/Mac/Index.vue'], resolve), children: [
                 { path: encodeURIComponent('Mac查看端口占用情况'), component: (resolve) => require(['./Skills/Mac/Mac查看端口占用情况.md'], resolve) },
