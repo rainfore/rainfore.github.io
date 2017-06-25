@@ -65,6 +65,20 @@ export default {
     line-height: 18px;
 }
 
+.root h2 :global(.header-anchor), .root h3 :global(.header-anchor), .root h4 :global(.header-anchor), .root h5 :global(.header-anchor) {
+    display: none;
+}
+
+.root h2:hover :global(.header-anchor), .root h3:hover :global(.header-anchor), .root h4:hover :global(.header-anchor), .root h5:hover :global(.header-anchor) {
+    display: inline;
+}
+
+.root :global(.u-article-meta) {
+    text-align: center;
+    color: #999;
+    margin: -1.2em 0 2em;
+}
+
 .root a {
     color: $brand-primary;
     $transition: color .2s;
@@ -199,6 +213,10 @@ export default {
     /*width: 100%;*/
     margin: 1em auto;
     font-size: 13px;
+}
+
+.root table img {
+    vertical-align: -5px;
 }
 
 .root th, .root td {

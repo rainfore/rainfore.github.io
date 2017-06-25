@@ -1,5 +1,6 @@
 const path = require('path');
 const hljs = require('highlight.js');
+const preprocess = require('./lib/preprocess');
 
 module.exports = {
     assetsPath: './lib/assets',
@@ -30,14 +31,23 @@ module.exports = {
                         let title = path.basename(this.resourcePath, '.md');
                         if (title === 'index')
                             title = path.basename(path.dirname(this.resourcePath));
-                        source = `# ${title}\n\n` + source;
-                        return source;
+
+                        const { result, meta } = preprocess.meta(source);
+
+                        const outputs = [`# ${title}`];
+                        if (meta.date) {
+                            if (meta.date instanceof Date)
+                                meta.date = meta.date.toJSON().split('T')[0];
+                            outputs.push(`<div class="u-article-meta">${meta.date}</div>`);
+                        }
+                        outputs.push(result);
+                        return outputs.join('\n\n');
                     },
                     highlight(str, lang) {
                         if (lang && hljs.getLanguage(lang)) {
                             try {
                                 return hljs.highlight(lang, str).value;
-                            } catch (__) {}
+                            } catch (e) {}
                         }
 
                         return ''; // use external default escaping
@@ -51,15 +61,22 @@ module.exports = {
                         require('markdown-it-footnote'),
                         require('markdown-it-deflist'),
                         // emoji
-                        [require('markdown-it-link-attributes'), { target: '_blank' }],
+                        // [require('markdown-it-link-attributes'), { target: '_blank' }],
                         require('markdown-it-container'),
-                        // anchor
+                        [require('markdown-it-anchor'), {
+                            level: 2,
+                            slugify: (str) => str.replace(/[^\u4e00-\u9fa5\w-]/g, '-'),
+                            permalink: true,
+                        }],
                         require('markdown-it-task-lists'),
                         // attrs,
                         // embed,
                         // decorate
                         require('markdown-it-implicit-figures'),
                         require('markdown-it-katex'),
+                        // require('markdown-it-meta'),
+                        // markdown-it-terminal
+                        // markdown-it-kbd
                     ],
                 } },
                 'EXTENDS',

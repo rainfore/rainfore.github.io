@@ -1,5 +1,3 @@
-// const path2component = (path) => ((resolve) => require([path], resolve));
-
 export default [
     { path: '/Profile', component: (resolve) => require(['./Profile.vue'], resolve), meta: { title: '个人简历' } },
     { path: '/', component: require('lib/specific/s-container.vue'), children: [
@@ -21,6 +19,9 @@ export default [
                 { path: encodeURIComponent('哲学概念梳理'), component: (resolve) => require(['./Skills/哲学/哲学概念梳理.md'], resolve) },
                 { path: encodeURIComponent('名句收集'), component: (resolve) => require(['./Skills/哲学/名句收集.md'], resolve) },
             ] },
+        ] },
+        { path: 'Collections', component: (resolve) => require(['lib/specific/s-empty.vue'], resolve), children: [
+            { path: encodeURIComponent('进击的巨人'), component: (resolve) => require(['./Collections/进击的巨人/Index.vue'], resolve), meta: { navShadowHidden: true } },
         ] },
     ] },
 ];

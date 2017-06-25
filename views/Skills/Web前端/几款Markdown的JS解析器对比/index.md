@@ -1,8 +1,11 @@
-2017-06-23
+---
+date: 2017-06-23
+tags: [ Markdown, JS, Parser ]
+---
 
 这些年，Markdown由于其容易上手、方便阅读的特色，基本上坐稳了网络标记语言的江山，在各网站中得到了广泛应用。相应JavaScript解析器也是此起彼伏，让我们这些前端程序员难以挑选。今天专门在GitHub上找到几款活跃的Markdown的JS解析器，在这里统一作个比较。
 
-先说结论：踩完各种坑之后，推荐使用[markdown-it](https://github.com/markdown-it/markdown-it)。
+先说结论：踩完各种坑之后，推荐使用[markdown-it][markdown-it]。
 
 ## 仓库信息
 
@@ -111,9 +114,9 @@
     <thead>
         <tr>
             <th rowspan="2">Repo</th>
-            <th>CommonMark(核心功能)</th>
-            <th colspan="2">GFM(新增)</th>
-            <th>Multi-Markdown(新增)</th>
+            <th><a href="https://github.com/jgm/commonmark">CommonMark</a>(核心功能)</th>
+            <th colspan="2"><a href="https://github.github.com/gfm">GFM</a>(新增)</th>
+            <th><a href="https://github.com/fletcher/MultiMarkdown/wiki/MultiMarkdown-Syntax-Guide">MultiMarkdown</a>(新增)，<a href="https://rawgit.com/fletcher/human-markdown-reference/master/index.html">Guide</a></th>
         </tr>
         <tr>
             <th>标题、段落、链接、图片<br>列表、引用块、代码块等</th>
@@ -220,7 +223,7 @@ Clone了[CommonMark.js](https://github.com/jgm/CommonMark.js#performance)这个�
 
 测试了不同的Markdown文本，结果显示的是各解析器的每分钟操作数（ops/second）（越高越好）与showdown解析器的比值（因为它基本就是垫底的）。
 
-各解析器的版本：markdown-it@8.3.1, remarkable@1.7.1, marked@0.3.6, showdown@1.7.1, commonmark@0.27.0, markdown@0.5.0, micromarkdown@0.3.4-a, nano-markdown@1.2.0。
+各解析器的版本：[markdown-it@8.3.1](https://www.npmjs.com/package/markdown-it), [remarkable@1.7.1](https://www.npmjs.com/package/remarkable), [marked@0.3.6](https://www.npmjs.com/package/marked), [showdown@1.7.1](https://www.npmjs.com/package/showdown), [commonmark@0.27.0](https://www.npmjs.com/package/commonmark), [markdown@0.5.0](https://www.npmjs.com/package/markdown), [micromarkdown@0.3.4-a](https://www.npmjs.com/package/micromarkdown), [nano-markdown@1.2.0](https://www.npmjs.com/package/nano-markdown)。
 
 最后求了个平均数，作为直观参考。
 
@@ -267,4 +270,7 @@ Clone了[CommonMark.js](https://github.com/jgm/CommonMark.js#performance)这个�
 
 大概14年底的事情。最先有个叫jonschlinkert的开发者，估计是看chjj的marked不给力，fork了一个仓库，叫remarked。后来改了个不那么山寨的名字，叫remarkable，准备放手大干一场。这前后有几个开发者也帮他提供代码，包括一个叫vitaly，改名后仓库的一血（first commit）也是这位仁兄的。刚开始搞得风生水起，后来好像jonschlinkert比较忙，开发不怎么积极，得罪了vitaly，因为好多代码是vitaly开发的。vitaly一怒之下决定分道扬镳，拉走几个小弟，直接开了个新矿markdown-it，这里有个[commit](https://github.com/markdown-it/markdown-it/commit/9afffbaefd4dce87ca609deb9f9b58accc69f032)就是他改名的证据。后来两人为了仓库的版权还老吵架，这里是一个[撕逼现场](https://talk.commonmark.org/t/remarkable-vs-markdown-it/1956)。
 
-当然，我们选择解析器肯定不是优先考虑谁正统。就功能、插件和维护程度来说，推荐用[markdown-it](https://github.com/markdown-it/markdown-it)。性能上与remarkable比，差得不多。
+当然，我们选择解析器肯定不是优先考虑谁正统。就功能、插件和维护性来说，推荐用[markdown-it][markdown-it]。性能上与remarkable比，差得不是很多。
+
+[markdown-it]: https://github.com/markdown-it/markdown-it
+[multi-markdown]: https://github.com/fletcher/MultiMarkdown/wiki/MultiMarkdown-Syntax-Guide
