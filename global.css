@@ -1,5 +1,11 @@
 @import 'u-base.vue/global.css';
 
+/* Dimensions */
+$media-xs-max-width: 479px;
+$media-sm-max-width: 767px;
+$media-md-max-width: 959px;
+$media-lg-max-width: 1219px;
+
 $brand-primary: #d22f25;
 
 $top-height: 66px;
@@ -8,5 +14,8 @@ $z-index-background: 0;
 $z-index-base: 5;
 $z-index-logo: 10;
 $box-shadow-base: 0 0 4px rgba(0,0,0,0.2);
+
+$background-color-base: #f7f7f7;
+$border-color-base: #eee;
 
 $border-color-light: #f0f0f0;

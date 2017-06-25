@@ -9,6 +9,11 @@
 <script src="https://unpkg.com/nano-markdown/dist/nanomd.min.js"></script>
 
 <style>
+#buttons {
+    width: 960px;
+    margin: 0 auto;
+}
+
 #result {
     width: 960px;
     margin: 40px auto;
@@ -266,14 +271,16 @@ It converts "HTML", but keep intact partial entries like "xxxHTMLyyy" and so on.
 :::
 </template>
 
-<button onclick="render('markdown-it')">markdown-it</button>
-<button onclick="render('remarkable')">remarkable</button>
-<button onclick="render('marked')">marked</button>
-<button onclick="render('showdown')">showdown</button>
-<button onclick="render('commonmark')">commonmark</button>
-<button onclick="render('markdown-js')">markdown-js</button>
-<button onclick="render('micromarkdown')">micromarkdown</button>
-<button onclick="render('nano-markdown')">nano-markdown</button>
+<div id="buttons">
+    <button onclick="render('markdown-it')">markdown-it</button>
+    <button onclick="render('remarkable')">remarkable</button>
+    <button onclick="render('marked')">marked</button>
+    <button onclick="render('showdown')">showdown</button>
+    <button onclick="render('commonmark')">commonmark</button>
+    <button onclick="render('markdown-js')">markdown-js</button>
+    <button onclick="render('micromarkdown')">micromarkdown</button>
+    <button onclick="render('nano-markdown')">nano-markdown</button>
+</div>
 
 <div class="markdown-body" id="result"></div>
 

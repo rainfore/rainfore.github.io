@@ -1,9 +1,9 @@
 const path = require('path');
 const hljs = require('highlight.js');
-const preprocess = require('./lib/preprocess');
+const preprocess = require('./src/preprocess');
 
 module.exports = {
-    assetsPath: './lib/assets',
+    assetsPath: './src/assets',
     webpack: {
         entry: {
             bundle: './index.js',
@@ -17,8 +17,8 @@ module.exports = {
             EXTENDS: true,
             alias: {
                 EXTENDS: true,
-                lib: path.resolve(__dirname, 'lib'),
-                views: path.resolve(__dirname, 'views'),
+                src: path.resolve(__dirname, 'src'),
+                // views: path.resolve(__dirname, 'views'),
             },
         },
         module: {
@@ -84,6 +84,7 @@ module.exports = {
         },
     },
     webpackDevServer: {
+        host: '10.242.67.24',
         port: 12356,
         publicPath: '/public/',
         contentBase: __dirname,

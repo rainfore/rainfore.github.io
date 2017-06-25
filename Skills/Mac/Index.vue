@@ -1,7 +1,7 @@
 <template>
 <div>
     <div :class="$style.background"></div>
-    <s-article></s-article>
+    <u-article></u-article>
 </div>
 </template>
 

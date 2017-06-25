@@ -3,16 +3,17 @@ import VueRouter from 'vue-router';
 Vue.use(VueRouter);
 
 // Install common components
-import { installComponents } from './lib/utils';
-import Logo from './lib/specific/s-logo.vue';
-import Container from './lib/specific/s-container.vue';
-import Article from './lib/specific/s-article.vue';
-import ParticleCanvas from './lib/common/u-particle-canvas.vue';
-import Navbar from './lib/common/u-navbar.vue';
-import NavbarItem from './lib/common/u-navbar-item.vue';
-installComponents([Logo, Container, Article, ParticleCanvas, Navbar, NavbarItem]);
+import { installComponents } from './src/utils';
+import Logo from './src/common/u-logo.vue';
+import Button from 'u-button.vue';
+import Container from './src/common/u-container.vue';
+import Article from './src/common/u-article.vue';
+import ParticleCanvas from './src/common/u-particle-canvas.vue';
+import Navbar from './src/common/u-navbar.vue';
+import NavbarItem from './src/common/u-navbar-item.vue';
+installComponents([Logo, Button, Container, Article, ParticleCanvas, Navbar, NavbarItem]);
 
-import routes from './views/routes';
+import routes from './routes';
 const router = new VueRouter({ mode: 'history', routes });
 router.beforeEach((to, from, next) => {
     document.title = to.meta.title || '乌瑟尔的世界';

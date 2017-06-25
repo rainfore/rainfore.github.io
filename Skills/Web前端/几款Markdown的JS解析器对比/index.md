@@ -1,6 +1,6 @@
 ---
 date: 2017-06-23
-tags: [ Markdown, JS, Parser ]
+tags: [ Markdown, JavaScript, Parser ]
 ---
 
 这些年，Markdown由于其容易上手、方便阅读的特色，基本上坐稳了网络标记语言的江山，在各网站中得到了广泛应用。相应JavaScript解析器也是此起彼伏，让我们这些前端程序员难以挑选。今天专门在GitHub上找到几款活跃的Markdown的JS解析器，在这里统一作个比较。

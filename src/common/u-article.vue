@@ -6,7 +6,7 @@
 
 <script>
 export default {
-    name: 's-article',
+    name: 'u-article',
 };
 </script>
 
@@ -25,6 +25,15 @@ export default {
     padding: 40px;
     padding-bottom: 60px;
     box-shadow: $box-shadow-base;
+}
+
+@media screen and (max-width: $media-md-max-width) {
+    .root {
+        width: auto;
+        margin: 10px;
+        padding: 20px;
+        overflow-x: hidden;
+    }
 }
 
 .root h1, .root h2, .root h3, .root h4, .root h5, .root h6 {
@@ -54,22 +63,22 @@ export default {
 }
 
 .root h5 {
-    margin: 0;
+    margin: 0.8em 0 0.4em;
     font-size: 14px;
     line-height: 20px;
 }
 
 .root h6 {
-    margin: 0;
+    margin: 0.8em 0 0.4em;
     font-size: 12px;
     line-height: 18px;
 }
 
-.root h2 :global(.header-anchor), .root h3 :global(.header-anchor), .root h4 :global(.header-anchor), .root h5 :global(.header-anchor) {
+.root h2 :global(.header-anchor), .root h3 :global(.header-anchor), .root h4 :global(.header-anchor), .root h5 :global(.header-anchor), .root h6 :global(.header-anchor) {
     display: none;
 }
 
-.root h2:hover :global(.header-anchor), .root h3:hover :global(.header-anchor), .root h4:hover :global(.header-anchor), .root h5:hover :global(.header-anchor) {
+.root h2:hover :global(.header-anchor), .root h3:hover :global(.header-anchor), .root h4:hover :global(.header-anchor) {
     display: inline;
 }
 

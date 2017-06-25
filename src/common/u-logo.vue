@@ -6,7 +6,7 @@
 
 <script>
 export default {
-    name: 's-logo',
+    name: 'u-logo',
 };
 </script>
 
@@ -17,6 +17,13 @@ export default {
     top: 0;
     display: block;
     background: black;
+}
+
+@media screen and (max-width: $media-md-max-width) {
+    .root {
+        left: 50%;
+        margin-left: -100px;
+    }
 }
 
 .img {

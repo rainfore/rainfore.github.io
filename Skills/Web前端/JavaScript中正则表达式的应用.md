@@ -1,3 +1,8 @@
+---
+date: 2015-01-05
+tags: [ JavaScript, 正则表达式 ]
+---
+
 本文只讲述正则表达式在JavaScript中的使用。<!--，正则表达式的概念和语法请参见。-->
 
 ### 创建正则对象
@@ -252,6 +257,6 @@ reg.exec(str);    // null
 ###### 参考
 
 - [[W3School] JavaScript RegExp 对象](http://www.w3school.com.cn/jsref/jsref_obj_regexp.asp)
-- http://blog.sina.com.cn/s/blog_7256fe8f01017poa.html
-- http://www.blog.lty0311.com/article/685.html
-- http://www.cnblogs.com/shunyao8210/archive/2008/11/13/1332591.html
+- <http://blog.sina.com.cn/s/blog_7256fe8f01017poa.html>
+- <http://www.blog.lty0311.com/article/685.html>
+- <http://www.cnblogs.com/shunyao8210/archive/2008/11/13/1332591.html>
