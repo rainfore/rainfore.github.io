@@ -1,6 +1,6 @@
 <template>
 <div>
-    <h2 v-for="article in list"><router-link :to="article" append>{{ decodeURIComponent(article) }}</router-link></h2>
+    <h2 v-for="article in list"><router-link :to="article + '/'">{{ decodeURIComponent(article) }}</router-link></h2>
 </div>
 </template>
 

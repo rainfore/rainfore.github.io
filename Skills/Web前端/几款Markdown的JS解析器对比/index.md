@@ -219,7 +219,7 @@ tags: [ Markdown, JavaScript, Parser ]
 
 ## 性能
 
-Clone了[CommonMark.js](https://github.com/jgm/CommonMark.js#performance)这个仓库，修改了一些脚本，然后跑出如下的评分：
+Fork了[CommonMark.js](https://github.com/rainfore/CommonMark.js#performance)这个仓库，修改了一些脚本，然后跑出如下的评分：
 
 测试了不同的Markdown文本，结果显示的是各解析器的每分钟操作数（ops/second）（越高越好）与showdown解析器的比值（因为它基本就是垫底的）。
 

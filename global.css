@@ -1,4 +1,4 @@
-@import 'u-base.vue/global.css';
+@import './node_modules/u-base.vue/global.css';
 
 /* Dimensions */
 $media-xs-max-width: 479px;

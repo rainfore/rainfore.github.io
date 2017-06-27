@@ -6,7 +6,7 @@
             <u-logo></u-logo>
             <u-navbar :class="$style.navbar">
                 <u-navbar-item to="/" exact>首页</u-navbar-item>
-                <u-navbar-item to="/Skills/Web前端">Web前端</u-navbar-item>
+                <u-navbar-item to="/Skills/Web前端/">Web前端</u-navbar-item>
                 <u-navbar-item to="/test">摄影</u-navbar-item>
                 <u-navbar-item to="/test2">分享</u-navbar-item>
             </u-navbar>

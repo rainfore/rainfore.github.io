@@ -84,7 +84,7 @@ module.exports = {
         },
     },
     webpackDevServer: {
-        host: '10.242.67.24',
+        // host: '10.242.67.24',
         port: 12356,
         publicPath: '/public/',
         contentBase: __dirname,
