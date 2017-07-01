@@ -133,7 +133,7 @@ export default {
     padding: 0 3px;
     font-size: 13px;
     background: #f7f7f7;
-    color: #d22f25;
+    color: #e96900;
     vertical-align: 1px;
 }
 
@@ -235,5 +235,19 @@ export default {
 
 .root muted {
     color: #999;
+}
+
+.root figure {
+    margin: 1em 0;
+}
+
+.root figure img {
+    max-width: 100%;
+}
+
+.root figcaption {
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
 }
 </style>

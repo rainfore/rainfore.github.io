@@ -16,7 +16,7 @@
         { x: 3, y: 3 },
         { x: 4, y: 3 },
         { x: 5, y: 3 },
-    ]" :first-food="{ x: 1, y: 2 }" :food-count="1"></u-snake-game>
+    ]" :initial-food="[{ x: 1, y: 2 }]" :food-count="1"></u-snake-game>
     <p></p>
     <u-snake-game :width="6" :height="6" :body="[
         { x: 1, y: 0 },
@@ -32,7 +32,7 @@
         { x: 0, y: 3 },
         { x: 1, y: 3 },
         { x: 1, y: 2 },
-    ]" :first-food="{ x: 0, y: 2 }" :food-count="1" debug></u-snake-game>
+    ]" :initial-food="[{ x: 0, y: 2 }]" :food-count="1" debug></u-snake-game>
     <h4>能吃的情况一定有最短路径，障碍物要动态分析</h4>
     <u-snake-game :width="6" :height="6" :body="[
         { x: 4, y: 2 },
@@ -41,7 +41,7 @@
         { x: 2, y: 1 },
         { x: 1, y: 1 },
         { x: 0, y: 1 },
-    ]" :first-food="{ x: 0, y: 0 }" :food-count="1"></u-snake-game>
+    ]" :initial-food="[{ x: 0, y: 0 }]" :food-count="1"></u-snake-game>
     <h4>能活下来的充分条件是有通向尾巴的路径</h4>
     <p>每一步行动都把这个充分条件作为判断依据</p>
     <h4>无脑模式</h4>
@@ -51,6 +51,8 @@
         <li>智能判断封闭路径</li>
         <li>3D贪吃蛇</li>
     </ul>
+    <h3>怎么把蛇弄死</h3>
+    <p>定理1：对于任意随机食物序列，贪吃蛇能吃满所有格子的必要条件是贪吃蛇所走的路径一定能首尾相连。</p>
 </section>
 </template>
 

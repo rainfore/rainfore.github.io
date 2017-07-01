@@ -1,5 +1,6 @@
 ---
-date: 2013-12-21
+created-date: 2013-12-21
+modified-date: 2013-12-21
 tags: [ jQuery, extend ]
 ---
 

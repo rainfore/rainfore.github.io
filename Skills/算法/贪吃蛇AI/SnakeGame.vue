@@ -1,5 +1,5 @@
 <template>
-<div :class="$style.root" @onkeydown="onKeyDown">
+<div :class="$style.root" @keydown="onKeyDown" tabindex="1">
     <div :class="$style.area" :status="status" :style="{ width: areaWidth + 'px', height: areaHeight + 'px' }">
         <div :class="$style.point" v-for="point in pointMetrix" :role="getRole(point)" :path="isInPathThought(point)"></div>
     </div>
@@ -36,7 +36,9 @@ export default {
         body: { type: Array, default() {
             return [{ x: this.width / 2, y: this.height / 2 }];
         } },
-        firstFood: { type: Object },
+        initialFood: { type: Array, default() {
+            return [];
+        } },
         foodCount: { type: Number, default: Infinity },
         manual: { type: Boolean, default: false },
         debug: { type: Boolean, default: false },
@@ -76,8 +78,10 @@ export default {
                 body: this.body.map((point) => new Point(point)),
             });
 
+            this.initialFood_ = this.initialFood.map((point) => new Point(point));
+
             Object.assign(this, {
-                food: this.firstFood ? new Point(this.firstFood) : this.getRandomFood(),
+                food: this.getFood(),
                 foodLeft: this.foodCount,
                 status: '',
                 playing: false,
@@ -91,7 +95,10 @@ export default {
          * @method feed()
          * @description 随机喂食物
         */
-        getRandomFood() {
+        getFood() {
+            if (this.initialFood_.length)
+                return this.initialFood_.shift();
+
             let index = Math.random() * (this.pointMetrix.length - this.snake.length) >> 0;
             for (let i = 0; i < this.pointMetrix.length; i++) {
                 const point = this.pointMetrix[i];
@@ -175,7 +182,14 @@ export default {
                 if (this.food.is(next)) {
                     this.foodLeft--;
 
-                    this.food = this.getRandomFood();
+                    if (this.snake.length === this.width * this.height) {
+                        this.food = undefined;
+                        this.status = 'success';
+                        this.playing = false;
+                        return;
+                    }
+
+                    this.food = this.getFood();
                     if (!this.foodLeft) {
                         this.foodLeft = this.foodCount;
                         this.playing = false;
@@ -350,6 +364,10 @@ $point-margin: 1px;
 
 .area[status="failed"] {
     border-color: $brand-primary;
+}
+
+.area[status="success"] {
+    border-color: #41b883;
 }
 
 .foot {

@@ -1,5 +1,6 @@
 ---
-date: 2015-01-05
+created-date: 2015-01-05
+modified-date: 2015-01-05
 tags: [ JavaScript, 正则表达式 ]
 ---
 

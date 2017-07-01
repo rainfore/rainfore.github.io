@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-cn"><head>
+<meta charset="utf-8">
+<title>小霖</title>
+<meta name="author" content="森森">
+<meta name="keywords" content="小霖">
+<meta name="description" content="小霖">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<link rel="icon" href="/global/img/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="/global/img/favicon.ico" type="image/x-icon">
+
+<link rel="stylesheet" href="http://libs.cncdn.cn/normalize/3.0.1/normalize.min.css">
+<link rel="stylesheet" href="http://libs.cncdn.cn/font-awesome/3.2.1/css/font-awesome.min.css">
+<link rel="stylesheet" href="/global/css/base.css">
+<style>
+	.m-figure {width: 800px; height: 450px; border: 1px solid #ccc; margin: 0 auto;}
+	.m-figure-1 .figurecontent {position: relative; box-sizing: border-box; padding: 52px 60px 28px; height: 100%;}
+	.m-figure-1 .figurecontent:before {position: absolute; top: 30px; left: 0; width: 100%; text-align: center; content: 'Source Map';}
+	.m-figure-1 .box {position: relative; box-sizing: border-box; width: 220px; height: 100%; border: 2px solid black;}
+	.m-figure-1 .box-1 {float: left; background: #2ECC71; border-color: #27AE60;}
+	.m-figure-1 .box-2 {float: right; background: #3498DB; border-color: #2980B9;}
+	.m-figure-1 .box:before {position: absolute; top: -24px; left: 0; width: 100%; text-align: center;}
+	.m-figure-1 .box-1:before {content: '生成代码';}
+	.m-figure-1 .box-2:before {content: '原始代码';}
+	.m-figure-1 .box .subbox {box-sizing: border-box; border-bottom: 2px solid black;}
+	.m-figure-1 .box-1 .subbox {border-color: #27AE60;}
+	.m-figure-1 .box-2 .subbox {border-color: #2980B9;}
+	.m-figure .canvas {position: absolute; top: 0; left: 0; width: 100%; height: 100%;}
+	.m-figure .canvas .line {stroke: #555; stroke-width: 2px;}
+	.m-figure .canvas #markerArrow {fill: #555;}
+</style>
+<body>
+<div class="g-top">
+	<div class="g-topc">
+		<h1 class="m-logo">
+			<a href="/">小霖</a>
+		</h1>
+		<nav class="m-nav">
+			<ul>
+				<li class="z-crt"><a href="/">首页</a></li>
+				<li>
+					<a href="/Memory">忆事</a>
+					<ul>
+						<li><a href="/Memory/{[说说]}">说说</a></li>
+						<li><a href="/Memory/{[点滴]}">点滴</a></li>
+						<li><a href="/Memory/{[摄影]}">摄影</a></li>
+					</ul>
+				</li>
+				<li><a href="/Project">作品</a></li>
+				<li>
+					<a href="/Skill">技能</a>
+					<ul>
+						<li><a href="/Skill/{[Web前端]}">Web前端</a></li>
+						<li><a href="/Skill/{[Linux]}">Linux</a></li>
+						<li><a href="/Skill/Other">其它</a></li>
+					</ul>
+				</li>
+				<li><a href="/Collection">收集</a></li>
+				<li><a href="/Achievement">成就</a></li>
+			</ul>
+		</nav>
+	</div>
+</div>
+<div class="g-hd">
+	<div class="g-hdc">
+	</div>
+</div>
+<div class="g-bd">
+	<div class="g-bdc">
+	<div class="m-list">
+	<article class="m-article">
+		<div class="m-figure m-figure-1">
+			<div class="figurecontent">
+				<div class="box box-1">
+					<div class="subbox"></div>
+					<div class="subbox"></div>
+					<div class="subbox"></div>
+					<div class="subbox"></div>
+					<div class="subbox"></div>
+				</div>
+				<div class="box box-2">
+					<div class="subbox"></div>
+					<div class="subbox"></div>
+					<div class="subbox"></div>
+					<div class="subbox"></div>
+					<div class="subbox"></div>
+				</div>
+				<svg class="canvas">
+					<defs>
+						<marker id="markerArrow" refX="9" refY="3.25" markerWidth="10" markerHeight="10" orient="auto">
+							<path d="M0 0 L0 6.5 L10 3.25"></path>
+						</marker>
+					</defs>
+				</svg>
+			</div>
+		</div>
+	</article>
+	</div>
+	</div>
+</div>
+<a href="#" class="m-gotop"></a>
+<script src="http://libs.cncdn.cn/jquery/1.9.1/jquery.min.js"></script>
+<script>
+(function($) {
+	var box1HeightPercents = [5, 10, 20, 30, 15];
+	var box2HeightPercents = [8, 16, 28, 20, 18];
+	var $subboxes1 = $('.m-figure-1 .box-1 .subbox');
+	var $subboxes2 = $('.m-figure-1 .box-2 .subbox');
+	var canvas = $('.m-figure .canvas')[0];
+	var boxHeight = $('.m-figure-1 .box').height();
+	var boxTop = 40 + 12;
+	var lines = [];
+	var line1Height = boxTop + 1;
+	var line2Height = boxTop + 1;
+	lines.push('<line class="line" x1="280" y1="' + line1Height + '" x2="520" y2="' + line2Height + '" marker-end="url(#markerArrow)" />');
+	for(var i = 0; i < 5; i++) {
+		$($subboxes1[i]).height(box1HeightPercents[i] + '%');
+		$($subboxes2[i]).height(box2HeightPercents[i] + '%');
+		line1Height += box1HeightPercents[i] * 0.01 * boxHeight;
+		line2Height += box2HeightPercents[i] * 0.01 * boxHeight;
+		lines.push('<line class="line" x1="280" y1="' + line1Height + '" x2="520" y2="' + line2Height + '" marker-end="url(#markerArrow)" />');
+	}
+	line1Height = boxTop + 3 + boxHeight;
+	line2Height = boxTop + 3 + boxHeight;
+	lines.push('<line class="line" x1="280" y1="' + line1Height + '" x2="520" y2="' + line2Height + '" marker-end="url(#markerArrow)" />');
+	canvas.innerHTML = canvas.innerHTML + lines.join('\n');
+})(jQuery);
+</script>
+
+</body></html>

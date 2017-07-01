@@ -12,7 +12,7 @@
     top: 0;
     width: 100%;
     height: 100%;
-    background: url(/public/Yosemite.jpg) no-repeat;
+    background: url(./Yosemite.jpg) no-repeat;
     background-size: cover;
 }
 </style>

@@ -28,17 +28,22 @@ module.exports = {
                     langPrefix: 'lang-',
                     html: true,
                     preprocess(markdownIt, source) {
+                        const { result, meta } = preprocess.meta(source);
+
                         let title = path.basename(this.resourcePath, '.md');
                         if (title === 'index')
                             title = path.basename(path.dirname(this.resourcePath));
-
-                        const { result, meta } = preprocess.meta(source);
+                        if (/^\d{8}~/.test(title)) {
+                            const arr = title.split('~');
+                            title = arr[1];
+                            meta['created-date'] = new Date(arr[0].slice(0, 4) + '-' + arr[0].slice(4, 6) + '-' + arr[0].slice(6, 8));
+                        }
 
                         const outputs = [`# ${title}`];
-                        if (meta.date) {
-                            if (meta.date instanceof Date)
-                                meta.date = meta.date.toJSON().split('T')[0];
-                            outputs.push(`<div class="u-article-meta">${meta.date}</div>`);
+
+                        if (meta['created-date']) {
+                            const date = meta['created-date'] instanceof Date ? meta['created-date'].toJSON().split('T')[0] : meta['created-date'];
+                            outputs.push(`<div class="u-article-meta">${date}</div>`);
                         }
                         outputs.push(result);
                         return outputs.join('\n\n');
@@ -72,7 +77,9 @@ module.exports = {
                         // attrs,
                         // embed,
                         // decorate
-                        require('markdown-it-implicit-figures'),
+                        [require('markdown-it-implicit-figures'), {
+                            figcaption: true,
+                        }],
                         require('markdown-it-katex'),
                         // require('markdown-it-meta'),
                         // markdown-it-terminal

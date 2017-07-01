@@ -3,6 +3,8 @@
   "description": "This is my website",
   "author": "Rainfore <rainforest92@126.com>",
   "dependencies": {
+    "katex": "^0.7.1",
+    "three": "^0.86.0",
     "u-base.vue": "^0.1.0",
     "u-button.vue": "^0.1.1",
     "vue": "^2.3.0",
