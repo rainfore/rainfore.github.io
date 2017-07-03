@@ -5,8 +5,8 @@ export default [
         { path: 'Skills', component: (resolve) => require(['./src/common/u-empty-view.vue'], resolve), children: [
             { path: encodeURIComponent('Web前端'), component: (resolve) => require(['./Skills/Web前端/Index.vue'], resolve), meta: { navShadowHidden: true }, children: [
                 { path: '', component: (resolve) => require(['./src/common/u-list.vue'], resolve) },
-                { path: encodeURIComponent('20170628~《不吹不黑聊聊前端框架》笔记'), component: (resolve) => require(['./Skills/Web前端/20170628~《不吹不黑聊聊前端框架》笔记.md'], resolve) },
-                { path: encodeURIComponent('20170628~柯里化'), component: (resolve) => require(['./Skills/Web前端/20170628~柯里化.md'], resolve) },
+                { path: encodeURIComponent('20170628~尤大的Live笔记'), component: (resolve) => require(['./Skills/Web前端/20170628~尤大的Live笔记.md'], resolve) },
+                { path: encodeURIComponent('20170628~柯里化与反柯里化'), component: (resolve) => require(['./Skills/Web前端/20170628~柯里化与反柯里化.md'], resolve) },
                 { path: encodeURIComponent('20170628~Three入门'), component: (resolve) => require(['./Skills/Web前端/20170628~Three入门/Index.vue'], resolve) },
                 { path: encodeURIComponent('20170623~几款Markdown的JS解析器对比'), component: (resolve) => require(['./Skills/Web前端/20170623~几款Markdown的JS解析器对比/index.md'], resolve) },
                 { path: encodeURIComponent('20161030~网易蜂巢的工业化前端架构'), component: (resolve) => require(['./Skills/Web前端/20161030~网易蜂巢的工业化前端架构/index.md'], resolve) },

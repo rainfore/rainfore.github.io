@@ -88,7 +88,7 @@ export default {
             opacity: 0.2,
             envMap: cubeCamera.renderTarget,
             // reflectivity: 0,
-            refractionRatio: 0,
+            // refractionRatio: 0,
             depthTest: false,
             // wireframe: true,
             // wireframeLinewidth: 10,
