@@ -21,6 +21,10 @@ module.exports = {
                 // views: path.resolve(__dirname, 'views'),
             },
         },
+        resolveLoader: {
+            EXTENDS: true,
+            modules: ['src/loaders', 'EXTENDS'],
+        },
         module: {
             EXTENDS: true,
             rules: [
@@ -28,24 +32,50 @@ module.exports = {
                     langPrefix: 'lang-',
                     html: true,
                     preprocess(markdownIt, source) {
-                        const { result, meta } = preprocess.meta(source);
+                        const outputs = [];
 
-                        let title = path.basename(this.resourcePath, '.md');
-                        if (title === 'index')
-                            title = path.basename(path.dirname(this.resourcePath));
+                        // 获取元数据
+                        let { result, meta } = preprocess.meta(source);
+
+                        // 根据文件名处理标题和日期
+                        let url = path.relative(process.cwd(), this.resourcePath.replace(/\.md$/, ''));
+                        let title = path.basename(url);
+                        if (title === 'index') {
+                            title = path.basename(path.dirname(url));
+                            url = path.dirname(url);
+                        }
+                        url = '/' + url.split('/').map((part) => encodeURIComponent(part)).join('/') + '/';
+                        markdownIt._url = url;
+
                         if (/^\d{8}~/.test(title)) {
                             const arr = title.split('~');
                             title = arr[1];
                             meta['created-date'] = new Date(arr[0].slice(0, 4) + '-' + arr[0].slice(4, 6) + '-' + arr[0].slice(6, 8));
                         }
 
-                        const outputs = [`# ${title}`];
+                        // 添加标题
+                        if (this.resourceQuery.includes('partial'))
+                            outputs.push(`<h1><router-link to="${url}">${title}</router-link></h1>`);
+                        else
+                            outputs.push(`# ${title}`);
 
+                        // 添加日期
                         if (meta['created-date']) {
                             const date = meta['created-date'] instanceof Date ? meta['created-date'].toJSON().split('T')[0] : meta['created-date'];
                             outputs.push(`<div class="u-article-meta">${date}</div>`);
                         }
+
+                        // 处理摘要
+                        if (this.resourceQuery.includes('partial')) {
+                            const m = result.match(/^[\s\S]*?(?=#{2,5})/);
+                            result = m ? m[0] : result.slice(0, 200);
+                        }
+
                         outputs.push(result);
+
+                        if (this.resourceQuery.includes('partial'))
+                            outputs.push(`<p class="read-more"><router-link to="${url}">Read More →</router-link></p>`);
+
                         return outputs.join('\n\n');
                     },
                     highlight(str, lang) {
@@ -84,6 +114,7 @@ module.exports = {
                         // require('markdown-it-meta'),
                         // markdown-it-terminal
                         // markdown-it-kbd
+                        require('./src/plugins/markdown-it-absolutize-url'),
                     ],
                 } },
                 'EXTENDS',

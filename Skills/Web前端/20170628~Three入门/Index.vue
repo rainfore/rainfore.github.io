@@ -54,10 +54,10 @@ export default {
             antialias: true,
         });
         this.renderer.setSize(this.width, this.height);
-        this.renderer.setClearColor(0xFFFFFF, 1);
+        // this.renderer.setClearColor(0xFFFFFF, 1);
 
         // LIGHTS
-        const ambientLight = new THREE.AmbientLight(0xFFFFFF, 0.5);
+        const ambientLight = new THREE.AmbientLight(0xFFFFFF, 1);
         this.scene.add(ambientLight);
         const light = new THREE.DirectionalLight(0xFFFFFF, 1);
         light.position.set(4, 2, 4);
@@ -85,7 +85,7 @@ export default {
             color: 0x0099FF,
             side: THREE.DoubleSide,
             transparent: true,
-            opacity: 0.2,
+            opacity: 0.4,
             envMap: cubeCamera.renderTarget,
             // reflectivity: 0,
             // refractionRatio: 0,

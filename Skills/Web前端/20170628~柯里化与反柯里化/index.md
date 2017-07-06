@@ -4,18 +4,20 @@ modified-date: 2015-06-29
 tags: [ 柯里化, Curry, JavaScript ]
 ---
 
+![](feature.jpg)
+
 ## 什么是柯里化？
 
 柯里化来源于数学家Haskell Curry的名字（编程语言Haskell也是以他的名字命名的）。
 
-> **柯里化（Currying），又称部分求值（Partial Evaluation）**。其含义是给函数分步传递参数，每次传递参数后部分应用参数，并返回一个更具体的函数接受剩下的参数，这中间可嵌套多层这样的接受部分参数函数，直至返回最后结果。
+> **柯里化（Curry），又称部分求值（Partial Evaluation）**。其含义是给函数分步传递参数，每次传递参数后部分应用参数，并返回一个更具体的函数接受剩下的参数，这中间可嵌套多层这样的接受部分参数函数，直至返回最后结果。
 
 ### 典型示例
 
 下面是一个部分求和的例子：
 
 ``` javascript
-const currying = (func) => {
+const curry = (func) => {
     const args = [];
     return function result(...rest) {
         if (rest.length === 0)
@@ -28,7 +30,7 @@ const currying = (func) => {
 
 const add = (...args) => args.reduce((a, b) => a + b);
 
-const sum = currying(add);
+const sum = curry(add);
 
 sum(1,2)(3);
 sum(4);
@@ -37,7 +39,7 @@ sum(); // 10
 
 ## 柯里化的基础
 
-上面的`currying`函数是一个高阶函数（high-order function）。高阶函数是指操作函数的函数，它接收一个或者多个函数作为参数，并返回一个新函数。此外，还依赖于闭包的特性，用来保存中间过程中输入的参数。即柯里化的基础：
+上面的`curry`函数是一个高阶函数（high-order function）。高阶函数是指操作函数的函数，它接收一个或者多个函数作为参数，并返回一个新函数。此外，还依赖于闭包的特性，用来保存中间过程中输入的参数。即柯里化的基础：
 
 - 函数可以作为参数传递
 - 函数能够作为函数的返回值
@@ -52,7 +54,7 @@ sum(); // 10
 
 例如兼容现代浏览器和IE浏览器的添加事件方法，我们通常会这样写：
 
-``` JavaScript
+``` javascript
 const addEvent = (elem, type, fn, cature) => {
     if (window.addEventListener) {
         elem.addEventListener(type, (e) => fn.call(elem, e), capture);
@@ -64,7 +66,7 @@ const addEvent = (elem, type, fn, cature) => {
 
 这种方法显然有个问题，就是每次添加事件处理都要执行一遍`if {...} else if {...}`。其实用下面的方法只需判断一次即可：
 
-``` JavaScript
+``` javascript
 const addEvent = (() => {
     if (window.addEventListener) {
         return (elem, type, fn, capture) => {
@@ -78,21 +80,21 @@ const addEvent = (() => {
 })();
 ```
 
-这个例子，第一次`if {...} else if {...}`判断之后，完成了部分计算，动态创建新的函数来处理后面传入的参数，以后就不必重新进行计算了。这是一个典型的柯里化的应用。
+这个例子，第一次`if {...} else if {...}`判断之后，完成了部分计算，动态创建新的函数来处理后面传入的参数，以后就不必重新进行计算了。这是一个典型的柯里化应用。
 
 ### 3. 参数复用
 
 当多次调用同一个函数，并且传递的参数绝大多数是相同的时候，那么该函数就是一个很好的柯里化候选。
 
-例如我们经常会用来解决上述问题的`Function.prototype.bind`方法。
+例如我们经常会用`Function.prototype.bind`方法来解决上述问题。
 
 ``` javascript
 const obj = { name: 'test' };
 const foo = function (prefix, suffix) {
     console.log(prefix + this.name + suffix);
-}.bind(obj, 'currying-');
+}.bind(obj, 'curry-');
 
-foo('-function'); // currying-test-function
+foo('-function'); // curry-test-function
 ```
 
 与`call`/`apply`方法直接执行不同，`bind`方法将第一个参数设置为函数执行的上下文，其他参数依次传递给调用方法（函数的主体本身不执行，可以看成是延迟执行），并动态创建返回一个新的函数。这很符合柯里化的特征。下面来手动实现一下`bind`方法：
@@ -109,13 +111,13 @@ Function.prototype.bind = function (...args) {
 
 即把如下给定的函数调用形式：
 
-``` JavaScript
+``` javascript
 obj.func(arg1, arg2);
 ```
 
 转化成如下的函数调用形式：
 
-``` JavaScript
+``` javascript
 func(obj, arg1, arg2);
 ```
 
@@ -128,18 +130,18 @@ func(obj, arg1, arg2);
 用箭头函数可以很简单地实现反柯里化：
 
 ``` javascript
-const uncurrying = (func) => (...args) => func.call(...args);
+const uncurry = (func) => (...args) => func.call(...args);
 
-const split = uncurrying(String.prototype.split);
+const split = uncurry(String.prototype.split);
 split('a,b,c', ','); // ['a', 'b', 'c']
 ```
 
 ### 2. 进击的形式
 
-可以看出，`uncurrying`函数和上面的`bind`方法有点神似。下面的形式可以表示出它们与`call`方法之间的关系。
+可以看出，`uncurry`函数和上面的`bind`方法有点神似。下面的形式可以表示出它们与`call`方法之间的关系。
 
 ``` javascript
-const uncurrying = (func) => Function.prototype.call.bind(func);
+const uncurry = (func) => Function.prototype.call.bind(func);
 ```
 
 ### 3. 终极形式
@@ -147,7 +149,7 @@ const uncurrying = (func) => Function.prototype.call.bind(func);
 利用`bind`方法可以再剥掉一层，得出反柯里化的终极形式：
 
 ``` javascript
-const uncurrying = Function.prototype.bind.bind(Function.prototype.call);
+const uncurry = Function.prototype.bind.bind(Function.prototype.call);
 ```
 
 最后以一个反柯里化的`bind`函数的终极形式结束，其实就是代入上上个式子得出的结果。

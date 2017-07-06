@@ -1,7 +1,7 @@
 <template>
-<a :class="$style.root">
+<router-link :class="$style.root" to="/">
     <img :class="$style.img" src="/public/logo.png" height="80">
-</a>
+</router-link>
 </template>
 
 <script>

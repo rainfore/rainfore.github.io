@@ -14,7 +14,11 @@ import NavbarItem from './src/common/u-navbar-item.vue';
 installComponents([Logo, Button, Container, Article, ParticleCanvas, Navbar, NavbarItem]);
 
 import routes from './routes';
-const router = new VueRouter({ mode: 'history', routes });
+const router = new VueRouter({
+    mode: 'history',
+    routes,
+    scrollBehavior: (to, from, savedPosition) => savedPosition || { x: 0, y: 0 },
+});
 router.beforeEach((to, from, next) => {
     document.title = to.meta.title || '乌瑟尔的世界';
     next();

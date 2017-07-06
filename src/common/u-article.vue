@@ -1,6 +1,6 @@
 <template>
 <article :class="$style.root">
-    <router-view></router-view>
+    <slot><router-view></router-view></slot>
 </article>
 </template>
 
@@ -19,11 +19,9 @@ export default {
     position: relative;
     z-index: $z-index-base;
     width: 900px;
-    min-height: 400px;
     background: white;
     margin: 40px auto;
     padding: 40px;
-    padding-bottom: 60px;
     box-shadow: $box-shadow-base;
 }
 
@@ -45,6 +43,15 @@ export default {
     font-size: 26px;
     line-height: 36px;
     margin: 1em 0 1.2em;
+}
+
+.root h1 a {
+    color: inherit;
+}
+
+.root h1 a:hover {
+    color: $brand-primary;
+    text-decoration: none;
 }
 
 .root h2 {
@@ -90,11 +97,25 @@ export default {
 
 .root a {
     color: $brand-primary;
-    $transition: color .2s;
+    transition: all .2s;
 }
 
 .root a:hover {
     text-decoration: underline;
+}
+
+.root :global(.read-more) {
+    text-align: right;
+}
+
+.root :global(.read-more) a {
+    padding: 0 4px;
+}
+
+.root :global(.read-more) a:hover {
+    color: white;
+    background: rgba(210, 47, 37, 0.7);
+    text-decoration: none;
 }
 
 .root p {
