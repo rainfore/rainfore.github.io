@@ -1,3 +1,3 @@
 # Uther's World
 
-This is my website: https://uther.world
+My World, My Craft. http://uther.world
