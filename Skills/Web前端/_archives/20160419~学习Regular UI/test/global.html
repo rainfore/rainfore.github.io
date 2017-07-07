@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Regular UI Global Demo 2</title>
+<link rel="stylesheet" href="node_modules/regular-ui/dist/css/regular-ui.default.min.css">
+</head>
+<body>
+<div id="app"></div>
+<script src="node_modules/regular-ui/dist/vendor/regular.min.js"></script>
+<script src="node_modules/regular-ui/dist/js/regular-ui.min.js"></script>
+<script id="template" type="text/regular">
+    <datePicker />
+    <datePicker date="2008-08-08" />
+</script>
+<script>
+    var App = RGUI.Component.extend({
+        template: '#template'
+    });
+
+    new App().$inject('#app');
+</script>
+</body>

@@ -1,7 +1,7 @@
 <template>
 <div>
     <div :class="$style.header"></div>
-    <u-article></u-article>
+    <router-view></router-view>
 </div>
 </template>
 

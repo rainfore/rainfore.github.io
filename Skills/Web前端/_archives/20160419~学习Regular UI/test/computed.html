@@ -1,0 +1,34 @@
+<head>
+<link rel="stylesheet" href="node_modules/regular-ui/dist/css/regular-ui.default.min.css">
+</head>
+<body>
+<div id="app1"></div>
+<div id="app2"></div>
+<script src="node_modules/regular-ui/dist/vendor/regular.min.js"></script>
+<script src="node_modules/regular-ui/dist/js/regular-ui.min.js"></script>
+<script>
+var shared = {test: 'abc'};
+var App1 = RGUI.Component.extend({
+    template: '<div on-click={shared.test = !shared.test}>{shared.test}</div>',
+    config: function() {
+        this.data.shared = shared;
+    },
+    _onChange: function() {
+        app2.$update();
+    }
+});
+new App1().$inject('#app1').$on('$update', function() {
+    console.log('$update1');
+});
+
+var App2 = RGUI.Component.extend({
+    template: '{shared.test}',
+    config: function() {
+        this.data.shared = shared;
+    }
+});
+var app2 = new App2().$inject('#app2').$on('$update', function() {
+    console.log('$update2');
+})
+</script>
+</body>

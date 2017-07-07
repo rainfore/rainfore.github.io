@@ -12,6 +12,7 @@ module.exports = {
             path: path.resolve(__dirname, 'public'),
             publicPath: '/public/',
             filename: '[name].js',
+            chunkFilename: 'chunk-[chunkhash:12].js',
         },
         resolve: {
             EXTENDS: true,
@@ -47,34 +48,58 @@ module.exports = {
                         url = '/' + url.split('/').map((part) => encodeURIComponent(part)).join('/') + '/';
                         markdownIt._url = url;
 
-                        if (/^\d{8}~/.test(title)) {
-                            const arr = title.split('~');
-                            title = arr[1];
-                            meta['created-date'] = new Date(arr[0].slice(0, 4) + '-' + arr[0].slice(4, 6) + '-' + arr[0].slice(6, 8));
+                        if (meta.redirect) {
+                            if (meta.redirect.startsWith('http') || meta.redirect[0] === '/' || meta.redirect[0] === '#')
+                                url = meta.redirect;
+                            else
+                                url = path.join(url, meta.redirect);
                         }
 
+                        title = title.replace(/^\d+~/, '');
+
                         // 添加标题
-                        if (this.resourceQuery.includes('partial'))
-                            outputs.push(`<h1><router-link to="${url}">${title}</router-link></h1>`);
-                        else
+                        if (this.resourceQuery.includes('partial')) {
+                            if (meta.redirect)
+                                outputs.push(`<h1><a href="${url}">${title}</a></h1>`);
+                            else
+                                outputs.push(`<h1><router-link to="${url}">${title}</router-link></h1>`);
+                        } else
                             outputs.push(`# ${title}`);
 
                         // 添加日期
                         if (meta['created-date']) {
                             const date = meta['created-date'] instanceof Date ? meta['created-date'].toJSON().split('T')[0] : meta['created-date'];
-                            outputs.push(`<div class="u-article-meta">${date}</div>`);
+                            outputs.push(`<div class="u-article_meta">${date}</div>`);
                         }
 
                         // 处理摘要
                         if (this.resourceQuery.includes('partial')) {
-                            const m = result.match(/^[\s\S]*?(?=#{2,5})/);
-                            result = m ? m[0] : result.slice(0, 200);
+                            const arr = result.split('\n\n');
+                            let i;
+                            let length = 0;
+                            for (i = 0; i < arr.length; i++) {
+                                length += arr[i].trim().length;
+                                if (length > 200)
+                                    break;
+                            }
+                            result = arr.slice(0, i + 1).join('\n\n');
                         }
 
                         outputs.push(result);
 
-                        if (this.resourceQuery.includes('partial'))
-                            outputs.push(`<p class="read-more"><router-link to="${url}">Read More →</router-link></p>`);
+                        {
+                            let footer = '<p class="u-article_footer">';
+                            if (meta.tags)
+                                footer += meta.tags.map((tag) => `<span class="u-article_tag">${tag}</span>`).join(' ');
+                            if (this.resourceQuery.includes('partial')) {
+                                if (meta.redirect)
+                                    footer += `<a class="u-article_read-more" href="${url}">Read More →</a>`;
+                                else
+                                    footer += `<router-link class="u-article_read-more" to="${url}">Read More →</router-link>`;
+                            }
+                            footer += '</p>';
+                            outputs.push(footer);
+                        }
 
                         return outputs.join('\n\n');
                     },

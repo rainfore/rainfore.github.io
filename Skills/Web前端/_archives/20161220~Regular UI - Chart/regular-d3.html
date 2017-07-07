@@ -1,0 +1,88 @@
+<script src="https://unpkg.com/regularjs@0.5.2/dist/regular.min.js"></script>
+<script src="https://d3js.org/d3.v3.min.js"></script>
+
+<style>
+svg {
+    width: 600px;
+    height: 600px;
+    background: #eee;
+}
+
+circle {
+    fill: skyblue;
+}
+
+line, path, polyline {
+    stroke: blue;
+    stroke-width: 2px;
+}
+
+polyline {
+    fill: blue;
+}
+</style>
+<div id="app"></div>
+<script>
+new Regular({
+    template: `
+<svg ref="svg">
+    <defs>
+        <marker id="arrow"
+            markerUnits="strokeWidth"
+            markerWidth="12"
+            markerHeight="12"
+            viewBox="0 0 12 12"
+            refX="4"
+            refY="6"
+            orient="auto">
+            <polyline points="0,2 12,6 0,10 2,6 0,2" />
+        </marker>
+    </defs>
+    {#list nodes as node}
+    <circle cx={node.x} cy={node.y} r="20" />
+    {/list}
+    {#list links as link}
+    <path d="M {link.source.x},{link.source.y} L {link.target.x},{link.target.y}" marker-mid="url(#arrow)" />
+    {/list}
+</svg>
+    `,
+    data: {
+        nodes: [
+            {"name": "Client 1",        x: 100, y: 200},
+            {"name": "Loadbalancer 1",  x: 200, y: 200},
+            {"name": "Webserver 1",     x: 200, y: 100},
+            {"name": "Webserver 2",     x: 300, y: 200},
+        ],
+        links: [
+            {"source":0, "target":1, "value":1},
+            {"source":1, "target":2, "value":1},
+            {"source":1, "target":3, "value":1}
+        ],
+    },
+    config() {
+        this.data.links.forEach((link) => {
+            link.source = this.data.nodes[link.source];
+            link.target = this.data.nodes[link.target];
+        })
+    },
+    init() {
+
+        var force = d3.layout.force()
+            .size([600, 600])
+            .nodes(this.data.nodes)
+            .links(this.data.links)
+            // .gravity(0.6)
+            .charge(-6000)
+            .linkDistance(200);
+        force.start();
+
+        var drag = force.drag();
+         var nodes = d3.select(this.$refs.svg).selectAll('circle').data(this.data.nodes).call(drag);
+
+
+        force.on('tick', () => {
+            this.$update();
+        })
+    }
+}).$inject('#app');
+</script>

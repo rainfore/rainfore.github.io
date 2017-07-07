@@ -20,7 +20,7 @@ export default {
     z-index: $z-index-base;
     width: 900px;
     background: white;
-    margin: 40px auto;
+    margin: 30px auto;
     padding: 40px;
     box-shadow: $box-shadow-base;
 }
@@ -35,12 +35,14 @@ export default {
 }
 
 .root h1, .root h2, .root h3, .root h4, .root h5, .root h6 {
+    font-weight: 500;
     margin: 1.5em 0 1em;
 }
 
 .root h1 {
     text-align: center;
-    font-size: 26px;
+    font-size: 25px;
+    font-weight: 400;
     line-height: 36px;
     margin: 1em 0 1.2em;
 }
@@ -89,10 +91,11 @@ export default {
     display: inline;
 }
 
-.root :global(.u-article-meta) {
+.root :global(.u-article_meta) {
     text-align: center;
+    font-size: 13px;
     color: #999;
-    margin: -1.2em 0 2em;
+    margin: -1.5em 0 2em;
 }
 
 .root a {
@@ -104,18 +107,33 @@ export default {
     text-decoration: underline;
 }
 
-.root :global(.read-more) {
-    text-align: right;
+.root :global(.u-article_footer) {
+    margin-top: 1.8em;
+    margin-bottom: 0;
+    font-size: 13px;
+    overflow: auto;
 }
 
-.root :global(.read-more) a {
+.root :global(.u-article_read-more) {
+    float: right;
     padding: 0 4px;
 }
 
-.root :global(.read-more) a:hover {
+.root :global(.u-article_read-more):hover {
     color: white;
     background: rgba(210, 47, 37, 0.7);
     text-decoration: none;
+}
+
+.root :global(.u-article_tag) {
+    background: #eee;
+    color: #777;
+    padding: 2px 6px;
+    border-radius: 3px;
+}
+
+.root :global(.u-article_tag):before {
+    content: '# ';
 }
 
 .root p {
@@ -259,10 +277,12 @@ export default {
 }
 
 .root figure {
-    margin: 1em 0;
+    margin: 1em -40px;
 }
 
 .root figure img {
+    display: block;
+    margin: 0 auto;
     max-width: 100%;
 }
 

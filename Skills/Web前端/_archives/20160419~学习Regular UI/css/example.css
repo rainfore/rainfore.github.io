@@ -1,0 +1,42 @@
+.reveal .m-example {
+    transform: scale(1.5);
+    font-size: 14px;
+    margin: 40px;
+}
+
+.reveal .u-example {
+    display: inline-block;
+    vertical-align: middle;
+    transform: scale(2);
+    font-size: 14px;
+    margin: 0 40px;
+}
+
+.reveal .m-example .m-modal {
+    position: static;
+    background: transparent;
+    margin-top: 80px;
+}
+
+.reveal .m-example .m-tabs .tabs_hd {
+    margin-bottom: -5px;
+}
+
+.u-badge {
+    line-height: inherit;
+    vertical-align: text-top;
+}
+
+.u-outline {
+    position: absolute !important;
+    z-index: 10;
+    /*background: rgba(255, 255, 255, 0.3);*/
+}
+
+.reveal .g-col-6 {
+    display: inline-block;
+    width: 46%;
+    margin-left: 1%;
+    margin-right: 1%;
+    vertical-align: top;
+}

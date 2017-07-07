@@ -1,0 +1,31 @@
+<head>
+<link rel="stylesheet" href="node_modules/regular-ui/dist/css/regular-ui.default.min.css">
+</head>
+<body>
+<div id="app"></div>
+<script src="node_modules/regular-ui/dist/vendor/regular.min.js"></script>
+<script src="node_modules/regular-ui/dist/js/regular-ui.min.js"></script>
+<script id="template" type="text/regular">
+    {date | dateFormat: true}
+</script>
+<script>
+    var App = RGUI.Component.extend({
+        template: '#template',
+        config: function() {
+            this.data.date = new Date()
+        }
+    }).filter({
+        dateFormat: function(date, type) {
+            var arr = [
+                date.getFullYear(),
+                date.getMonth() + 1,
+                date.getDate()
+            ];
+            if(type)
+                arr.shift();
+            return arr.join('-');
+        }
+    });
+    new App().$inject('#app');
+</script>
+</body>

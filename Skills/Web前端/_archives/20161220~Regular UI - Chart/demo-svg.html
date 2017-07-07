@@ -1,0 +1,66 @@
+<style>
+svg {
+    background: #f4f4f4;
+    margin-bottom: 40px;
+}
+
+rect {
+    fill: blue;
+    fill-opacity: 0.2;
+    stroke: lightgreen;
+    stroke-width: 5px;
+    stroke-opacity: 0.2;
+}
+
+line {
+    stroke: black;
+}
+
+polyline {
+    fill: none;
+    stroke: blue;
+    stroke-width: 5px;
+    stroke-dasharray: 10px 5px 20px 10px;
+    stroke-dashoffset: 20px;
+}
+
+.progress circle {
+    fill: lightgreen;
+    stroke: blue;
+    stroke-width: 80px;
+    stroke-dasharray: 10px 10px;
+}
+</style>
+<svg class="progress" width="400" height="400">
+    <circle cx="200" cy="200" r="100" />
+</svg>
+<svg width="400" height="400">
+</svg>
+
+<style>
+.m-circularProgress circle {
+    fill: none;
+    stroke: cornflowerblue;
+    stroke-width: 50px;
+    stroke-dasharray: 200px 1000px;
+}
+
+.m-circularProgress path {
+    stroke: white;
+    stroke-width: 2px;
+}
+</style>
+<svg class="m-circularProgress" width="400" height="400">
+    <g transform="translate(200,200)">
+        <path fill="purple" d="M 0,-50 A 50,50 0 0 1 35.3553,-35.3553 L 0,0 Z" />
+        <path fill="lightgreen" d="M 35.3553,-35.3553 A 50,50 0 1 1 -50,0 L 0,0 Z" />
+    </g>
+</svg>
+
+<style>
+
+</style>
+<svg width="400" height="400">
+    <path fill="purple" d="M 0,-50 A 50,50 0 0 1 35.3553,-35.3553 L 0,0 Z" />
+    <path fill="lightgreen" d="M 35.3553,-35.3553 A 50,50 0 1 1 -50,0 L 0,0 Z" />
+</svg>
