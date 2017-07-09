@@ -1,3 +1,5 @@
 # Uther's World
 
-My World, My Craft. http://uther.world
+My Craft, My World.
+
+http://uther.world

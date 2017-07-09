@@ -1,19 +1,20 @@
 <template>
-    <canvas ref="canvas" :class="$style.root" :width="width" :height="height"
-        @mousedown="onMouseDown" @mousemove="onMouseMove" @mouseup="onMouseUp"></canvas>
+<u-article>
+    <figure>
+        <canvas ref="canvas" :class="$style.root" :width="width" :height="height"></canvas>
+    </figure>
+</u-article>
 </template>
 
 <script>
 import * as THREE from 'three';
+import OrbitControls from 'src/lib/OrbitControls';
 
 export default {
     data() {
         return {
-            width: 640,
-            height: 480,
-            rotateX: 0,
-            rotateY: 0,
-            isMouseDown: false,
+            width: 900,
+            height: 600,
         };
     },
     created() {
@@ -39,6 +40,7 @@ export default {
 
         this.camera = new THREE.PerspectiveCamera(45, this.width / this.height, 0.1, 1000);
         this.camera.position.y = 3;
+        this.camera.position.x = 6;
         this.camera.position.z = 6;
         this.camera.lookAt({
             x: 0,
@@ -54,7 +56,10 @@ export default {
             antialias: true,
         });
         this.renderer.setSize(this.width, this.height);
-        // this.renderer.setClearColor(0xFFFFFF, 1);
+        this.renderer.setClearColor(0xFFFFFF, 1);
+
+        this.controls = new OrbitControls(this.camera, this.$refs.canvas);
+        this.controls.enableZoom = false;
 
         // LIGHTS
         const ambientLight = new THREE.AmbientLight(0xFFFFFF, 1);
@@ -85,8 +90,8 @@ export default {
             color: 0x0099FF,
             side: THREE.DoubleSide,
             transparent: true,
-            opacity: 0.4,
-            envMap: cubeCamera.renderTarget,
+            opacity: 0.2,
+            envMap: cubeCamera.renderTarget.texture,
             // reflectivity: 0,
             // refractionRatio: 0,
             depthTest: false,
@@ -120,12 +125,10 @@ export default {
             geometry.vertices[4],
         );
 
-        // const edges = new THREE.EdgesGeometry(geometry);
         this.line = new THREE.LineSegments(edges, new THREE.LineBasicMaterial({ color: 0x0099FF }));
         this.scene.add(this.line);
 
-        // const helper = new THREE.GridHelper(10, 100);
-        // this.scene.add(helper);
+        this.scene.add(new THREE.AxisHelper(20));
 
         this.animate = this.animate.bind(this);
         this.animate();
@@ -157,24 +160,9 @@ export default {
             this.edges.computeBoundingSphere();
             this.cubeCamera.updateCubeMap(this.renderer, this.scene);
 
+            this.controls.update();
             this.renderer.render(this.scene, this.camera);
             requestAnimationFrame(this.animate);
-        },
-        onMouseDown(e) {
-            this.isMouseDown = true;
-            this.clientX = e.clientX;
-            this.clientY = e.clientY;
-            this.rotateX = this.geo.rotation.x;
-            this.rotateY = this.geo.rotation.y;
-        },
-        onMouseMove(e) {
-            if (this.isMouseDown) {
-                this.line.rotation.x = this.geo.rotation.x = this.rotateX + (e.clientY - this.clientY) * 0.1;
-                this.line.rotation.y = this.geo.rotation.y = this.rotateY + (e.clientX - this.clientX) * 0.1;
-            }
-        },
-        onMouseUp(e) {
-            this.isMouseDown = false;
         },
     },
 };

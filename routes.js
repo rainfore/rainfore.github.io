@@ -37,7 +37,12 @@ export default [
             ] },
             { path: encodeURIComponent('数学'), component: (resolve) => require(['./src/common/u-empty-view.vue'], resolve), children: [
                 { path: '', component: (resolve) => require(['./src/common/u-empty-view.vue'], resolve) },
-                { path: encodeURIComponent('多维空间'), component: (resolve) => require(['./Skills/数学/多维空间/index.md'], resolve) },
+                { path: encodeURIComponent('多维空间的正几何体'), component: (resolve) => require(['./Skills/数学/多维空间的正几何体/index.md'], resolve), children: [
+                    { path: '', components: {
+                        simplex4: (resolve) => require(['./Skills/数学/多维空间的正几何体/simplex4.vue'], resolve),
+                        hypercube4: (resolve) => require(['./Skills/数学/多维空间的正几何体/hypercube4.vue'], resolve),
+                    } },
+                ] },
             ] },
         ] },
         { path: 'Collections', component: (resolve) => require(['./src/common/u-empty-view.vue'], resolve), children: [

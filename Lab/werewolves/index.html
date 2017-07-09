@@ -1,0 +1,412 @@
+<style>
+html, body {
+    font: 12px/1.6 "Microsoft YaHei","Hiragino Sans GB","WenQuanYi Micro Hei",sans-serif;
+}
+input[type=number] {
+    width: 60px;
+}
+
+.g-lt {
+    float: left;
+    width: 200px;
+}
+
+.g-md {
+    float: left;
+    margin-left: 10px;
+    width: 300px;
+}
+
+.g-rt {
+    margin-left: 520px;
+}
+
+.m-details {
+    height: 400px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    font-size: 12px;
+}
+.m-details > div {
+    border-bottom: 1px solid #ddd;
+}
+
+
+.u-card {
+    display: inline-block;
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border: 4px solid #000;
+    background-size: 100%;
+    background-image: url(img/back.jpg);
+}
+
+.u-card.z-open:before {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    right: 0;
+    top: 0;
+    border: 4px solid #000;
+    border-radius: 100%;
+}
+
+.u-card.z-die {
+    border-color: red;
+}
+
+.u-card-werewolf.z-show { background-image: url(img/werewolf.jpg); }
+.u-card-villager.z-show { background-image: url(img/villager.jpg); }
+.u-card-seer.z-show { background-image: url(img/seer.jpg); }
+.u-card-witch.z-show { background-image: url(img/witch.jpg); }
+.u-card-guard.z-show { background-image: url(img/guard.jpg); }
+.u-card-hunter.z-show { background-image: url(img/hunter.jpg); }
+.u-card-thief.z-show { background-image: url(img/thief.jpg); }
+.u-card-cupido.z-show { background-image: url(img/cupido.jpg); }
+.u-card-elder.z-show { background-image: url(img/elder.jpg); }
+.u-card-muteElder.z-show { background-image: url(img/muteElder.jpg); }
+.u-card-idiot.z-show { background-image: url(img/idiot.jpg); }
+.u-card-scapegoat.z-show { background-image: url(img/scapegoat.jpg); }
+</style>
+<div id="app"></div>
+<script id="template" type="text/regular">
+<div class="g-lt">
+    <h2>规则</h2>
+    <div>
+        <label><input type="radio" name="winWay" r-model={winWay} value="part" /> 屠边</label>
+        <label><input type="radio" name="winWay" r-model={winWay} value="all" /> 屠城</label>
+    </div>
+    <div><label><input type="checkbox" disabled /> 死亡后翻牌</label></div>
+    <div><label><input type="checkbox" checked disabled /> 女巫可以救自己</label></div>
+    <h2>参与人员</h2>
+    <ol>
+        <li><input type="number" r-model={roles.werewolf | num2str} min="0" max="10" /> 狼人</li>
+        <li><input type="number" r-model={roles.villager | num2str} min="0" max="10" /> 村民</li>
+        <li><input type="checkbox" r-model={roles.seer | num2bool} /> 预言家</li>
+        <li><input type="checkbox" r-model={roles.witch | num2bool} /> 女巫</li>
+        <li><input type="checkbox" r-model={roles.guard | num2bool} /> 守卫</li>
+        <li><input type="checkbox" r-model={roles.hunter | num2bool} /> 猎人</li>
+        <li><input type="checkbox" r-model={roles.thief | num2bool} /> 盗贼</li>
+        <li><input type="checkbox" r-model={roles.cupido | num2bool} /> 丘比特</li>
+        <li><input type="checkbox" r-model={roles.elder | num2bool} /> 长老</li>
+        <li><input type="checkbox" r-model={roles.muteElder | num2bool} /> 禁言长老</li>
+        <li><input type="checkbox" r-model={roles.idiot | num2bool} /> 白痴</li>
+        <li><input type="checkbox" r-model={roles.scapegoat | num2bool} /> 替罪羊</li>
+    </ol>
+    <p>狼人：{roles.werewolf}，村民：{roles.villager}，能力者：{total - roles.werewolf - roles.villager}</p>
+    <p>总人数：{total}</p>
+    <p><button on-click={this.start()}>开局</button> <button on-click={this.flow.next()}>下一步</button></p>
+</div>
+<div class="g-md">
+    <h2>流程</h2>
+    <div class="m-details" ref="details">
+        {#list details as text}
+        <div>{text}</div>
+        {/list}
+    </div>
+</div>
+<div class="g-rt">
+    <h2>局面</h2>
+    {#list persons as person}
+    <div class="u-card u-card-{person.type}" r-class={{ 'z-show': person.visible, 'z-open': person.open, 'z-die': !person.alive }} on-click={person.visible = !person.visible}></div>
+    {/list}
+</div>
+</script>
+<script src="/node_modules/regularjs/dist/regular.min.js"></script>
+<script>
+Math.sum = function () {
+    let total = 0;
+    for(let i = 0; i < arguments.length; i++)
+        total += +arguments[i];
+    return total;
+};
+
+class Person {
+    constructor(options) {
+        Object.assign(this, options);
+
+        if (options.type === 'seer')
+            this.knowns = [];
+        else if (options.type === 'witch') {
+            this.dedrug = 1;
+            this.endrug = 1;
+        }
+    }
+
+    action() {
+        return this['_' + this.type]();
+    }
+
+    talk() {
+        return '!@#$%^&*()';
+    }
+
+    _guard() {
+        // @TIP 第一晚只守护自己
+        if (app.data.turn === 1)
+            return this;
+
+        // @RULE 守护者可以不守护人
+    }
+
+    _seer() {
+        // 随机验一个未验过的人
+        // @TIP 不能验死人
+        const unknowns = app.data._actives.filter((person) => !this.knowns.includes(person) && person !== this);
+        const target = unknowns[Math.random()*unknowns.length>>0];
+        this.knowns.push(target);
+
+        // @RULE 预言家必须验一个人
+        return target;
+    }
+
+    _werewolf() {
+        // 随机杀一个非狼的人
+        // @TIP 不杀狼人
+        const goods = app.data._actives.filter((person) => person.type !== 'werewolf');
+        const target = goods[Math.random()*goods.length>>0];
+        if(app.data.personMap.guardTarget !== target)
+            target.alive = false;
+        return target;
+    }
+
+    _witch() {
+        // @TIP 第一轮救人
+        const werewolfTarget = app.data.personMap.werewolfTarget;
+
+        const save = werewolfTarget === this ? 1 : Math.random() >= 0.5;
+        if (this.dedrug && !werewolfTarget.alive) {
+            if (save) {
+                werewolfTarget.alive = true;
+                this.dedrug--;
+                return werewolfTarget;
+            }
+        }
+    }
+}
+
+const App = Regular.extend({
+    template: '#template',
+    config() {
+        Object.assign(this.data, {
+            winWay: 'part',
+            roles: {
+                werewolf: 0,
+                villager: 0,
+                seer: 0,
+                witch: 0,
+                guard: 0,
+                hunter: 0,
+                thief: 0,
+                cupido: 0,
+                elder: 0,
+                muteElder: 0,
+                idiot: 0,
+                scapegoat: 0,
+            },
+            persons: [],
+            personMap: {},
+            _actives: [],
+            _deads: [],
+            turn: 0,
+            details: [],
+        });
+        this.supr();
+
+        this.data.roles.werewolf = 2;
+        this.data.roles.villager = 3;
+        this.data.roles.seer = 1;
+        this.data.roles.witch = 1;
+        this.data.roles.guard = 1;
+
+        // @DEBUG 自动开局
+        this.start();
+    },
+    computed: {
+        total() {
+            return Math.sum.apply(null, Object.keys(this.data.roles).map((key) => this.data.roles[key]));
+        },
+    },
+    getAliveCount(type) {
+        if (type === 'ability')
+            return this.data.persons.filter((person) =>
+                person.alive && person.type !== 'werewolf' && person.type !== 'villager').length;
+        else if (type === 'good')
+            return this.data.persons.filter((person) =>
+                person.alive && person.type !== 'werewolf').length;
+        else if (type)
+            return this.data.persons.filter((person) => person.alive && person.type === type).length;
+        else
+            return this.data.persons.filter((person) => person.alive).length;
+    },
+    log(text) {
+        this.data.details.push(text);
+        setTimeout(() => this.$refs.details.scrollTop = this.$refs.details.scrollHeight);
+    },
+    checkWin() {
+        if (!this.getAliveCount('werewolf'))
+            return 'good';
+        else {
+            if (this.data.winWay === 'part') {
+                if (!this.getAliveCount('villager') || !this.getAliveCount('ability'))
+                    return 'werewolf';
+            } else {
+                if (!this.getAliveCount('good'))
+                    return 'werewolf';
+            }
+        }
+    },
+    start() {
+        const roles = this.data.roles;
+        const persons = window.persons = this.data.persons = [];
+        const personMap = this.data.personMap = {
+            werewolves: [],
+            villagers: [],
+        };
+
+        let number = 1;
+        Object.keys(roles).forEach((key) => {
+            for (let i = 0; i < roles[key]; i++) {
+                const person = new Person({
+                    number: number++,
+                    type: key,
+                    alive: true,
+                    visible: false,
+                    open: true,
+                });
+                persons.push(person);
+
+                // 快速寻找能力者
+                if (key === 'werewolf')
+                    personMap.werewolves.push(person);
+                else if (key === 'villager')
+                    personMap.villagers.push(person);
+                else
+                    personMap[key] = person;
+            }
+        });
+
+        this.data.details = ['角色已分配，请点击“下一步”。'];
+        this.data.turn = 1;
+        this.data._actives = persons;
+        this.flow = this._gen();
+    },
+    _gen: function* () {
+        const roles = this.data.roles;
+        const details = this.data.details;
+        const persons = this.data.persons;
+        const personMap = this.data.personMap;
+        let _actives = this.data._actives;
+
+        let winner;
+        do {
+            this.log(`------第${this.data.turn}轮------`);
+            this.log('天黑请闭眼。');
+            yield _actives.forEach((person) => person.open = false);
+
+            // @TODO
+            if (personMap.thief)
+                yield this.log('盗贼请睁眼。');
+
+            // @TODO
+            if (personMap.cupido)
+                yield this.log('丘比特请睁眼。');
+
+            if (personMap.guard) {
+                this.log('守卫请睁眼。');
+                yield personMap.guard.open = true;
+                this.log('守卫请守护一个人：');
+                personMap.guardTarget = undefined;
+                if (personMap.guard.alive) {
+                     personMap.guardTarget = personMap.guard.action();
+                    yield this.log(personMap.guardTarget ? `[守卫守护了(${personMap.guardTarget.number})]` : '[守卫没有守护人]');
+                } else
+                    yield this.log('[守卫已死]');
+                this.log('守卫请闭眼。');
+                yield personMap.guard.open = false;
+            }
+            if (personMap.seer) {
+                this.log('预言家请睁眼。');
+                yield personMap.seer.open = true;
+                this.log('预言家请验一个人：');
+                if (personMap.seer.alive) {
+                    const target = personMap.seer.action();
+                    yield this.log(`[预言家验了(${target.number})，TA是${target.type}]`);
+                } else
+                    yield this.log('[预言家已死]');
+                this.log('预言家请闭眼。');
+                yield personMap.seer.open = false;
+            }
+
+            this.log('狼人请睁眼，并相互确认。');
+            yield personMap.werewolves.forEach((werewolf) => werewolf.alive && (werewolf.open = true));
+            this.log('狼人请杀人：');
+            personMap.werewolfTarget = personMap.werewolves[0].action();
+            yield this.log(`[狼人杀了(${personMap.werewolfTarget.number})]`);
+            this.log('狼人请闭眼。');
+            yield personMap.werewolves.forEach((werewolf) => werewolf.alive && (werewolf.open = false));
+
+            if (personMap.witch) {
+                this.log('女巫请睁眼。');
+                yield personMap.witch.open = true;
+                this.log(`你有一瓶解药，刚才死的人是(${personMap.werewolfTarget.number})，你是否要救TA？`);
+                this.log(`你有一瓶毒药，你是否要用它？`);
+                if (personMap.witch.alive || personMap.werewolfTarget === personMap.witch) {
+                    const target = personMap.witch.action();
+                    if (target === personMap.werewolfTarget)
+                        yield this.log(`[女巫救了：(${target.number})]`);
+                    else if (target)
+                        yield this.log(`[女巫毒死了：(${target.number})]`);
+                    else
+                        yield this.log(`[女巫没有使用药]`);
+                } else
+                    yield this.log('[女巫已死]');
+                this.log('女巫请闭眼。');
+                yield personMap.witch.open = false;
+            }
+
+            winner = this.checkWin();
+            if (winner) {
+                this.log(`游戏结束，${winner}获胜！`);
+                break;
+            }
+
+            this.log('天亮请睁眼。');
+            yield _actives.forEach((person) => person.open = true);
+
+            if (personMap.werewolfTarget.alive)
+                yield this.log('[昨天没死人]');
+            else {
+                yield this.log(`[昨天(${personMap.werewolfTarget.number})死了]`);
+                yield this.log(`(${personMap.werewolfTarget.number})遗言：“${personMap.werewolfTarget.talk()}”`);
+            }
+
+            _actives = this.data._actives = persons.filter((person) => person.alive);
+            for(let i = 0; i < _actives.length; i++)
+                yield this.log(`(${_actives[i].number})：“${_actives[i].talk()}”`);
+
+            this.data.turn++;
+            winner = this.checkWin();
+            if (winner) {
+                this.log(`游戏结束，${winner}获胜！`);
+                break;
+            }
+
+            _actives = this.data._actives = persons.filter((person) => person.alive);
+            yield this.log('游戏继续。');
+        } while (true);
+    },
+}).filter({
+    num2str: {
+        get: (value) => '' + value,
+        set: (value) => +value,
+    },
+    num2bool: {
+        get: (value) => !!value,
+        set: (value) => +value,
+    },
+});
+const app = new App().$inject('#app');
+</script>
