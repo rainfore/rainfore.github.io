@@ -1,6 +1,6 @@
 webpackJsonp([3],{
 
-/***/ 108:
+/***/ 110:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -24,204 +24,111 @@ class Point {
 
 /***/ }),
 
-/***/ 188:
+/***/ 191:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(189);
+var content = __webpack_require__(192);
 if(typeof content === 'string') content = [[module.i, content, '']];
-// add the styles to the DOM
-var update = __webpack_require__(1)(content, {});
 if(content.locals) module.exports = content.locals;
-// Hot Module Replacement
-if(false) {
-	// When the styles change, update the <style> tags
-	if(!content.locals) {
-		module.hot.accept("!!../../../../Projects/GitHub/Vusion/vusion-cli/node_modules/vusion-css-loader/index.js?{\"minimize\":true,\"localIdentName\":\"[name]_[local]\",\"modules\":true,\"importLoaders\":true}!../../../../Projects/GitHub/Vusion/vusion-cli/node_modules/vusion-vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-253c4082\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../Projects/GitHub/Vusion/vusion-cli/node_modules/import-global-loader/index.js!../../../../Projects/GitHub/Vusion/vusion-cli/node_modules/vusion-vue-loader/lib/selector.js?type=styles&index=0!./Index.vue", function() {
-			var newContent = require("!!../../../../Projects/GitHub/Vusion/vusion-cli/node_modules/vusion-css-loader/index.js?{\"minimize\":true,\"localIdentName\":\"[name]_[local]\",\"modules\":true,\"importLoaders\":true}!../../../../Projects/GitHub/Vusion/vusion-cli/node_modules/vusion-vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-253c4082\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../Projects/GitHub/Vusion/vusion-cli/node_modules/import-global-loader/index.js!../../../../Projects/GitHub/Vusion/vusion-cli/node_modules/vusion-vue-loader/lib/selector.js?type=styles&index=0!./Index.vue");
-			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-			update(newContent);
-		});
-	}
-	// When the module is disposed, remove the <style> tags
-	module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-
-/***/ 189:
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(0)();
-// imports
-
-
-// module
-exports.push([module.i, ".Index_area_2HM9pV{width:142px;height:142px;background:#f7f7f7;margin:0 auto;border:1px solid #eee}.Index_area_2HM9pV[status=failed]{border-color:#d22f25}.Index_foot_2weXGV{text-align:center;margin:40px auto}.Index_point_ZfMKf5{float:left;width:12px;height:12px;margin:1px;background:#fff;border-radius:2px}.Index_point_ZfMKf5[role=body]{background:#666}.Index_point_ZfMKf5[role=head]{background:#222}.Index_point_ZfMKf5[role=food]{background:#d22f25;border-radius:100%}", ""]);
-
-// exports
-exports.locals = {
-	"area": "Index_area_2HM9pV",
-	"foot": "Index_foot_2weXGV",
-	"point": "Index_point_ZfMKf5"
-};
-
-/***/ }),
-
-/***/ 190:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__SnakeGame_vue__ = __webpack_require__(191);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__SnakeGame_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__SnakeGame_vue__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    components: {
-        [__WEBPACK_IMPORTED_MODULE_0__SnakeGame_vue___default.a.name]: __WEBPACK_IMPORTED_MODULE_0__SnakeGame_vue___default.a,
-    },
-});
-
-
-/***/ }),
-
-/***/ 191:
-/***/ (function(module, exports, __webpack_require__) {
-
-var cssModules = {}
-function injectStyle (ssrContext) {
-
-              var oldLocals = this['$style'];
-              var newLocals = __webpack_require__(192);
-              if (oldLocals && oldLocals.root === 'SnakeGame.vue')
-                  newLocals = Object.assign({}, oldLocals, newLocals);
-              cssModules['$style'] = newLocals;
-            this['$style'] = cssModules['$style']
-}
-var Component = __webpack_require__(2)(
-  /* script */
-  __webpack_require__(194),
-  /* template */
-  __webpack_require__(197),
-  /* styles */
-  injectStyle,
-  /* scopeId */
-  null,
-  /* moduleIdentifier (server only) */
-  null
-)
-
-module.exports = Component.exports
-
+// add the styles to the DOM
+var update = __webpack_require__(45)("0b836361", content, true);
 
 /***/ }),
 
 /***/ 192:
 /***/ (function(module, exports, __webpack_require__) {
 
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(193);
-if(typeof content === 'string') content = [[module.i, content, '']];
-// add the styles to the DOM
-var update = __webpack_require__(1)(content, {});
-if(content.locals) module.exports = content.locals;
-// Hot Module Replacement
-if(false) {
-	// When the styles change, update the <style> tags
-	if(!content.locals) {
-		module.hot.accept("!!../../../../Projects/GitHub/Vusion/vusion-cli/node_modules/vusion-css-loader/index.js?{\"minimize\":true,\"localIdentName\":\"[name]_[local]\",\"modules\":true,\"importLoaders\":true}!../../../../Projects/GitHub/Vusion/vusion-cli/node_modules/vusion-vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-803995fc\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../Projects/GitHub/Vusion/vusion-cli/node_modules/import-global-loader/index.js!../../../../Projects/GitHub/Vusion/vusion-cli/node_modules/vusion-vue-loader/lib/selector.js?type=styles&index=0!./SnakeGame.vue", function() {
-			var newContent = require("!!../../../../Projects/GitHub/Vusion/vusion-cli/node_modules/vusion-css-loader/index.js?{\"minimize\":true,\"localIdentName\":\"[name]_[local]\",\"modules\":true,\"importLoaders\":true}!../../../../Projects/GitHub/Vusion/vusion-cli/node_modules/vusion-vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-803995fc\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../Projects/GitHub/Vusion/vusion-cli/node_modules/import-global-loader/index.js!../../../../Projects/GitHub/Vusion/vusion-cli/node_modules/vusion-vue-loader/lib/selector.js?type=styles&index=0!./SnakeGame.vue");
-			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-			update(newContent);
-		});
-	}
-	// When the module is disposed, remove the <style> tags
-	module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-
-/***/ 193:
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(0)();
+exports = module.exports = __webpack_require__(44)(undefined);
 // imports
 
 
 // module
-exports.push([module.i, ".SnakeGame_area_2seC9Y{background:#f7f7f7;margin:0 auto;border:1px solid #eee}.SnakeGame_area_2seC9Y[status=failed]{border-color:#d22f25}.SnakeGame_area_2seC9Y[status=success]{border-color:#41b883}.SnakeGame_foot_2DA1xj{text-align:center;margin:0 auto}.SnakeGame_point_1PX796{float:left;width:12px;height:12px;margin:1px;background:#fff;border-radius:2px}.SnakeGame_point_1PX796[role=body]{background:#41b883}.SnakeGame_point_1PX796[role=head]{background:#35495e}.SnakeGame_point_1PX796[path]{-webkit-box-shadow:inset 0 0 10px 10px rgba(0,0,0,.15);box-shadow:inset 0 0 10px 10px rgba(0,0,0,.15)}.SnakeGame_point_1PX796[role=food]{background:#e96900;border-radius:100%;-webkit-box-shadow:none;box-shadow:none}", ""]);
+exports.push([module.i, "._3QADw_aWRLcv2tJF{width:142px;height:142px;background:#f7f7f7;margin:0 auto;border:1px solid #eee}._3QADw_aWRLcv2tJF[status=failed]{border-color:#d22f25}._3QADw_aWRLcv2tJF{text-align:center;margin:40px auto;float:left;width:12px;height:12px;margin:1px;background:#fff;border-radius:2px}._3QADw_aWRLcv2tJF[role=body]{background:#666}._3QADw_aWRLcv2tJF[role=head]{background:#222}._3QADw_aWRLcv2tJF[role=food]{background:#d22f25;border-radius:100%}", ""]);
 
 // exports
 exports.locals = {
-	"root": "SnakeGame_3Udrnj",
-	"area": "SnakeGame_area_2seC9Y",
-	"foot": "SnakeGame_foot_2DA1xj",
-	"point": "SnakeGame_point_1PX796"
+	"area": "_3QADw_aWRLcv2tJF",
+	"foot": "_3QADw_aWRLcv2tJF",
+	"point": "_3QADw_aWRLcv2tJF"
 };
+
+/***/ }),
+
+/***/ 193:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__SnakeGame_vue__ = __webpack_require__(194);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+    components: {
+        [__WEBPACK_IMPORTED_MODULE_0__SnakeGame_vue__["a" /* default */].name]: __WEBPACK_IMPORTED_MODULE_0__SnakeGame_vue__["a" /* default */],
+    },
+});
+
 
 /***/ }),
 
@@ -229,10 +136,77 @@ exports.locals = {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Point__ = __webpack_require__(108);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__LinkedPoint__ = __webpack_require__(195);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Snake__ = __webpack_require__(196);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Projects_GitHub_Vusion_vusion_cli_node_modules_vusion_vue_loader_lib_selector_type_script_index_0_SnakeGame_vue__ = __webpack_require__(197);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Projects_GitHub_Vusion_vusion_cli_node_modules_vusion_vue_loader_lib_template_compiler_index_id_data_v_803995fc_hasScoped_false_preserveWhitespace_false_Projects_GitHub_Vusion_vusion_cli_node_modules_vusion_vue_loader_lib_selector_type_template_index_0_SnakeGame_vue__ = __webpack_require__(200);
+var cssModules = {}
+function injectStyle (ssrContext) {
+cssModules['$style'] = __webpack_require__(195);  this['$style'] = cssModules['$style']
+}
+var normalizeComponent = __webpack_require__(1)
+/* script */
+
+/* template */
+
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __WEBPACK_IMPORTED_MODULE_0__Projects_GitHub_Vusion_vusion_cli_node_modules_vusion_vue_loader_lib_selector_type_script_index_0_SnakeGame_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__Projects_GitHub_Vusion_vusion_cli_node_modules_vusion_vue_loader_lib_template_compiler_index_id_data_v_803995fc_hasScoped_false_preserveWhitespace_false_Projects_GitHub_Vusion_vusion_cli_node_modules_vusion_vue_loader_lib_selector_type_template_index_0_SnakeGame_vue__["a" /* default */],
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+
+/* harmony default export */ __webpack_exports__["a"] = (Component.exports);
+
+
+/***/ }),
+
+/***/ 195:
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(196);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(45)("7024f4f3", content, true);
+
+/***/ }),
+
+/***/ 196:
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(44)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "._1PCUlB8Snb-1dZUZ{background:#f7f7f7;border:1px solid #eee}._1PCUlB8Snb-1dZUZ[status=failed]{border-color:#d22f25}._1PCUlB8Snb-1dZUZ[status=success]{border-color:#41b883}._1PCUlB8Snb-1dZUZ{text-align:center;margin:0 auto;float:left;width:12px;height:12px;margin:1px;background:#fff;border-radius:2px}._1PCUlB8Snb-1dZUZ[role=body]{background:#41b883}._1PCUlB8Snb-1dZUZ[role=head]{background:#35495e}._1PCUlB8Snb-1dZUZ[path]{-webkit-box-shadow:inset 0 0 10px 10px rgba(0,0,0,.15);box-shadow:inset 0 0 10px 10px rgba(0,0,0,.15)}._1PCUlB8Snb-1dZUZ[role=food]{background:#e96900;border-radius:100%;-webkit-box-shadow:none;box-shadow:none}", ""]);
+
+// exports
+exports.locals = {
+	"root": "_1PCUlB8Snb-1dZUZ",
+	"area": "_1PCUlB8Snb-1dZUZ",
+	"foot": "_1PCUlB8Snb-1dZUZ",
+	"point": "_1PCUlB8Snb-1dZUZ"
+};
+
+/***/ }),
+
+/***/ 197:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Point__ = __webpack_require__(110);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__LinkedPoint__ = __webpack_require__(198);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Snake__ = __webpack_require__(199);
 //
 //
 //
@@ -263,7 +237,7 @@ const KEY_ENUM = {
 };
 const KEY_PRINT = ['←', '↑', '→', '↓'];
 
-/* harmony default export */ __webpack_exports__["default"] = ({
+/* harmony default export */ __webpack_exports__["a"] = ({
     name: 'u-snake-game',
     props: {
         width: { type: Number, default: 12 },
@@ -585,11 +559,11 @@ const KEY_PRINT = ['←', '↑', '→', '↓'];
 
 /***/ }),
 
-/***/ 195:
+/***/ 198:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Point__ = __webpack_require__(108);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Point__ = __webpack_require__(110);
 
 
 class LinkedPoint extends __WEBPACK_IMPORTED_MODULE_0__Point__["a" /* default */] {
@@ -603,7 +577,7 @@ class LinkedPoint extends __WEBPACK_IMPORTED_MODULE_0__Point__["a" /* default */
 
 /***/ }),
 
-/***/ 196:
+/***/ 199:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -656,10 +630,11 @@ class Snake {
 
 /***/ }),
 
-/***/ 197:
-/***/ (function(module, exports) {
+/***/ 200:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+"use strict";
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     class: _vm.$style.root,
     attrs: {
@@ -708,14 +683,18 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("重置")])], 1), _c('div', {
     class: _vm.$style.foot
   }, [_vm._v("\n        步数：" + _vm._s(_vm.stepCount) + ", 长度：" + _vm._s(_vm.snake.length) + "\n    ")])])
-},staticRenderFns: []}
+}
+var staticRenderFns = []
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+/* harmony default export */ __webpack_exports__["a"] = (esExports);
 
 /***/ }),
 
-/***/ 198:
-/***/ (function(module, exports) {
+/***/ 201:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+"use strict";
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('section', [_c('h1', [_vm._v("贪吃蛇AI")]), _c('u-snake-game', {
     attrs: {
       "width": 12,
@@ -883,39 +862,46 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "nobrain": ""
     }
   }), _vm._m(0), _c('h3', [_vm._v("怎么把蛇弄死")]), _c('p', [_vm._v("定理1：对于任意随机食物序列，贪吃蛇能吃满所有格子的必要条件是贪吃蛇所走的路径一定能首尾相连。")])], 1)
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+}
+var staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('ul', [_c('li', [_vm._v("智能checkNext")]), _c('li', [_vm._v("智能判断封闭路径")]), _c('li', [_vm._v("3D贪吃蛇")])])
-}]}
+}]
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+/* harmony default export */ __webpack_exports__["a"] = (esExports);
 
 /***/ }),
 
-/***/ 76:
-/***/ (function(module, exports, __webpack_require__) {
+/***/ 70:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Projects_GitHub_Vusion_vusion_cli_node_modules_vusion_vue_loader_lib_selector_type_script_index_0_Index_vue__ = __webpack_require__(193);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Projects_GitHub_Vusion_vusion_cli_node_modules_vusion_vue_loader_lib_template_compiler_index_id_data_v_253c4082_hasScoped_false_preserveWhitespace_false_Projects_GitHub_Vusion_vusion_cli_node_modules_vusion_vue_loader_lib_selector_type_template_index_0_Index_vue__ = __webpack_require__(201);
 var cssModules = {}
 function injectStyle (ssrContext) {
-
-              var oldLocals = this['$style'];
-              var newLocals = __webpack_require__(188);
-              if (oldLocals && oldLocals.root === 'Index.vue')
-                  newLocals = Object.assign({}, oldLocals, newLocals);
-              cssModules['$style'] = newLocals;
-            this['$style'] = cssModules['$style']
+cssModules['$style'] = __webpack_require__(191);  this['$style'] = cssModules['$style']
 }
-var Component = __webpack_require__(2)(
-  /* script */
-  __webpack_require__(190),
-  /* template */
-  __webpack_require__(198),
-  /* styles */
-  injectStyle,
-  /* scopeId */
-  null,
-  /* moduleIdentifier (server only) */
-  null
+var normalizeComponent = __webpack_require__(1)
+/* script */
+
+/* template */
+
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __WEBPACK_IMPORTED_MODULE_0__Projects_GitHub_Vusion_vusion_cli_node_modules_vusion_vue_loader_lib_selector_type_script_index_0_Index_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__Projects_GitHub_Vusion_vusion_cli_node_modules_vusion_vue_loader_lib_template_compiler_index_id_data_v_253c4082_hasScoped_false_preserveWhitespace_false_Projects_GitHub_Vusion_vusion_cli_node_modules_vusion_vue_loader_lib_selector_type_template_index_0_Index_vue__["a" /* default */],
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
 )
 
-module.exports = Component.exports
+/* harmony default export */ __webpack_exports__["default"] = (Component.exports);
 
 
 /***/ })

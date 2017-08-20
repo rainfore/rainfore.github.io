@@ -162,7 +162,7 @@ export default Base.extend({
         },
         rotateAndUpdate() {
             this.vertices.forEach((vector, index) => {
-                vector.applyMatrix4(this.rotation);
+                // vector.applyMatrix4(this.rotation);
                 vector.applyMatrix4(this.rotation2);
                 vector.applyMatrix4(this.rotation3);
                 this.geometry.vertices[index].fromArray(vector.toArray());

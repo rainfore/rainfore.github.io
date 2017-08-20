@@ -9,7 +9,7 @@ export default {
     data() {
         return {
             articles: [
-                require('./Mac查看端口占用情况.md?partial=true'),
+                require('./Mac查看端口占用情况.md?partial=true').default,
             ],
         };
     },

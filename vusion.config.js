@@ -3,7 +3,9 @@ const hljs = require('highlight.js');
 const preprocess = require('./src/preprocess');
 
 module.exports = {
+    type: 'app',
     assetsPath: './src/assets',
+    extractCSS: true,
     webpack: {
         entry: {
             bundle: './index.js',

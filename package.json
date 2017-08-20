@@ -7,12 +7,13 @@
     "three": "^0.86.0",
     "u-base.vue": "^0.1.0",
     "u-button.vue": "^0.1.1",
-    "vue": "^2.3.0",
+    "vue": "^2.4.2",
     "vue-router": "^2.5.3"
   },
   "devDependencies": {
-    "eslint": "^3.19.0",
-    "eslint-config-vusion": "^1.1.0",
+    "babel-eslint": "^7.2.3",
+    "eslint": "^4.3.0",
+    "eslint-config-vusion": "^1.2.0",
     "eslint-plugin-html": "^2.0.3",
     "highlight.js": "^9.12.0",
     "js-yaml": "^3.8.4",

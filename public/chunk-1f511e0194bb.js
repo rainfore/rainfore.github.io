@@ -1,30 +1,40 @@
-webpackJsonp([19],{
+webpackJsonp([22],{
 
-/***/ 145:
-/***/ (function(module, exports, __webpack_require__) {
+/***/ 148:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-var Component = __webpack_require__(2)(
-  /* script */
-  null,
-  /* template */
-  __webpack_require__(146),
-  /* styles */
-  null,
-  /* scopeId */
-  null,
-  /* moduleIdentifier (server only) */
-  null
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Projects_GitHub_Vusion_vusion_cli_node_modules_vusion_vue_loader_lib_template_compiler_index_id_data_v_24c7aeef_hasScoped_false_Projects_GitHub_Vusion_vusion_cli_node_modules_vusion_vue_loader_lib_selector_type_template_index_0_node_modules_vue_markdown_loader_lib_markdown_compiler_js_raw_index_md__ = __webpack_require__(149);
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = null
+/* template */
+
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __WEBPACK_IMPORTED_MODULE_0__Projects_GitHub_Vusion_vusion_cli_node_modules_vusion_vue_loader_lib_template_compiler_index_id_data_v_24c7aeef_hasScoped_false_Projects_GitHub_Vusion_vusion_cli_node_modules_vusion_vue_loader_lib_selector_type_template_index_0_node_modules_vue_markdown_loader_lib_markdown_compiler_js_raw_index_md__["a" /* default */],
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
 )
 
-module.exports = Component.exports
+/* harmony default export */ __webpack_exports__["default"] = (Component.exports);
 
 
 /***/ }),
 
-/***/ 146:
-/***/ (function(module, exports) {
+/***/ 149:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+"use strict";
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('u-article', [_c('h1', [_vm._v("网易蜂巢的工业化前端架构")]), _vm._v(" "), _c('div', {
     staticClass: "u-article_meta"
   }, [_vm._v("2016-10-30")]), _vm._v(" "), _c('p', [_vm._v("近两年前端领域风云变幻，各种技术栈层出不穷。React、Angular2、Vue2逐步三分天下，Webpack + Babel + ES6模式如日中天，PostCSS大有取代SASS、LESS、Stylus的趋势，还有http2、WebComponents、WebAssembly、函数式编程等新概念不断涌现。让我们这些前端工程师应接不暇、感叹不已：“今年一个技术还没学会，明年可能就不用学了。”")]), _vm._v(" "), _c('p', [_vm._v("回顾前端发展历史，按照"), _c('a', {
@@ -447,15 +457,18 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "u-article_tag"
   }, [_vm._v("工程化")]), _vm._v(" "), _c('span', {
     staticClass: "u-article_tag"
-  }, [_vm._v("前端架构")])])], 1)
-},staticRenderFns: []}
+  }, [_vm._v("前端架构")])])])
+}
+var staticRenderFns = []
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+/* harmony default export */ __webpack_exports__["a"] = (esExports);
 
 /***/ }),
 
-/***/ 62:
+/***/ 56:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(145);
+module.exports = __webpack_require__(148);
 
 /***/ })
 

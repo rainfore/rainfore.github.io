@@ -1,55 +1,43 @@
-webpackJsonp([6],{
+webpackJsonp([5],{
 
-/***/ 136:
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(137);
-if(typeof content === 'string') content = [[module.i, content, '']];
-// add the styles to the DOM
-var update = __webpack_require__(1)(content, {});
-if(content.locals) module.exports = content.locals;
-// Hot Module Replacement
-if(false) {
-	// When the styles change, update the <style> tags
-	if(!content.locals) {
-		module.hot.accept("!!../../../../Projects/GitHub/Vusion/vusion-cli/node_modules/vusion-css-loader/index.js?{\"minimize\":true,\"localIdentName\":\"[name]_[local]\",\"modules\":true,\"importLoaders\":true}!../../../../Projects/GitHub/Vusion/vusion-cli/node_modules/vusion-vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2b157bee\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../Projects/GitHub/Vusion/vusion-cli/node_modules/import-global-loader/index.js!../../../../Projects/GitHub/Vusion/vusion-cli/node_modules/vusion-vue-loader/lib/selector.js?type=styles&index=0!./Index.vue", function() {
-			var newContent = require("!!../../../../Projects/GitHub/Vusion/vusion-cli/node_modules/vusion-css-loader/index.js?{\"minimize\":true,\"localIdentName\":\"[name]_[local]\",\"modules\":true,\"importLoaders\":true}!../../../../Projects/GitHub/Vusion/vusion-cli/node_modules/vusion-vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2b157bee\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../Projects/GitHub/Vusion/vusion-cli/node_modules/import-global-loader/index.js!../../../../Projects/GitHub/Vusion/vusion-cli/node_modules/vusion-vue-loader/lib/selector.js?type=styles&index=0!./Index.vue");
-			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-			update(newContent);
-		});
-	}
-	// When the module is disposed, remove the <style> tags
-	module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-
-/***/ 137:
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(0)();
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-exports.locals = {
-	"root": "Index_bTGX1q"
-};
-
-/***/ }),
-
-/***/ 138:
+/***/ 107:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_three__ = __webpack_require__(139);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Projects_GitHub_Vusion_vusion_cli_node_modules_vusion_vue_loader_lib_selector_type_script_index_0_base_vue__ = __webpack_require__(108);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Projects_GitHub_Vusion_vusion_cli_node_modules_vusion_vue_loader_lib_template_compiler_index_id_data_v_b53454f8_hasScoped_false_preserveWhitespace_false_Projects_GitHub_Vusion_vusion_cli_node_modules_vusion_vue_loader_lib_selector_type_template_index_0_base_vue__ = __webpack_require__(109);
+var normalizeComponent = __webpack_require__(1)
+/* script */
+
+/* template */
+
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __WEBPACK_IMPORTED_MODULE_0__Projects_GitHub_Vusion_vusion_cli_node_modules_vusion_vue_loader_lib_selector_type_script_index_0_base_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__Projects_GitHub_Vusion_vusion_cli_node_modules_vusion_vue_loader_lib_template_compiler_index_id_data_v_b53454f8_hasScoped_false_preserveWhitespace_false_Projects_GitHub_Vusion_vusion_cli_node_modules_vusion_vue_loader_lib_selector_type_template_index_0_base_vue__["a" /* default */],
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+
+/* harmony default export */ __webpack_exports__["a"] = (Component.exports);
+
+
+/***/ }),
+
+/***/ 108:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_three__ = __webpack_require__(75);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_src_lib_OrbitControls__ = __webpack_require__(76);
+//
 //
 //
 //
@@ -58,133 +46,188 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
-/* harmony default export */ __webpack_exports__["default"] = ({
+
+
+/* harmony default export */ __webpack_exports__["a"] = (__WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */].extend({
     data() {
-        return {
-            width: 640,
-            height: 480,
-            rotateX: 0,
-            rotateY: 0,
-            isMouseDown: false,
-        };
-    },
-    created() {
-        const center = new __WEBPACK_IMPORTED_MODULE_0_three__["o" /* Vector4 */](1 / 2, Math.sqrt(3) / 6, Math.sqrt(6) / 12, Math.sqrt(10) / 4);
-        this.vertices = [
-            new __WEBPACK_IMPORTED_MODULE_0_three__["o" /* Vector4 */](0, 0, 0, 0).sub(center).multiplyScalar(2),
-            new __WEBPACK_IMPORTED_MODULE_0_three__["o" /* Vector4 */](1, 0, 0, 0).sub(center).multiplyScalar(2),
-            new __WEBPACK_IMPORTED_MODULE_0_three__["o" /* Vector4 */](1 / 2, Math.sqrt(3) / 2, 0, 0).sub(center).multiplyScalar(2),
-            new __WEBPACK_IMPORTED_MODULE_0_three__["o" /* Vector4 */](1 / 2, Math.sqrt(3) / 6, Math.sqrt(6) / 3, 0).sub(center).multiplyScalar(2),
-            new __WEBPACK_IMPORTED_MODULE_0_three__["o" /* Vector4 */](0, 0, 0, 0),
-        ];
-        const theta = Math.PI / 180 / 4;
-        this.rotation = new __WEBPACK_IMPORTED_MODULE_0_three__["i" /* Matrix4 */]();
-        this.rotation.set(
-            Math.cos(theta), -Math.sin(theta), 0, 0,
-            Math.sin(theta), Math.cos(theta), 0, 0,
-            0, 0, Math.cos(theta), -Math.sin(theta),
-            0, 0, Math.sin(theta), Math.cos(theta),
-        );
+        return { width: 900, height: 300 };
     },
     mounted() {
-        this.scene = new __WEBPACK_IMPORTED_MODULE_0_three__["m" /* Scene */]();
+        // 场景
+        this.scene = new __WEBPACK_IMPORTED_MODULE_1_three__["r" /* Scene */]();
 
-        this.camera = new __WEBPACK_IMPORTED_MODULE_0_three__["l" /* PerspectiveCamera */](45, this.width / this.height, 0.1, 1000);
+        // 摄像机
+        this.camera = new __WEBPACK_IMPORTED_MODULE_1_three__["p" /* PerspectiveCamera */](45, this.width / this.height, 0.1, 1000);
         this.camera.position.y = 3;
-        this.camera.position.z = 6;
+        this.camera.position.x = 3;
+        this.camera.position.z = 3;
         this.camera.lookAt({
             x: 0,
             y: 0,
             z: 0,
         });
 
-        const cubeCamera = this.cubeCamera = new __WEBPACK_IMPORTED_MODULE_0_three__["b" /* CubeCamera */](0.1, 1000, 128);
-        this.scene.add(cubeCamera);
+        // 旋转控制
+        this.controls = new __WEBPACK_IMPORTED_MODULE_2_src_lib_OrbitControls__["a" /* default */](this.camera, this.$refs.canvas);
+        this.controls.enableZoom = false;
 
-        this.renderer = new __WEBPACK_IMPORTED_MODULE_0_three__["p" /* WebGLRenderer */]({
+        // 渲染器
+        this.renderer = new __WEBPACK_IMPORTED_MODULE_1_three__["w" /* WebGLRenderer */]({
             canvas: this.$refs.canvas,
             antialias: true,
         });
         this.renderer.setSize(this.width, this.height);
-        // this.renderer.setClearColor(0xFFFFFF, 1);
+        this.renderer.setClearColor(0xFFFFFF, 1);
 
-        // LIGHTS
-        const ambientLight = new __WEBPACK_IMPORTED_MODULE_0_three__["a" /* AmbientLight */](0xFFFFFF, 1);
-        this.scene.add(ambientLight);
-        const light = new __WEBPACK_IMPORTED_MODULE_0_three__["c" /* DirectionalLight */](0xFFFFFF, 1);
-        light.position.set(4, 2, 4);
-        this.scene.add(light);
-
-        // for (let i = 0; i < 160; i++)
-        //     this.rotate();
-
-        const geometry = this.geometry = new __WEBPACK_IMPORTED_MODULE_0_three__["f" /* Geometry */]();
-        geometry.vertices.push(...this.getVertices());
-        geometry.faces.push(
-            new __WEBPACK_IMPORTED_MODULE_0_three__["e" /* Face3 */](0, 2, 1),
-            new __WEBPACK_IMPORTED_MODULE_0_three__["e" /* Face3 */](0, 1, 3),
-            new __WEBPACK_IMPORTED_MODULE_0_three__["e" /* Face3 */](0, 1, 4),
-            new __WEBPACK_IMPORTED_MODULE_0_three__["e" /* Face3 */](0, 3, 2),
-            new __WEBPACK_IMPORTED_MODULE_0_three__["e" /* Face3 */](0, 4, 2),
-            new __WEBPACK_IMPORTED_MODULE_0_three__["e" /* Face3 */](0, 3, 4),
-            new __WEBPACK_IMPORTED_MODULE_0_three__["e" /* Face3 */](1, 2, 3),
-            new __WEBPACK_IMPORTED_MODULE_0_three__["e" /* Face3 */](1, 2, 4),
-            new __WEBPACK_IMPORTED_MODULE_0_three__["e" /* Face3 */](1, 3, 4),
-            new __WEBPACK_IMPORTED_MODULE_0_three__["e" /* Face3 */](2, 4, 3),
-        );
-
-        const material = new __WEBPACK_IMPORTED_MODULE_0_three__["k" /* MeshLambertMaterial */]({
-            color: 0x0099FF,
-            side: __WEBPACK_IMPORTED_MODULE_0_three__["d" /* DoubleSide */],
-            transparent: true,
-            opacity: 0.4,
-            envMap: cubeCamera.renderTarget,
-            // reflectivity: 0,
-            // refractionRatio: 0,
-            depthTest: false,
-            // wireframe: true,
-            // wireframeLinewidth: 10,
-        });
-        this.geo = new __WEBPACK_IMPORTED_MODULE_0_three__["j" /* Mesh */](geometry, material);
-        this.scene.add(this.geo);
-
-        const edges = this.edges = new __WEBPACK_IMPORTED_MODULE_0_three__["f" /* Geometry */]();
-        edges.vertices.push(
-            geometry.vertices[0],
-            geometry.vertices[1],
-            geometry.vertices[0],
-            geometry.vertices[2],
-            geometry.vertices[0],
-            geometry.vertices[3],
-            geometry.vertices[0],
-            geometry.vertices[4],
-            geometry.vertices[1],
-            geometry.vertices[2],
-            geometry.vertices[1],
-            geometry.vertices[3],
-            geometry.vertices[1],
-            geometry.vertices[4],
-            geometry.vertices[2],
-            geometry.vertices[3],
-            geometry.vertices[2],
-            geometry.vertices[4],
-            geometry.vertices[3],
-            geometry.vertices[4],
-        );
-
-        // const edges = new THREE.EdgesGeometry(geometry);
-        this.line = new __WEBPACK_IMPORTED_MODULE_0_three__["h" /* LineSegments */](edges, new __WEBPACK_IMPORTED_MODULE_0_three__["g" /* LineBasicMaterial */]({ color: 0x0099FF }));
-        this.scene.add(this.line);
-
-        // const helper = new THREE.GridHelper(10, 100);
-        // this.scene.add(helper);
+        //
+        this.initScene();
 
         this.animate = this.animate.bind(this);
         this.animate();
     },
     methods: {
+        superAnimate() {
+            this.controls.update();
+            this.renderer.render(this.scene, this.camera);
+            requestAnimationFrame(this.animate);
+        },
+    },
+}));
+
+
+/***/ }),
+
+/***/ 109:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('figure', [_c('canvas', {
+    ref: "canvas",
+    attrs: {
+      "width": _vm.width,
+      "height": _vm.height
+    }
+  })])
+}
+var staticRenderFns = []
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+/* harmony default export */ __webpack_exports__["a"] = (esExports);
+
+/***/ }),
+
+/***/ 204:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__base_vue__ = __webpack_require__(107);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_three__ = __webpack_require__(75);
+
+
+
+
+/* harmony default export */ __webpack_exports__["a"] = (__WEBPACK_IMPORTED_MODULE_0__base_vue__["a" /* default */].extend({
+    methods: {
+        initData() {
+            const scalar = 2;
+            const center = new __WEBPACK_IMPORTED_MODULE_1_three__["v" /* Vector4 */](1 / 2, Math.sqrt(3) / 6, Math.sqrt(6) / 12, Math.sqrt(10) / 20);
+            this.vertices = [
+                new __WEBPACK_IMPORTED_MODULE_1_three__["v" /* Vector4 */](0, 0, 0, 0).sub(center).multiplyScalar(scalar),
+                new __WEBPACK_IMPORTED_MODULE_1_three__["v" /* Vector4 */](1, 0, 0, 0).sub(center).multiplyScalar(scalar),
+                new __WEBPACK_IMPORTED_MODULE_1_three__["v" /* Vector4 */](1 / 2, Math.sqrt(3) / 2, 0, 0).sub(center).multiplyScalar(scalar),
+                new __WEBPACK_IMPORTED_MODULE_1_three__["v" /* Vector4 */](1 / 2, Math.sqrt(3) / 6, Math.sqrt(6) / 3, 0).sub(center).multiplyScalar(scalar),
+                new __WEBPACK_IMPORTED_MODULE_1_three__["v" /* Vector4 */](1 / 2, Math.sqrt(3) / 6, Math.sqrt(6) / 12, Math.sqrt(10) / 4).sub(center).multiplyScalar(scalar),
+            ];
+
+            const theta = Math.PI / 180 / 4;
+            this.rotation = new __WEBPACK_IMPORTED_MODULE_1_three__["l" /* Matrix4 */]();
+            this.rotation.set(
+                Math.cos(theta), -Math.sin(theta), 0, 0,
+                Math.sin(theta), Math.cos(theta), 0, 0,
+                0, 0, Math.cos(theta), -Math.sin(theta),
+                0, 0, Math.sin(theta), Math.cos(theta),
+            );
+        },
+        initScene() {
+            this.initData();
+
+            // 镜面摄像机
+            this.cubeCamera = new __WEBPACK_IMPORTED_MODULE_1_three__["c" /* CubeCamera */](0.1, 1000, 128);
+            this.scene.add(this.cubeCamera);
+
+            // LIGHTS
+            const ambientLight = new __WEBPACK_IMPORTED_MODULE_1_three__["a" /* AmbientLight */](0xFFFFFF, 1);
+            this.scene.add(ambientLight);
+            const light = new __WEBPACK_IMPORTED_MODULE_1_three__["d" /* DirectionalLight */](0xFFFFFF, 1);
+            light.position.set(3, 3, 3);
+            this.scene.add(light);
+
+            // GEOMETRY
+            const geometry = this.geometry = new __WEBPACK_IMPORTED_MODULE_1_three__["h" /* Geometry */]();
+            geometry.vertices.push(...this.getVertices());
+            geometry.faces.push(
+                new __WEBPACK_IMPORTED_MODULE_1_three__["g" /* Face3 */](0, 2, 1),
+                new __WEBPACK_IMPORTED_MODULE_1_three__["g" /* Face3 */](0, 1, 3),
+                new __WEBPACK_IMPORTED_MODULE_1_three__["g" /* Face3 */](0, 1, 4),
+                new __WEBPACK_IMPORTED_MODULE_1_three__["g" /* Face3 */](0, 3, 2),
+                new __WEBPACK_IMPORTED_MODULE_1_three__["g" /* Face3 */](0, 4, 2),
+                new __WEBPACK_IMPORTED_MODULE_1_three__["g" /* Face3 */](0, 3, 4),
+                new __WEBPACK_IMPORTED_MODULE_1_three__["g" /* Face3 */](1, 2, 3),
+                new __WEBPACK_IMPORTED_MODULE_1_three__["g" /* Face3 */](1, 2, 4),
+                new __WEBPACK_IMPORTED_MODULE_1_three__["g" /* Face3 */](1, 3, 4),
+                new __WEBPACK_IMPORTED_MODULE_1_three__["g" /* Face3 */](2, 4, 3),
+            );
+            geometry.computeVertexNormals();
+            geometry.computeFaceNormals();
+
+            const material = new __WEBPACK_IMPORTED_MODULE_1_three__["n" /* MeshLambertMaterial */]({
+                color: 0x0099FF,
+                side: __WEBPACK_IMPORTED_MODULE_1_three__["e" /* DoubleSide */],
+                transparent: true,
+                opacity: 0.2,
+                envMap: this.cubeCamera.renderTarget.texture,
+                // reflectivity: 0,
+                // refractionRatio: 0,
+                depthTest: false,
+                // wireframe: true,
+                // wireframeLinewidth: 10,
+            });
+            const mesh = new __WEBPACK_IMPORTED_MODULE_1_three__["m" /* Mesh */](geometry, material);
+            this.scene.add(mesh);
+
+            const edges = this.edges = new __WEBPACK_IMPORTED_MODULE_1_three__["h" /* Geometry */]();
+            edges.vertices.push(
+                    geometry.vertices[0],
+                    geometry.vertices[1],
+                    geometry.vertices[0],
+                    geometry.vertices[2],
+                    geometry.vertices[0],
+                    geometry.vertices[3],
+                    geometry.vertices[0],
+                    geometry.vertices[4],
+                    geometry.vertices[1],
+                    geometry.vertices[2],
+                    geometry.vertices[1],
+                    geometry.vertices[3],
+                    geometry.vertices[1],
+                    geometry.vertices[4],
+                    geometry.vertices[2],
+                    geometry.vertices[3],
+                    geometry.vertices[2],
+                    geometry.vertices[4],
+                    geometry.vertices[3],
+                    geometry.vertices[4],
+                );
+            edges.computeVertexNormals();
+            edges.computeFaceNormals();
+
+            this.scene.add(new __WEBPACK_IMPORTED_MODULE_1_three__["j" /* LineSegments */](edges, new __WEBPACK_IMPORTED_MODULE_1_three__["i" /* LineBasicMaterial */]({ color: 0x0099FF })));
+
+            this.scene.add(new __WEBPACK_IMPORTED_MODULE_1_three__["b" /* AxisHelper */](2));
+            // this.scene.add(new THREE.FaceNormalsHelper(mesh, 1, 0xff0000, 3));
+        },
         getVertices() {
-            return this.vertices.map((vector) => new __WEBPACK_IMPORTED_MODULE_0_three__["n" /* Vector3 */](...vector.toArray()));
+            return this.vertices.map((vector) => new __WEBPACK_IMPORTED_MODULE_1_three__["u" /* Vector3 */](...vector.toArray()));
         },
         rotate() {
             this.vertices.forEach((vector) => vector.applyMatrix4(this.rotation));
@@ -199,63 +242,70 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.rotateAndUpdate();
             this.geometry.dynamic = true;
             this.geometry.verticesNeedUpdate = true;
-            this.geometry.computeVertexNormals();
-            this.geometry.computeFaceNormals();
-            this.geometry.computeBoundingSphere();
             this.edges.dynamic = true;
             this.edges.verticesNeedUpdate = true;
-            this.edges.computeVertexNormals();
-            this.edges.computeFaceNormals();
-            this.edges.computeBoundingSphere();
             this.cubeCamera.updateCubeMap(this.renderer, this.scene);
 
-            this.renderer.render(this.scene, this.camera);
-            requestAnimationFrame(this.animate);
-        },
-        onMouseDown(e) {
-            this.isMouseDown = true;
-            this.clientX = e.clientX;
-            this.clientY = e.clientY;
-            this.rotateX = this.geo.rotation.x;
-            this.rotateY = this.geo.rotation.y;
-        },
-        onMouseMove(e) {
-            if (this.isMouseDown) {
-                this.line.rotation.x = this.geo.rotation.x = this.rotateX + (e.clientY - this.clientY) * 0.1;
-                this.line.rotation.y = this.geo.rotation.y = this.rotateY + (e.clientX - this.clientX) * 0.1;
-            }
-        },
-        onMouseUp(e) {
-            this.isMouseDown = false;
+            this.superAnimate();
         },
     },
-});
+}));
 
 
 /***/ }),
 
-/***/ 139:
+/***/ 72:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Projects_GitHub_Vusion_vusion_cli_node_modules_vusion_vue_loader_lib_selector_type_script_index_0_simplex4_vue__ = __webpack_require__(204);
+var normalizeComponent = __webpack_require__(1)
+/* script */
+
+/* template */
+var __vue_template__ = null
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __WEBPACK_IMPORTED_MODULE_0__Projects_GitHub_Vusion_vusion_cli_node_modules_vusion_vue_loader_lib_selector_type_script_index_0_simplex4_vue__["a" /* default */],
+  __vue_template__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+
+/* harmony default export */ __webpack_exports__["default"] = (Component.exports);
+
+
+/***/ }),
+
+/***/ 75:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* unused harmony export WebGLRenderTargetCube */
 /* unused harmony export WebGLRenderTarget */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "p", function() { return WebGLRenderer; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "w", function() { return WebGLRenderer; });
 /* unused harmony export ShaderLib */
 /* unused harmony export UniformsLib */
 /* unused harmony export UniformsUtils */
 /* unused harmony export ShaderChunk */
 /* unused harmony export FogExp2 */
 /* unused harmony export Fog */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "m", function() { return Scene; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "r", function() { return Scene; });
 /* unused harmony export LensFlare */
 /* unused harmony export Sprite */
 /* unused harmony export LOD */
 /* unused harmony export SkinnedMesh */
 /* unused harmony export Skeleton */
 /* unused harmony export Bone */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return Mesh; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return LineSegments; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "m", function() { return Mesh; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return LineSegments; });
 /* unused harmony export LineLoop */
 /* unused harmony export Line */
 /* unused harmony export Points */
@@ -289,14 +339,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* unused harmony export RectAreaLight */
 /* unused harmony export HemisphereLight */
 /* unused harmony export DirectionalLightShadow */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return DirectionalLight; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return DirectionalLight; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AmbientLight; });
 /* unused harmony export LightShadow */
 /* unused harmony export Light */
 /* unused harmony export StereoCamera */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "l", function() { return PerspectiveCamera; });
-/* unused harmony export OrthographicCamera */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return CubeCamera; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "p", function() { return PerspectiveCamera; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "o", function() { return OrthographicCamera; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return CubeCamera; });
 /* unused harmony export ArrayCamera */
 /* unused harmony export Camera */
 /* unused harmony export AudioListener */
@@ -321,16 +371,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* unused harmony export InstancedBufferGeometry */
 /* unused harmony export BufferGeometry */
 /* unused harmony export GeometryIdCount */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return Geometry; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return Geometry; });
 /* unused harmony export InterleavedBufferAttribute */
 /* unused harmony export InstancedInterleavedBuffer */
 /* unused harmony export InterleavedBuffer */
 /* unused harmony export InstancedBufferAttribute */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return Face3; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return Face3; });
 /* unused harmony export Object3D */
 /* unused harmony export Raycaster */
 /* unused harmony export Layers */
-/* unused harmony export EventDispatcher */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return EventDispatcher; });
 /* unused harmony export Clock */
 /* unused harmony export QuaternionLinearInterpolant */
 /* unused harmony export LinearInterpolant */
@@ -339,22 +389,22 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* unused harmony export Interpolant */
 /* unused harmony export Triangle */
 /* unused harmony export Math */
-/* unused harmony export Spherical */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "s", function() { return Spherical; });
 /* unused harmony export Cylindrical */
 /* unused harmony export Plane */
 /* unused harmony export Frustum */
 /* unused harmony export Sphere */
 /* unused harmony export Ray */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return Matrix4; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "l", function() { return Matrix4; });
 /* unused harmony export Matrix3 */
 /* unused harmony export Box3 */
 /* unused harmony export Box2 */
 /* unused harmony export Line3 */
 /* unused harmony export Euler */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "o", function() { return Vector4; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "n", function() { return Vector3; });
-/* unused harmony export Vector2 */
-/* unused harmony export Quaternion */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "v", function() { return Vector4; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "u", function() { return Vector3; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "t", function() { return Vector2; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "q", function() { return Quaternion; });
 /* unused harmony export Color */
 /* unused harmony export MorphBlendMesh */
 /* unused harmony export ImmediateRenderObject */
@@ -371,7 +421,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* unused harmony export CameraHelper */
 /* unused harmony export BoxHelper */
 /* unused harmony export ArrowHelper */
-/* unused harmony export AxisHelper */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return AxisHelper; });
 /* unused harmony export CatmullRomCurve3 */
 /* unused harmony export CubicBezierCurve3 */
 /* unused harmony export QuadraticBezierCurve3 */
@@ -442,11 +492,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* unused harmony export MeshPhongMaterial */
 /* unused harmony export MeshToonMaterial */
 /* unused harmony export MeshNormalMaterial */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return MeshLambertMaterial; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "n", function() { return MeshLambertMaterial; });
 /* unused harmony export MeshDepthMaterial */
 /* unused harmony export MeshBasicMaterial */
 /* unused harmony export LineDashedMaterial */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return LineBasicMaterial; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return LineBasicMaterial; });
 /* unused harmony export Material */
 /* unused harmony export Float64BufferAttribute */
 /* unused harmony export Float32BufferAttribute */
@@ -459,7 +509,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* unused harmony export Int8BufferAttribute */
 /* unused harmony export BufferAttribute */
 /* unused harmony export REVISION */
-/* unused harmony export MOUSE */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return MOUSE; });
 /* unused harmony export CullFaceNone */
 /* unused harmony export CullFaceBack */
 /* unused harmony export CullFaceFront */
@@ -471,7 +521,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* unused harmony export PCFSoftShadowMap */
 /* unused harmony export FrontSide */
 /* unused harmony export BackSide */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return DoubleSide; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return DoubleSide; });
 /* unused harmony export FlatShading */
 /* unused harmony export SmoothShading */
 /* unused harmony export NoColors */
@@ -44343,54 +44393,936 @@ function CanvasRenderer() {
 
 /***/ }),
 
-/***/ 140:
-/***/ (function(module, exports) {
+/***/ 76:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('canvas', {
-    ref: "canvas",
-    class: _vm.$style.root,
-    attrs: {
-      "width": _vm.width,
-      "height": _vm.height
-    },
-    on: {
-      "mousedown": _vm.onMouseDown,
-      "mousemove": _vm.onMouseMove,
-      "mouseup": _vm.onMouseUp
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_three__ = __webpack_require__(75);
+
+
+/**
+ * @author qiao / https://github.com/qiao
+ * @author mrdoob / http://mrdoob.com
+ * @author alteredq / http://alteredqualia.com/
+ * @author WestLangley / http://github.com/WestLangley
+ * @author erich666 / http://erichaines.com
+ */
+
+// This set of controls performs orbiting, dollying (zooming), and panning.
+// Unlike TrackballControls, it maintains the "up" direction object.up (+Y by default).
+//
+//    Orbit - left mouse / touch: one finger move
+//    Zoom - middle mouse, or mousewheel / touch: two finger spread or squish
+//    Pan - right mouse, or arrow keys / touch: three finger swipe
+
+const OrbitControls = function (object, domElement) {
+    this.object = object;
+
+    this.domElement = (domElement !== undefined) ? domElement : document;
+
+	// Set to false to disable this control
+    this.enabled = true;
+
+	// "target" sets the location of focus, where the object orbits around
+    this.target = new __WEBPACK_IMPORTED_MODULE_0_three__["u" /* Vector3 */]();
+
+	// How far you can dolly in and out ( PerspectiveCamera only )
+    this.minDistance = 0;
+    this.maxDistance = Infinity;
+
+	// How far you can zoom in and out ( OrthographicCamera only )
+    this.minZoom = 0;
+    this.maxZoom = Infinity;
+
+	// How far you can orbit vertically, upper and lower limits.
+	// Range is 0 to Math.PI radians.
+    this.minPolarAngle = 0; // radians
+    this.maxPolarAngle = Math.PI; // radians
+
+	// How far you can orbit horizontally, upper and lower limits.
+	// If set, must be a sub-interval of the interval [ - Math.PI, Math.PI ].
+    this.minAzimuthAngle = -Infinity; // radians
+    this.maxAzimuthAngle = Infinity; // radians
+
+	// Set to true to enable damping (inertia)
+	// If damping is enabled, you must call controls.update() in your animation loop
+    this.enableDamping = false;
+    this.dampingFactor = 0.25;
+
+	// This option actually enables dollying in and out; left as "zoom" for backwards compatibility.
+	// Set to false to disable zooming
+    this.enableZoom = true;
+    this.zoomSpeed = 1.0;
+
+	// Set to false to disable rotating
+    this.enableRotate = true;
+    this.rotateSpeed = 1.0;
+
+	// Set to false to disable panning
+    this.enablePan = true;
+    this.keyPanSpeed = 7.0;	// pixels moved per arrow key push
+
+	// Set to true to automatically rotate around the target
+	// If auto-rotate is enabled, you must call controls.update() in your animation loop
+    this.autoRotate = false;
+    this.autoRotateSpeed = 2.0; // 30 seconds per round when fps is 60
+
+	// Set to false to disable use of the keys
+    this.enableKeys = true;
+
+	// The four arrow keys
+    this.keys = { LEFT: 37, UP: 38, RIGHT: 39, BOTTOM: 40 };
+
+	// Mouse buttons
+    this.mouseButtons = { ORBIT: __WEBPACK_IMPORTED_MODULE_0_three__["k" /* MOUSE */].LEFT, ZOOM: __WEBPACK_IMPORTED_MODULE_0_three__["k" /* MOUSE */].MIDDLE, PAN: __WEBPACK_IMPORTED_MODULE_0_three__["k" /* MOUSE */].RIGHT };
+
+	// for reset
+    this.target0 = this.target.clone();
+    this.position0 = this.object.position.clone();
+    this.zoom0 = this.object.zoom;
+
+	//
+	// public methods
+	//
+
+    this.getPolarAngle = function () {
+        return spherical.phi;
+    };
+
+    this.getAzimuthalAngle = function () {
+        return spherical.theta;
+    };
+
+    this.saveState = function () {
+        scope.target0.copy(scope.target);
+        scope.position0.copy(scope.object.position);
+        scope.zoom0 = scope.object.zoom;
+    };
+
+    this.reset = function () {
+        scope.target.copy(scope.target0);
+        scope.object.position.copy(scope.position0);
+        scope.object.zoom = scope.zoom0;
+
+        scope.object.updateProjectionMatrix();
+        scope.dispatchEvent(changeEvent);
+
+        scope.update();
+
+        state = STATE.NONE;
+    };
+
+	// this method is exposed, but perhaps it would be better if we can make it private...
+    this.update = (function () {
+        const offset = new __WEBPACK_IMPORTED_MODULE_0_three__["u" /* Vector3 */]();
+
+		// so camera.up is the orbit axis
+        const quat = new __WEBPACK_IMPORTED_MODULE_0_three__["q" /* Quaternion */]().setFromUnitVectors(object.up, new __WEBPACK_IMPORTED_MODULE_0_three__["u" /* Vector3 */](0, 1, 0));
+        const quatInverse = quat.clone().inverse();
+
+        const lastPosition = new __WEBPACK_IMPORTED_MODULE_0_three__["u" /* Vector3 */]();
+        const lastQuaternion = new __WEBPACK_IMPORTED_MODULE_0_three__["q" /* Quaternion */]();
+
+        return function update() {
+            const position = scope.object.position;
+
+            offset.copy(position).sub(scope.target);
+
+			// rotate offset to "y-axis-is-up" space
+            offset.applyQuaternion(quat);
+
+			// angle from z-axis around y-axis
+            spherical.setFromVector3(offset);
+
+            if (scope.autoRotate && state === STATE.NONE)
+
+                rotateLeft(getAutoRotationAngle());
+
+            spherical.theta += sphericalDelta.theta;
+            spherical.phi += sphericalDelta.phi;
+
+			// restrict theta to be between desired limits
+            spherical.theta = Math.max(scope.minAzimuthAngle, Math.min(scope.maxAzimuthAngle, spherical.theta));
+
+			// restrict phi to be between desired limits
+            spherical.phi = Math.max(scope.minPolarAngle, Math.min(scope.maxPolarAngle, spherical.phi));
+
+            spherical.makeSafe();
+
+            spherical.radius *= scale;
+
+			// restrict radius to be between desired limits
+            spherical.radius = Math.max(scope.minDistance, Math.min(scope.maxDistance, spherical.radius));
+
+			// move target to panned location
+            scope.target.add(panOffset);
+
+            offset.setFromSpherical(spherical);
+
+			// rotate offset back to "camera-up-vector-is-up" space
+            offset.applyQuaternion(quatInverse);
+
+            position.copy(scope.target).add(offset);
+
+            scope.object.lookAt(scope.target);
+
+            if (scope.enableDamping === true) {
+                sphericalDelta.theta *= (1 - scope.dampingFactor);
+                sphericalDelta.phi *= (1 - scope.dampingFactor);
+            } else
+
+				sphericalDelta.set(0, 0, 0);
+
+            scale = 1;
+            panOffset.set(0, 0, 0);
+
+			// update condition is:
+			// min(camera displacement, camera rotation in radians)^2 > EPS
+			// using small-angle approximation cos(x/2) = 1 - x^2 / 8
+
+            if (zoomChanged
+				|| lastPosition.distanceToSquared(scope.object.position) > EPS
+				|| 8 * (1 - lastQuaternion.dot(scope.object.quaternion)) > EPS) {
+                scope.dispatchEvent(changeEvent);
+
+                lastPosition.copy(scope.object.position);
+                lastQuaternion.copy(scope.object.quaternion);
+                zoomChanged = false;
+
+                return true;
+            }
+
+            return false;
+        };
+    })();
+
+    this.dispose = function () {
+        scope.domElement.removeEventListener('contextmenu', onContextMenu, false);
+        scope.domElement.removeEventListener('mousedown', onMouseDown, false);
+        scope.domElement.removeEventListener('wheel', onMouseWheel, false);
+
+        scope.domElement.removeEventListener('touchstart', onTouchStart, false);
+        scope.domElement.removeEventListener('touchend', onTouchEnd, false);
+        scope.domElement.removeEventListener('touchmove', onTouchMove, false);
+
+        document.removeEventListener('mousemove', onMouseMove, false);
+        document.removeEventListener('mouseup', onMouseUp, false);
+
+        window.removeEventListener('keydown', onKeyDown, false);
+
+		// scope.dispatchEvent( { type: 'dispose' } ); // should this be added here?
+    };
+
+	//
+	// internals
+	//
+
+    var scope = this;
+
+    var changeEvent = { type: 'change' };
+    const startEvent = { type: 'start' };
+    const endEvent = { type: 'end' };
+
+    var STATE = { NONE: -1, ROTATE: 0, DOLLY: 1, PAN: 2, TOUCH_ROTATE: 3, TOUCH_DOLLY: 4, TOUCH_PAN: 5 };
+
+    var state = STATE.NONE;
+
+    var EPS = 0.000001;
+
+	// current position in spherical coordinates
+    var spherical = new __WEBPACK_IMPORTED_MODULE_0_three__["s" /* Spherical */]();
+    var sphericalDelta = new __WEBPACK_IMPORTED_MODULE_0_three__["s" /* Spherical */]();
+
+    var scale = 1;
+    var panOffset = new __WEBPACK_IMPORTED_MODULE_0_three__["u" /* Vector3 */]();
+    var zoomChanged = false;
+
+    const rotateStart = new __WEBPACK_IMPORTED_MODULE_0_three__["t" /* Vector2 */]();
+    const rotateEnd = new __WEBPACK_IMPORTED_MODULE_0_three__["t" /* Vector2 */]();
+    const rotateDelta = new __WEBPACK_IMPORTED_MODULE_0_three__["t" /* Vector2 */]();
+
+    const panStart = new __WEBPACK_IMPORTED_MODULE_0_three__["t" /* Vector2 */]();
+    const panEnd = new __WEBPACK_IMPORTED_MODULE_0_three__["t" /* Vector2 */]();
+    const panDelta = new __WEBPACK_IMPORTED_MODULE_0_three__["t" /* Vector2 */]();
+
+    const dollyStart = new __WEBPACK_IMPORTED_MODULE_0_three__["t" /* Vector2 */]();
+    const dollyEnd = new __WEBPACK_IMPORTED_MODULE_0_three__["t" /* Vector2 */]();
+    const dollyDelta = new __WEBPACK_IMPORTED_MODULE_0_three__["t" /* Vector2 */]();
+
+    function getAutoRotationAngle() {
+        return 2 * Math.PI / 60 / 60 * scope.autoRotateSpeed;
     }
-  })
-},staticRenderFns: []}
 
-/***/ }),
+    function getZoomScale() {
+        return Math.pow(0.95, scope.zoomSpeed);
+    }
 
-/***/ 59:
-/***/ (function(module, exports, __webpack_require__) {
+    function rotateLeft(angle) {
+        sphericalDelta.theta -= angle;
+    }
 
-var cssModules = {}
-function injectStyle (ssrContext) {
+    function rotateUp(angle) {
+        sphericalDelta.phi -= angle;
+    }
 
-              var oldLocals = this['$style'];
-              var newLocals = __webpack_require__(136);
-              if (oldLocals && oldLocals.root === 'Index.vue')
-                  newLocals = Object.assign({}, oldLocals, newLocals);
-              cssModules['$style'] = newLocals;
-            this['$style'] = cssModules['$style']
-}
-var Component = __webpack_require__(2)(
-  /* script */
-  __webpack_require__(138),
-  /* template */
-  __webpack_require__(140),
-  /* styles */
-  injectStyle,
-  /* scopeId */
-  null,
-  /* moduleIdentifier (server only) */
-  null
-)
+    const panLeft = (function () {
+        const v = new __WEBPACK_IMPORTED_MODULE_0_three__["u" /* Vector3 */]();
 
-module.exports = Component.exports
+        return function panLeft(distance, objectMatrix) {
+            v.setFromMatrixColumn(objectMatrix, 0); // get X column of objectMatrix
+            v.multiplyScalar(-distance);
+
+            panOffset.add(v);
+        };
+    })();
+
+    const panUp = (function () {
+        const v = new __WEBPACK_IMPORTED_MODULE_0_three__["u" /* Vector3 */]();
+
+        return function panUp(distance, objectMatrix) {
+            v.setFromMatrixColumn(objectMatrix, 1); // get Y column of objectMatrix
+            v.multiplyScalar(distance);
+
+            panOffset.add(v);
+        };
+    })();
+
+	// deltaX and deltaY are in pixels; right and down are positive
+    const pan = (function () {
+        const offset = new __WEBPACK_IMPORTED_MODULE_0_three__["u" /* Vector3 */]();
+
+        return function pan(deltaX, deltaY) {
+            const element = scope.domElement === document ? scope.domElement.body : scope.domElement;
+
+            if (scope.object instanceof __WEBPACK_IMPORTED_MODULE_0_three__["p" /* PerspectiveCamera */]) {
+				// perspective
+                const position = scope.object.position;
+                offset.copy(position).sub(scope.target);
+                let targetDistance = offset.length();
+
+				// half of the fov is center to top of screen
+                targetDistance *= Math.tan((scope.object.fov / 2) * Math.PI / 180.0);
+
+				// we actually don't use screenWidth, since perspective camera is fixed to screen height
+                panLeft(2 * deltaX * targetDistance / element.clientHeight, scope.object.matrix);
+                panUp(2 * deltaY * targetDistance / element.clientHeight, scope.object.matrix);
+            } else if (scope.object instanceof __WEBPACK_IMPORTED_MODULE_0_three__["o" /* OrthographicCamera */]) {
+				// orthographic
+                panLeft(deltaX * (scope.object.right - scope.object.left) / scope.object.zoom / element.clientWidth, scope.object.matrix);
+                panUp(deltaY * (scope.object.top - scope.object.bottom) / scope.object.zoom / element.clientHeight, scope.object.matrix);
+            } else {
+				// camera neither orthographic nor perspective
+                console.warn('WARNING: OrbitControls.js encountered an unknown camera type - pan disabled.');
+                scope.enablePan = false;
+            }
+        };
+    })();
+
+    function dollyIn(dollyScale) {
+        if (scope.object instanceof __WEBPACK_IMPORTED_MODULE_0_three__["p" /* PerspectiveCamera */])
+
+            scale /= dollyScale;
+
+		 else if (scope.object instanceof __WEBPACK_IMPORTED_MODULE_0_three__["o" /* OrthographicCamera */]) {
+     scope.object.zoom = Math.max(scope.minZoom, Math.min(scope.maxZoom, scope.object.zoom * dollyScale));
+     scope.object.updateProjectionMatrix();
+     zoomChanged = true;
+ } else {
+     console.warn('WARNING: OrbitControls.js encountered an unknown camera type - dolly/zoom disabled.');
+     scope.enableZoom = false;
+ }
+    }
+
+    function dollyOut(dollyScale) {
+        if (scope.object instanceof __WEBPACK_IMPORTED_MODULE_0_three__["p" /* PerspectiveCamera */])
+
+            scale *= dollyScale;
+
+		 else if (scope.object instanceof __WEBPACK_IMPORTED_MODULE_0_three__["o" /* OrthographicCamera */]) {
+     scope.object.zoom = Math.max(scope.minZoom, Math.min(scope.maxZoom, scope.object.zoom / dollyScale));
+     scope.object.updateProjectionMatrix();
+     zoomChanged = true;
+ } else {
+     console.warn('WARNING: OrbitControls.js encountered an unknown camera type - dolly/zoom disabled.');
+     scope.enableZoom = false;
+ }
+    }
+
+	//
+	// event callbacks - update the object state
+	//
+
+    function handleMouseDownRotate(event) {
+		// console.log( 'handleMouseDownRotate' );
+
+        rotateStart.set(event.clientX, event.clientY);
+    }
+
+    function handleMouseDownDolly(event) {
+		// console.log( 'handleMouseDownDolly' );
+
+        dollyStart.set(event.clientX, event.clientY);
+    }
+
+    function handleMouseDownPan(event) {
+		// console.log( 'handleMouseDownPan' );
+
+        panStart.set(event.clientX, event.clientY);
+    }
+
+    function handleMouseMoveRotate(event) {
+		// console.log( 'handleMouseMoveRotate' );
+
+        rotateEnd.set(event.clientX, event.clientY);
+        rotateDelta.subVectors(rotateEnd, rotateStart);
+
+        const element = scope.domElement === document ? scope.domElement.body : scope.domElement;
+
+		// rotating across whole screen goes 360 degrees around
+        rotateLeft(2 * Math.PI * rotateDelta.x / element.clientWidth * scope.rotateSpeed);
+
+		// rotating up and down along whole screen attempts to go 360, but limited to 180
+        rotateUp(2 * Math.PI * rotateDelta.y / element.clientHeight * scope.rotateSpeed);
+
+        rotateStart.copy(rotateEnd);
+
+        scope.update();
+    }
+
+    function handleMouseMoveDolly(event) {
+		// console.log( 'handleMouseMoveDolly' );
+
+        dollyEnd.set(event.clientX, event.clientY);
+
+        dollyDelta.subVectors(dollyEnd, dollyStart);
+
+        if (dollyDelta.y > 0)
+
+            dollyIn(getZoomScale());
+
+		 else if (dollyDelta.y < 0)
+
+     dollyOut(getZoomScale());
+
+        dollyStart.copy(dollyEnd);
+
+        scope.update();
+    }
+
+    function handleMouseMovePan(event) {
+		// console.log( 'handleMouseMovePan' );
+
+        panEnd.set(event.clientX, event.clientY);
+
+        panDelta.subVectors(panEnd, panStart);
+
+        pan(panDelta.x, panDelta.y);
+
+        panStart.copy(panEnd);
+
+        scope.update();
+    }
+
+    function handleMouseUp(event) {
+
+		// console.log( 'handleMouseUp' );
+
+    }
+
+    function handleMouseWheel(event) {
+		// console.log( 'handleMouseWheel' );
+
+        if (event.deltaY < 0)
+
+            dollyOut(getZoomScale());
+
+		 else if (event.deltaY > 0)
+
+     dollyIn(getZoomScale());
+
+        scope.update();
+    }
+
+    function handleKeyDown(event) {
+		// console.log( 'handleKeyDown' );
+
+        switch (event.keyCode) {
+
+            case scope.keys.UP:
+                pan(0, scope.keyPanSpeed);
+                scope.update();
+                break;
+
+            case scope.keys.BOTTOM:
+                pan(0, -scope.keyPanSpeed);
+                scope.update();
+                break;
+
+            case scope.keys.LEFT:
+                pan(scope.keyPanSpeed, 0);
+                scope.update();
+                break;
+
+            case scope.keys.RIGHT:
+                pan(-scope.keyPanSpeed, 0);
+                scope.update();
+                break;
+
+        }
+    }
+
+    function handleTouchStartRotate(event) {
+		// console.log( 'handleTouchStartRotate' );
+
+        rotateStart.set(event.touches[0].pageX, event.touches[0].pageY);
+    }
+
+    function handleTouchStartDolly(event) {
+		// console.log( 'handleTouchStartDolly' );
+
+        const dx = event.touches[0].pageX - event.touches[1].pageX;
+        const dy = event.touches[0].pageY - event.touches[1].pageY;
+
+        const distance = Math.sqrt(dx * dx + dy * dy);
+
+        dollyStart.set(0, distance);
+    }
+
+    function handleTouchStartPan(event) {
+		// console.log( 'handleTouchStartPan' );
+
+        panStart.set(event.touches[0].pageX, event.touches[0].pageY);
+    }
+
+    function handleTouchMoveRotate(event) {
+		// console.log( 'handleTouchMoveRotate' );
+
+        rotateEnd.set(event.touches[0].pageX, event.touches[0].pageY);
+        rotateDelta.subVectors(rotateEnd, rotateStart);
+
+        const element = scope.domElement === document ? scope.domElement.body : scope.domElement;
+
+		// rotating across whole screen goes 360 degrees around
+        rotateLeft(2 * Math.PI * rotateDelta.x / element.clientWidth * scope.rotateSpeed);
+
+		// rotating up and down along whole screen attempts to go 360, but limited to 180
+        rotateUp(2 * Math.PI * rotateDelta.y / element.clientHeight * scope.rotateSpeed);
+
+        rotateStart.copy(rotateEnd);
+
+        scope.update();
+    }
+
+    function handleTouchMoveDolly(event) {
+		// console.log( 'handleTouchMoveDolly' );
+
+        const dx = event.touches[0].pageX - event.touches[1].pageX;
+        const dy = event.touches[0].pageY - event.touches[1].pageY;
+
+        const distance = Math.sqrt(dx * dx + dy * dy);
+
+        dollyEnd.set(0, distance);
+
+        dollyDelta.subVectors(dollyEnd, dollyStart);
+
+        if (dollyDelta.y > 0)
+
+            dollyOut(getZoomScale());
+
+		 else if (dollyDelta.y < 0)
+
+     dollyIn(getZoomScale());
+
+        dollyStart.copy(dollyEnd);
+
+        scope.update();
+    }
+
+    function handleTouchMovePan(event) {
+		// console.log( 'handleTouchMovePan' );
+
+        panEnd.set(event.touches[0].pageX, event.touches[0].pageY);
+
+        panDelta.subVectors(panEnd, panStart);
+
+        pan(panDelta.x, panDelta.y);
+
+        panStart.copy(panEnd);
+
+        scope.update();
+    }
+
+    function handleTouchEnd(event) {
+
+		// console.log( 'handleTouchEnd' );
+
+    }
+
+	//
+	// event handlers - FSM: listen for events and reset state
+	//
+
+    function onMouseDown(event) {
+        if (scope.enabled === false)
+            return;
+
+        event.preventDefault();
+
+        switch (event.button) {
+
+            case scope.mouseButtons.ORBIT:
+
+                if (scope.enableRotate === false)
+                    return;
+
+                handleMouseDownRotate(event);
+
+                state = STATE.ROTATE;
+
+                break;
+
+            case scope.mouseButtons.ZOOM:
+
+                if (scope.enableZoom === false)
+                    return;
+
+                handleMouseDownDolly(event);
+
+                state = STATE.DOLLY;
+
+                break;
+
+            case scope.mouseButtons.PAN:
+
+                if (scope.enablePan === false)
+                    return;
+
+                handleMouseDownPan(event);
+
+                state = STATE.PAN;
+
+                break;
+
+        }
+
+        if (state !== STATE.NONE) {
+            document.addEventListener('mousemove', onMouseMove, false);
+            document.addEventListener('mouseup', onMouseUp, false);
+
+            scope.dispatchEvent(startEvent);
+        }
+    }
+
+    function onMouseMove(event) {
+        if (scope.enabled === false)
+            return;
+
+        event.preventDefault();
+
+        switch (state) {
+
+            case STATE.ROTATE:
+
+                if (scope.enableRotate === false)
+                    return;
+
+                handleMouseMoveRotate(event);
+
+                break;
+
+            case STATE.DOLLY:
+
+                if (scope.enableZoom === false)
+                    return;
+
+                handleMouseMoveDolly(event);
+
+                break;
+
+            case STATE.PAN:
+
+                if (scope.enablePan === false)
+                    return;
+
+                handleMouseMovePan(event);
+
+                break;
+
+        }
+    }
+
+    function onMouseUp(event) {
+        if (scope.enabled === false)
+            return;
+
+        handleMouseUp(event);
+
+        document.removeEventListener('mousemove', onMouseMove, false);
+        document.removeEventListener('mouseup', onMouseUp, false);
+
+        scope.dispatchEvent(endEvent);
+
+        state = STATE.NONE;
+    }
+
+    function onMouseWheel(event) {
+        if (scope.enabled === false || scope.enableZoom === false || (state !== STATE.NONE && state !== STATE.ROTATE))
+            return;
+
+        event.preventDefault();
+        event.stopPropagation();
+
+        handleMouseWheel(event);
+
+        scope.dispatchEvent(startEvent); // not sure why these are here...
+        scope.dispatchEvent(endEvent);
+    }
+
+    function onKeyDown(event) {
+        if (scope.enabled === false || scope.enableKeys === false || scope.enablePan === false)
+            return;
+
+        handleKeyDown(event);
+    }
+
+    function onTouchStart(event) {
+        if (scope.enabled === false)
+            return;
+
+        switch (event.touches.length) {
+
+            case 1:	// one-fingered touch: rotate
+
+                if (scope.enableRotate === false)
+                    return;
+
+                handleTouchStartRotate(event);
+
+                state = STATE.TOUCH_ROTATE;
+
+                break;
+
+            case 2:	// two-fingered touch: dolly
+
+                if (scope.enableZoom === false)
+                    return;
+
+                handleTouchStartDolly(event);
+
+                state = STATE.TOUCH_DOLLY;
+
+                break;
+
+            case 3: // three-fingered touch: pan
+
+                if (scope.enablePan === false)
+                    return;
+
+                handleTouchStartPan(event);
+
+                state = STATE.TOUCH_PAN;
+
+                break;
+
+            default:
+
+                state = STATE.NONE;
+
+        }
+
+        if (state !== STATE.NONE)
+
+            scope.dispatchEvent(startEvent);
+    }
+
+    function onTouchMove(event) {
+        if (scope.enabled === false)
+            return;
+
+        event.preventDefault();
+        event.stopPropagation();
+
+        switch (event.touches.length) {
+
+            case 1: // one-fingered touch: rotate
+
+                if (scope.enableRotate === false)
+                    return;
+                if (state !== STATE.TOUCH_ROTATE)
+                    return; // is this needed?...
+
+                handleTouchMoveRotate(event);
+
+                break;
+
+            case 2: // two-fingered touch: dolly
+
+                if (scope.enableZoom === false)
+                    return;
+                if (state !== STATE.TOUCH_DOLLY)
+                    return; // is this needed?...
+
+                handleTouchMoveDolly(event);
+
+                break;
+
+            case 3: // three-fingered touch: pan
+
+                if (scope.enablePan === false)
+                    return;
+                if (state !== STATE.TOUCH_PAN)
+                    return; // is this needed?...
+
+                handleTouchMovePan(event);
+
+                break;
+
+            default:
+
+                state = STATE.NONE;
+
+        }
+    }
+
+    function onTouchEnd(event) {
+        if (scope.enabled === false)
+            return;
+
+        handleTouchEnd(event);
+
+        scope.dispatchEvent(endEvent);
+
+        state = STATE.NONE;
+    }
+
+    function onContextMenu(event) {
+        if (scope.enabled === false)
+            return;
+
+        event.preventDefault();
+    }
+
+	//
+
+    scope.domElement.addEventListener('contextmenu', onContextMenu, false);
+
+    scope.domElement.addEventListener('mousedown', onMouseDown, false);
+    scope.domElement.addEventListener('wheel', onMouseWheel, false);
+
+    scope.domElement.addEventListener('touchstart', onTouchStart, false);
+    scope.domElement.addEventListener('touchend', onTouchEnd, false);
+    scope.domElement.addEventListener('touchmove', onTouchMove, false);
+
+    window.addEventListener('keydown', onKeyDown, false);
+
+	// force an update at start
+
+    this.update();
+};
+
+OrbitControls.prototype = Object.create(__WEBPACK_IMPORTED_MODULE_0_three__["f" /* EventDispatcher */].prototype);
+OrbitControls.prototype.constructor = OrbitControls;
+
+Object.defineProperties(OrbitControls.prototype, {
+
+    center: {
+
+        get() {
+            console.warn('OrbitControls: .center has been renamed to .target');
+            return this.target;
+        },
+
+    },
+
+	// backward compatibility
+
+    noZoom: {
+
+        get() {
+            console.warn('OrbitControls: .noZoom has been deprecated. Use .enableZoom instead.');
+            return !this.enableZoom;
+        },
+
+        set(value) {
+            console.warn('OrbitControls: .noZoom has been deprecated. Use .enableZoom instead.');
+            this.enableZoom = !value;
+        },
+
+    },
+
+    noRotate: {
+
+        get() {
+            console.warn('OrbitControls: .noRotate has been deprecated. Use .enableRotate instead.');
+            return !this.enableRotate;
+        },
+
+        set(value) {
+            console.warn('OrbitControls: .noRotate has been deprecated. Use .enableRotate instead.');
+            this.enableRotate = !value;
+        },
+
+    },
+
+    noPan: {
+
+        get() {
+            console.warn('OrbitControls: .noPan has been deprecated. Use .enablePan instead.');
+            return !this.enablePan;
+        },
+
+        set(value) {
+            console.warn('OrbitControls: .noPan has been deprecated. Use .enablePan instead.');
+            this.enablePan = !value;
+        },
+
+    },
+
+    noKeys: {
+
+        get() {
+            console.warn('OrbitControls: .noKeys has been deprecated. Use .enableKeys instead.');
+            return !this.enableKeys;
+        },
+
+        set(value) {
+            console.warn('OrbitControls: .noKeys has been deprecated. Use .enableKeys instead.');
+            this.enableKeys = !value;
+        },
+
+    },
+
+    staticMoving: {
+
+        get() {
+            console.warn('OrbitControls: .staticMoving has been deprecated. Use .enableDamping instead.');
+            return !this.enableDamping;
+        },
+
+        set(value) {
+            console.warn('OrbitControls: .staticMoving has been deprecated. Use .enableDamping instead.');
+            this.enableDamping = !value;
+        },
+
+    },
+
+    dynamicDampingFactor: {
+
+        get() {
+            console.warn('OrbitControls: .dynamicDampingFactor has been renamed. Use .dampingFactor instead.');
+            return this.dampingFactor;
+        },
+
+        set(value) {
+            console.warn('OrbitControls: .dynamicDampingFactor has been renamed. Use .dampingFactor instead.');
+            this.dampingFactor = value;
+        },
+
+    },
+
+});
+
+/* harmony default export */ __webpack_exports__["a"] = (OrbitControls);
 
 
 /***/ })

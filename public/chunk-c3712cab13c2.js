@@ -1,30 +1,40 @@
-webpackJsonp([13],{
+webpackJsonp([15],{
 
-/***/ 184:
-/***/ (function(module, exports, __webpack_require__) {
+/***/ 187:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-var Component = __webpack_require__(2)(
-  /* script */
-  null,
-  /* template */
-  __webpack_require__(185),
-  /* styles */
-  null,
-  /* scopeId */
-  null,
-  /* moduleIdentifier (server only) */
-  null
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Projects_GitHub_Vusion_vusion_cli_node_modules_vusion_vue_loader_lib_template_compiler_index_id_data_v_2d123a12_hasScoped_false_Projects_GitHub_Vusion_vusion_cli_node_modules_vusion_vue_loader_lib_selector_type_template_index_0_node_modules_vue_markdown_loader_lib_markdown_compiler_js_raw_md__ = __webpack_require__(188);
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = null
+/* template */
+
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __WEBPACK_IMPORTED_MODULE_0__Projects_GitHub_Vusion_vusion_cli_node_modules_vusion_vue_loader_lib_template_compiler_index_id_data_v_2d123a12_hasScoped_false_Projects_GitHub_Vusion_vusion_cli_node_modules_vusion_vue_loader_lib_selector_type_template_index_0_node_modules_vue_markdown_loader_lib_markdown_compiler_js_raw_md__["a" /* default */],
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
 )
 
-module.exports = Component.exports
+/* harmony default export */ __webpack_exports__["default"] = (Component.exports);
 
 
 /***/ }),
 
-/***/ 185:
-/***/ (function(module, exports) {
+/***/ 188:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+"use strict";
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('u-article', [_c('h1', [_vm._v("哲学概念梳理")]), _vm._v(" "), _c('h2', {
     attrs: {
       "id": "哲学的基本概念"
@@ -145,7 +155,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "href": "#生活的意义",
       "aria-hidden": "true"
     }
-  }, [_vm._v("¶")])]), _vm._v(" "), _c('p', [_vm._v("我的生活的意义")]), _vm._v(" "), _c('ul', [_c('li', [_vm._v("尽可能的探索真理，了解这个宇宙是怎样运转的，为人类做一些贡献，证明我来过这个世界")]), _vm._v(" "), _c('li', [_vm._v("把意识传授给机器，用机器达到永生，人工智能")]), _vm._v(" "), _c('li', [_vm._v("在历史中的一种存在，作为生命的意义")]), _vm._v(" "), _c('li', [_vm._v("实现物质理想")])]), _vm._v(" "), _c('p', [_vm._v("5 一种游戏：RPG游戏啊，一种态度吧，好玩\nx 一个故事：面太窄，先有意义再有故事，不能把故事当作意义\nx 一个悲剧：片面\nx 一个喜剧：片面\n5 一种使命：解决人类的终极问题\n3 艺　　术：太感性了，好好塑造自己的人生\n2 一次冒险：个人不喜欢冒险，喜欢稳定的生活\nx 一种疾病：什么是健康\n3 欲　　望：太物质了。。或者说欲望就是你想活成的意义吧。使命：人类的欲望？\nx 涅　　槃：没欲望也不行，不能走极端。有欲望才是宇宙常态\nx 利他主义：我比较自私\nx 荣　　誉：只是生活的一部分而已\nx 受　　苦\nx 一次投资：只是生活的一部分而已\nx 各种关系：只是生活的一部分而已")]), _vm._v(" "), _c('hr'), _vm._v(" "), _c('p', [_vm._v("我暂时觉得，生活的意义就是欲望。人类作为大自然的一部分，从无到有，有的那一刻开始，就已经被欲望驱动开始了。人类作为一个整体的欲望，理想，大同世界，共产主义？")]), _vm._v(" "), _c('p', [_vm._v("宇宙大爆炸\n夸克\n核子\n原子\n分子\n有机小分子\n有机大分子\n原始生物\n有核细胞\n鱼类\n两栖\n爬行\n哺乳\n人类\n原始社会\n奴隶社会\n封建社会\n资本主义\n社会主义\n进步的趋势，熵增")]), _vm._v(" "), _c('h2', {
+  }, [_vm._v("¶")])]), _vm._v(" "), _c('p', [_vm._v("我的生活的意义")]), _vm._v(" "), _c('ul', [_c('li', [_vm._v("尽可能的探索真理，了解这个宇宙是怎样运转的，为人类做一些贡献，证明我来过这个世界")]), _vm._v(" "), _c('li', [_vm._v("把意识传授给机器，用机器达到永生，人工智能")]), _vm._v(" "), _c('li', [_vm._v("在历史中的一种存在，作为生命的意义")]), _vm._v(" "), _c('li', [_vm._v("实现物质理想")])]), _vm._v(" "), _c('p', [_vm._v("5 一种游戏：RPG游戏啊，一种态度吧，好玩\nx 一个故事：面太窄，先有意义再有故事，不能把故事当作意义\nx 一个悲剧：片面\nx 一个喜剧：片面\n5 一种使命：解决人类的终极问题\n3 艺　　术：太感性了，好好塑造自己的人生\n2 一次冒险：个人不喜欢冒险，喜欢稳定的生活\nx 一种疾病：什么是健康\n3 欲　　望：太物质了。。或者说欲望就是你想活成的意义吧。使命：人类的欲望？\nx 涅　　槃：没欲望也不行，不能走极端。有欲望才是宇宙常态\nx 利他主义：我比较自私\nx 荣　　誉：只是生活的一部分而已\nx 受　　苦\nx 一次投资：只是生活的一部分而已\nx 各种关系：只是生活的一部分而已")]), _vm._v(" "), _c('hr'), _vm._v(" "), _c('h2', {
     attrs: {
       "id": "上帝"
     }
@@ -158,14 +168,17 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("¶")])]), _vm._v(" "), _c('p', [_vm._v("哲学，本体论论证：\n1.我们只能把上帝设想成一个无限的和最完美的东西。\n2.一个具有除“存在”以外的所有完美性（公正、全能、全知等）的东西不能算是“最完美的”。\n3.因此，最完美的东西必然存在。")]), _vm._v(" "), _c('p', {
     staticClass: "u-article_footer"
   })])
-},staticRenderFns: []}
+}
+var staticRenderFns = []
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+/* harmony default export */ __webpack_exports__["a"] = (esExports);
 
 /***/ }),
 
-/***/ 74:
+/***/ 68:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(184);
+module.exports = __webpack_require__(187);
 
 /***/ })
 

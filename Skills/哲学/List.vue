@@ -9,8 +9,8 @@ export default {
     data() {
         return {
             articles: [
-                require('./哲学概念梳理.md?partial=true'),
-                require('./名句收集.md?partial=true'),
+                require('./哲学概念梳理.md?partial=true').default,
+                require('./名句收集.md?partial=true').default,
             ],
         };
     },
