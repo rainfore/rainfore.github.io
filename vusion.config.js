@@ -13,8 +13,7 @@ module.exports = {
         output: {
             path: path.resolve(__dirname, 'public'),
             publicPath: '/public/',
-            filename: '[name].js',
-            chunkFilename: 'chunk-[chunkhash:12].js',
+            EXTENDS: true,
         },
         resolve: {
             EXTENDS: true,
@@ -34,6 +33,7 @@ module.exports = {
                 { test: /\.md$/, loader: 'vue-markdown-loader', options: {
                     langPrefix: 'lang-',
                     html: true,
+                    wrapper: 'u-article',
                     preprocess(markdownIt, source) {
                         const outputs = [];
 
@@ -151,7 +151,6 @@ module.exports = {
     webpackDevServer: {
         // host: '10.242.67.24',
         port: 12356,
-        publicPath: '/public/',
         contentBase: __dirname,
     },
 };

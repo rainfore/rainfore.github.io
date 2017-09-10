@@ -1,0 +1,16 @@
+.root {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    width: 174px;
+    height: 80px;
+    background: url(./logo.svg) center center no-repeat;
+}
+
+@media screen and (max-width: $media-md-max-width) {
+    .root {
+        left: 50%;
+        margin-left: -100px;
+    }
+}

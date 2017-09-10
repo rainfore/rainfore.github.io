@@ -9,7 +9,7 @@ export default {
     data() {
         return {
             articles: [
-                require('./20170820~git同步远程仓库.md?partial=true').default,
+                require('./20170820~git的fork项目与原项目同步.md?partial=true').default,
                 require('./20170628~尤大的Live笔记.md?partial=true').default,
                 require('./20170628~柯里化与反柯里化/index.md?partial=true').default,
                 // require('./20170628~Three入门/Index.vue?partial=true').default,

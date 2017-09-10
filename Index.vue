@@ -9,7 +9,7 @@ export default {
     data() {
         return {
             articles: [
-                require('./Skills/Web前端/20170820~git同步远程仓库.md?partial=true').default,
+                require('./Skills/Web前端/20170820~git的fork项目与原项目同步.md?partial=true').default,
                 require('./Skills/Web前端/20170628~柯里化与反柯里化/index.md?partial=true').default,
                 require('./Skills/Web前端/20170623~几款Markdown的JS解析器对比/index.md?partial=true').default,
                 require('./Skills/Web前端/20170405~几款前端框架对比/index.md?partial=true').default,

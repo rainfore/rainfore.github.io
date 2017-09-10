@@ -1,5 +1,4 @@
-# Uther's World
+# Rainfore's Craft
 
-My Craft, My World.
+My Craft, My Website.
 
-http://uther.world
