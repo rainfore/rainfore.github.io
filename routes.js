@@ -5,6 +5,7 @@ export default [
         { path: 'Skills', component: () => import('./src/common/u-empty-view.vue'), children: [
             { path: encodeURIComponent('Web前端'), component: () => import('./Skills/Web前端/Index.vue'), meta: { navShadowHidden: true }, children: [
                 { path: '', component: () => import('./Skills/Web前端/List.vue') },
+                { path: encodeURIComponent('20170907~跨产品的组件化解决方案'), component: () => import('./Skills/Web前端/20170907~跨产品的组件化解决方案/index.md') },
                 { path: encodeURIComponent('20170820~git的fork项目与原项目同步'), component: () => import('./Skills/Web前端/20170820~git的fork项目与原项目同步.md') },
                 { path: encodeURIComponent('20170628~尤大的Live笔记'), component: () => import('./Skills/Web前端/20170628~尤大的Live笔记.md') },
                 { path: encodeURIComponent('20170628~柯里化与反柯里化'), component: () => import('./Skills/Web前端/20170628~柯里化与反柯里化/index.md') },

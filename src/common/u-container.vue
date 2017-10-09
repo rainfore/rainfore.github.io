@@ -8,7 +8,7 @@
                 <u-navbar-item to="/" exact>首页</u-navbar-item>
                 <u-navbar-item to="/Skills/Web前端/">Web前端</u-navbar-item>
                 <u-navbar-item to="/Skills/哲学/">哲学</u-navbar-item>
-                <u-navbar-item to="/Skills/Mac/">Mac</u-navbar-item>
+                <u-navbar-item to="/Skills/Mac/">Mac技巧</u-navbar-item>
             </u-navbar>
         </div>
     </nav>
