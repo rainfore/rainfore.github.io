@@ -4,7 +4,7 @@ modified-date: 2014-12-11
 tags: [ CSS, 图形 ]
 ---
 
-<style>
+<!-- style>
 .square {margin: .146em; width: .707em; height: .707em; background: #2ecc71;}
 .rectangle {margin: .238em .075em; width: .850em; height: .525em; background: #2ecc71;}
 .circle {width: 1em; height: 1em; border-radius: 50%; background: #e67e22;}
@@ -67,7 +67,7 @@ tags: [ CSS, 图形 ]
 .m-box {box-sizing: content-box; display: inline-block; margin: 20px 30px;}
 .m-box .shape {width: 200px; height: 200px; background: #ddd; font-size: 200px; border-radius: 50%; border: 5px solid #eee; margin-bottom: 10px;}
 .m-box .text {}
-</style>
+</style -->
 
 CSS真是强大啊！学习了一篇文章制作出下面的图形，并做了一些改进。首先，使用单位`em`，意味着可以方便的使用父容器的`font-size`属性来改变图形的大小。其次，为了美观，将所有的图形与单位圆内切来标准化。不多说了，直接对照下面的类名看[这里的CSS](css/shape.css)吧，也可以打开开发人员工具查看参数，还是觉得最后一个八卦最霸气！
 

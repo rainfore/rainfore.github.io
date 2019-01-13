@@ -13,6 +13,8 @@ import Navbar from './src/common/u-navbar.vue';
 import NavbarItem from './src/common/u-navbar-item.vue';
 installComponents([Logo, Button, Container, Article, ParticleCanvas, Navbar, NavbarItem]);
 
+import 'u-base.vue/base.css';
+
 import routes from './routes';
 const router = new VueRouter({
     mode: 'history',
@@ -20,7 +22,7 @@ const router = new VueRouter({
     scrollBehavior: (to, from, savedPosition) => savedPosition || { x: 0, y: 0 },
 });
 router.beforeEach((to, from, next) => {
-    document.title = to.meta.title || "雨林工业 | Rainfore's Craft";
+    document.title = to.meta.title || "雨业林森 | Rainfore's Craft";
     next();
 });
 

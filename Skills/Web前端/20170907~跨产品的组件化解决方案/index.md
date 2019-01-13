@@ -5,4 +5,4 @@ tags: [ 跨产品, 组件化, 解决方案, Vue, Vusion ]
 redirect: index.pdf
 ---
 
-![](feature.jpg)
+![](feature.png)

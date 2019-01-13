@@ -3,9 +3,11 @@ const hljs = require('highlight.js');
 const preprocess = require('./src/preprocess');
 
 module.exports = {
+    version: '>=0.6.5',
     type: 'app',
-    assetsPath: './src/assets',
+    staticPath: './src/static',
     extractCSS: true,
+    uglifyJS: true,
     webpack: {
         entry: {
             bundle: './index.js',
@@ -13,138 +15,145 @@ module.exports = {
         output: {
             path: path.resolve(__dirname, 'public'),
             publicPath: '/public/',
-            EXTENDS: true,
         },
         resolve: {
-            EXTENDS: true,
             alias: {
-                EXTENDS: true,
                 src: path.resolve(__dirname, 'src'),
                 // views: path.resolve(__dirname, 'views'),
             },
         },
-        resolveLoader: {
-            EXTENDS: true,
-            modules: ['src/loaders', 'EXTENDS'],
-        },
+        // resolveLoader: {
+        //     modules: ['src/loaders', 'EXTENDS'],
+        // },
         module: {
-            EXTENDS: true,
             rules: [
-                { test: /\.md$/, loader: 'vue-markdown-loader', options: {
-                    langPrefix: 'lang-',
-                    html: true,
-                    wrapper: 'u-article',
-                    preprocess(markdownIt, source) {
-                        const outputs = [];
+                {
+                    test: /\.md$/,
+                    use: [{
+                        loader: 'vue-loader',
+                        options: {
+                            preserveWhitespace: false,
+                        },
+                    }, {
+                        loader: 'vue-markdown-html-loader',
+                        options: {
+                            wrapper: 'u-article',
+                            markdownIt: {
+                                langPrefix: 'lang-',
+                                html: true,
+                            },
+                            preprocess(markdownIt, source) {
+                                const outputs = [];
 
-                        // 获取元数据
-                        let { result, meta } = preprocess.meta(source);
+                                // 获取元数据
+                                let { result, meta } = preprocess.meta(source);
 
-                        // 根据文件名处理标题和日期
-                        let url = path.relative(process.cwd(), this.resourcePath.replace(/\.md$/, ''));
-                        let title = path.basename(url);
-                        if (title === 'index') {
-                            title = path.basename(path.dirname(url));
-                            url = path.dirname(url);
-                        }
-                        url = '/' + url.split('/').map((part) => encodeURIComponent(part)).join('/') + '/';
-                        markdownIt._url = url;
+                                // 根据文件名处理标题和日期
+                                let url = path.relative(process.cwd(), this.resourcePath.replace(/\.md$/, ''));
+                                let title = path.basename(url);
+                                if (title === 'index') {
+                                    title = path.basename(path.dirname(url));
+                                    url = path.dirname(url);
+                                }
+                                url = '/' + url.split('/').map((part) => encodeURIComponent(part)).join('/') + '/';
+                                markdownIt._url = url;
 
-                        if (meta.redirect) {
-                            if (meta.redirect.startsWith('http') || meta.redirect[0] === '/' || meta.redirect[0] === '#')
-                                url = meta.redirect;
-                            else
-                                url = path.join(url, meta.redirect);
-                        }
+                                if (meta.redirect) {
+                                    if (meta.redirect.startsWith('http') || meta.redirect[0] === '/' || meta.redirect[0] === '#')
+                                        url = meta.redirect;
+                                    else
+                                        url = path.join(url, meta.redirect);
+                                }
 
-                        title = title.replace(/^\d+~/, '');
+                                title = title.replace(/^\d+~/, '');
 
-                        // 添加标题
-                        if (this.resourceQuery.includes('partial')) {
-                            if (meta.redirect)
-                                outputs.push(`<h1><a href="${url}">${title}</a></h1>`);
-                            else
-                                outputs.push(`<h1><router-link to="${url}">${title}</router-link></h1>`);
-                        } else
-                            outputs.push(`# ${title}`);
+                                // 添加标题
+                                if (this.resourceQuery.includes('partial')) {
+                                    if (meta.redirect)
+                                        outputs.push(`<h1><a href="${url}">${title}</a></h1>`);
+                                    else
+                                        outputs.push(`<h1><router-link to="${url}">${title}</router-link></h1>`);
+                                } else
+                                    outputs.push(`# ${title}`);
 
-                        // 添加日期
-                        if (meta['created-date']) {
-                            const date = meta['created-date'] instanceof Date ? meta['created-date'].toJSON().split('T')[0] : meta['created-date'];
-                            outputs.push(`<div class="u-article_meta">${date}</div>`);
-                        }
+                                // 添加日期
+                                if (meta['created-date']) {
+                                    const date = meta['created-date'] instanceof Date ? meta['created-date'].toJSON().split('T')[0] : meta['created-date'];
+                                    outputs.push(`<div class="u-article_meta">${date}</div>`);
+                                }
 
-                        // 处理摘要
-                        if (this.resourceQuery.includes('partial')) {
-                            const arr = result.split('\n\n');
-                            let i;
-                            let length = 0;
-                            for (i = 0; i < arr.length; i++) {
-                                length += arr[i].trim().length;
-                                if (length > 200)
-                                    break;
-                            }
-                            result = arr.slice(0, i + 1).join('\n\n');
-                        }
+                                // 处理摘要
+                                if (this.resourceQuery.includes('partial')) {
+                                    const arr = result.split('\n\n');
+                                    let i;
+                                    let length = 0;
+                                    for (i = 0; i < arr.length; i++) {
+                                        length += arr[i].trim().length;
+                                        if (length > 200)
+                                            break;
+                                    }
+                                    result = arr.slice(0, i + 1).join('\n\n');
+                                }
 
-                        outputs.push(result);
+                                outputs.push(result);
 
-                        {
-                            let footer = '<p class="u-article_footer">';
-                            if (meta.tags)
-                                footer += meta.tags.map((tag) => `<span class="u-article_tag">${tag}</span>`).join(' ');
-                            if (this.resourceQuery.includes('partial')) {
-                                if (meta.redirect)
-                                    footer += `<a class="u-article_read-more" href="${url}">Read More →</a>`;
-                                else
-                                    footer += `<router-link class="u-article_read-more" to="${url}">Read More →</router-link>`;
-                            }
-                            footer += '</p>';
-                            outputs.push(footer);
-                        }
+                                {
+                                    let footer = '<p class="u-article_footer">';
+                                    if (meta.tags)
+                                        footer += meta.tags.map((tag) => `<span class="u-article_tag">${tag}</span>`).join(' ');
+                                    if (this.resourceQuery.includes('partial')) {
+                                        if (meta.redirect)
+                                            footer += `<a class="u-article_read-more" href="${url}">Read More →</a>`;
+                                        else
+                                            footer += `<router-link class="u-article_read-more" to="${url}">Read More →</router-link>`;
+                                    }
+                                    footer += '</p>';
+                                    outputs.push(footer);
+                                }
 
-                        return outputs.join('\n\n');
-                    },
-                    highlight(str, lang) {
-                        if (lang && hljs.getLanguage(lang)) {
-                            try {
-                                return hljs.highlight(lang, str).value;
-                            } catch (e) {}
-                        }
+                                return outputs.join('\n\n');
+                            },
+                            highlight(str, lang) {
+                                if (lang && hljs.getLanguage(lang)) {
+                                    try {
+                                        return hljs.highlight(lang, str).value;
+                                    } catch (e) {}
+                                }
 
-                        return ''; // use external default escaping
-                    },
-                    use: [
-                        require('markdown-it-sub'),
-                        require('markdown-it-sup'),
-                        require('markdown-it-ins'),
-                        require('markdown-it-mark'),
-                        require('markdown-it-abbr'),
-                        require('markdown-it-footnote'),
-                        require('markdown-it-deflist'),
-                        // emoji
-                        // [require('markdown-it-link-attributes'), { target: '_blank' }],
-                        require('markdown-it-container'),
-                        [require('markdown-it-anchor'), {
-                            level: 2,
-                            slugify: (str) => str.replace(/[^\u4e00-\u9fa5\w-]/g, '-'),
-                            permalink: true,
-                        }],
-                        require('markdown-it-task-lists'),
-                        // attrs,
-                        // embed,
-                        // decorate
-                        [require('markdown-it-implicit-figures'), {
-                            figcaption: true,
-                        }],
-                        require('markdown-it-katex'),
-                        // require('markdown-it-meta'),
-                        // markdown-it-terminal
-                        // markdown-it-kbd
-                        require('./src/plugins/markdown-it-absolutize-url'),
-                    ],
-                } },
-                'EXTENDS',
+                                return ''; // use external default escaping
+                            },
+                            markdownItPlugins: [
+                                require('markdown-it-sub'),
+                                require('markdown-it-sup'),
+                                require('markdown-it-ins'),
+                                require('markdown-it-mark'),
+                                require('markdown-it-abbr'),
+                                require('markdown-it-footnote'),
+                                require('markdown-it-deflist'),
+                                // emoji
+                                // [require('markdown-it-link-attributes'), { target: '_blank' }],
+                                require('markdown-it-container'),
+                                [require('markdown-it-anchor'), {
+                                    level: 2,
+                                    slugify: (str) => str.replace(/[^\u4e00-\u9fa5\w-]/g, '-'),
+                                    permalink: true,
+                                }],
+                                require('markdown-it-task-lists'),
+                                // attrs,
+                                // embed,
+                                // decorate
+                                [require('markdown-it-implicit-figures'), {
+                                    figcaption: true,
+                                }],
+                                require('markdown-it-katex'),
+                                // require('markdown-it-meta'),
+                                // markdown-it-terminal
+                                // markdown-it-kbd
+                                require('./src/plugins/markdown-it-absolutize-url'),
+                            ],
+                        },
+                    }],
+                },
             ],
         },
     },
