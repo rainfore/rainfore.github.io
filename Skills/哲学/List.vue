@@ -1,6 +1,6 @@
 <template>
 <div>
-    <component v-for="article in articles" :is="article"></component>
+    <component :is="article" v-for="article in articles" :key="article.title"></component>
 </div>
 </template>
 

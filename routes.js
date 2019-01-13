@@ -1,8 +1,21 @@
+import EmptyView from './src/common/u-empty-view.vue';
+
 export default [
     { path: '/Profile', component: () => import('./Profile.vue'), meta: { title: '个人简历' } },
     { path: '/', component: require('./src/common/u-container.vue').default, children: [
         { path: '', component: () => import('./Index.vue') },
-        { path: 'Skills', component: () => import('./src/common/u-empty-view.vue'), children: [
+        { path: 'Apps', component: EmptyView, children: [
+            { path: '易经', component: EmptyView, children: [
+                { path: '', component: () => import('./Apps/易经/index.vue') },
+                { path: '卦', component: EmptyView, children: [
+                    { path: '63', component: () => import('./Apps/易经/卦/1.63.乾.vue') },
+                    { path: '0', component: () => import('./Apps/易经/卦/2.0.坤.vue') },
+                    { path: '7', component: () => import('./Apps/易经/卦/11.7.泰.vue') },
+                    { path: '56', component: () => import('./Apps/易经/卦/12.56.否.vue') },
+                ] },
+            ] },
+        ] },
+        { path: 'Skills', component: EmptyView, children: [
             { path: encodeURIComponent('Web前端'), component: () => import('./Skills/Web前端/Index.vue'), meta: { navShadowHidden: true }, children: [
                 { path: '', component: () => import('./Skills/Web前端/List.vue') },
                 { path: encodeURIComponent('20170907~跨产品的组件化解决方案'), component: () => import('./Skills/Web前端/20170907~跨产品的组件化解决方案/index.md') },
@@ -24,21 +37,21 @@ export default [
                 { path: '', component: () => import('./Skills/Mac/List.vue') },
                 { path: encodeURIComponent('Mac查看端口占用情况'), component: () => import('./Skills/Mac/Mac查看端口占用情况.md') },
             ] },
-            { path: 'Linux', component: () => import('./src/common/u-empty-view.vue'), children: [
-                { path: '', component: () => import('./src/common/u-empty-view.vue') },
+            { path: 'Linux', component: EmptyView, children: [
+                { path: '', component: EmptyView },
                 { path: encodeURIComponent('20140921~Linux临时设置代理'), component: () => import('./Skills/Linux/20140921~Linux临时设置代理.md') },
             ] },
-            { path: encodeURIComponent('哲学'), component: () => import('./src/common/u-empty-view.vue'), children: [
+            { path: encodeURIComponent('哲学'), component: EmptyView, children: [
                 { path: '', component: () => import('./Skills/哲学/List.vue') },
                 { path: encodeURIComponent('哲学概念梳理'), component: () => import('./Skills/哲学/哲学概念梳理.md') },
                 { path: encodeURIComponent('名句收集'), component: () => import('./Skills/哲学/名句收集.md') },
             ] },
-            { path: encodeURIComponent('算法'), component: () => import('./src/common/u-empty-view.vue'), children: [
-                { path: '', component: () => import('./src/common/u-empty-view.vue') },
+            { path: encodeURIComponent('算法'), component: EmptyView, children: [
+                { path: '', component: EmptyView },
                 { path: encodeURIComponent('贪吃蛇AI'), component: () => import('./Skills/算法/贪吃蛇AI/Index.vue') },
             ] },
-            { path: encodeURIComponent('数学'), component: () => import('./src/common/u-empty-view.vue'), children: [
-                { path: '', component: () => import('./src/common/u-empty-view.vue') },
+            { path: encodeURIComponent('数学'), component: EmptyView, children: [
+                { path: '', component: EmptyView },
                 { path: encodeURIComponent('多维空间的正几何体'), component: () => import('./Skills/数学/多维空间的正几何体/index.md'), children: [
                     { path: '', components: {
                         simplex4: () => import('./Skills/数学/多维空间的正几何体/simplex4.vue'),
@@ -47,7 +60,7 @@ export default [
                 ] },
             ] },
         ] },
-        { path: 'Collections', component: () => import('./src/common/u-empty-view.vue'), children: [
+        { path: 'Collections', component: EmptyView, children: [
             { path: encodeURIComponent('进击的巨人'), component: () => import('./Collections/进击的巨人/Index.vue'), meta: { navShadowHidden: true } },
         ] },
     ] },

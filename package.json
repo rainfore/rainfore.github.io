@@ -2,19 +2,23 @@
   "name": "rainfore.github.io",
   "description": "This is my website",
   "author": "Rainfore <rainforest92@126.com>",
+  "scripts": {
+    "lint": "eslint ./Skills/**/*.{js,vue} --fix"
+  },
   "dependencies": {
     "katex": "^0.7.1",
     "three": "^0.86.0",
     "u-base.vue": "^0.1.0",
     "u-button.vue": "^0.1.1",
-    "vue": "^2.5.0",
-    "vue-router": "^3.0.0"
+    "vue": "^2.5.22",
+    "vue-router": "^3.0.2"
   },
   "devDependencies": {
+    "@vusion/md-vue-loader": "^0.2.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-stage-2": "^6.24.1",
-    "eslint": "^4.13.1",
-    "eslint-config-vusion": "^2.0.0",
+    "eslint": "^5.12.0",
+    "eslint-config-vusion": "^3.0.0",
     "highlight.js": "^9.12.0",
     "js-yaml": "^3.8.4",
     "loader-utils": "^1.1.0",
@@ -33,7 +37,6 @@
     "markdown-it-sub": "^1.0.0",
     "markdown-it-sup": "^1.0.0",
     "markdown-it-task-lists": "^2.0.1",
-    "vue-loader": "^13.6.0",
-    "vue-markdown-html-loader": "0.0.3"
+    "vue-loader": "^13.6.0"
   }
 }
