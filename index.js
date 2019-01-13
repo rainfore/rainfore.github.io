@@ -22,7 +22,7 @@ const router = new VueRouter({
     scrollBehavior: (to, from, savedPosition) => savedPosition || { x: 0, y: 0 },
 });
 router.beforeEach((to, from, next) => {
-    document.title = to.meta.title || "雨业林森 | Rainfore's Craft";
+    document.title = to.meta.title || "子霂 | Rainfore's Craft";
     next();
 });
 
