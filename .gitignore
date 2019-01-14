@@ -24,9 +24,6 @@ node_modules/
 .vscode/
 .idea/
 
-# Build Output
-public/
-
 # Coverage
 lib-cov
 coverage
