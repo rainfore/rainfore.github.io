@@ -37,7 +37,7 @@ module.exports = {
                     loader: '@vusion/md-vue-loader',
                     options: {
                         wrapper: 'u-article',
-                        /* plugins: [
+                        plugins: [
                             // [iterator, 'link_converter', 'link_open', (tokens, idx) => tokens[idx].tag = 'u-link'],
                             // [iterator, 'link_converter', 'link_close', (tokens, idx) => tokens[idx].tag = 'u-link'],
                             require('markdown-it-sub'),
@@ -48,7 +48,7 @@ module.exports = {
                             require('markdown-it-footnote'),
                             require('markdown-it-deflist'),
                             // emoji
-                            // [require('markdown-it-link-attributes'), { target: '_blank' }],
+                            [require('markdown-it-link-attributes'), { target: '_blank' }],
                             require('markdown-it-container'),
                             [require('markdown-it-anchor'), {
                                 level: 2,
@@ -62,12 +62,12 @@ module.exports = {
                             [require('markdown-it-implicit-figures'), {
                                 figcaption: true,
                             }],
-                            require('markdown-it-katex'),
+                            // require('markdown-it-katex'),
                             // require('markdown-it-meta'),
                             // markdown-it-terminal
                             // markdown-it-kbd
                             require('./src/plugins/markdown-it-absolutize-url'),
-                        ], */
+                        ],
                         preprocess(source) {
                             const outputs = [];
 
@@ -81,7 +81,7 @@ module.exports = {
                                 title = path.basename(path.dirname(url));
                                 url = path.dirname(url);
                             }
-                            url = '/' + url.split('/').map((part) => encodeURIComponent(part)).join('/') + '/';
+                            url = '/' + url + '/';
                             this.markdown._url = url;
 
                             if (meta.redirect) {

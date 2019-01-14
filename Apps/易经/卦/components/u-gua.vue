@@ -1,6 +1,6 @@
 <template>
-<div :class="$style.gua">
-    <div :class="$style.yao" v-for="(binary, index) in binaries" :key="index" :yang="binary">
+<div :class="$style.卦">
+    <div :class="$style.爻" v-for="(binary, index) in binaries" :key="index" :阳="binary" :style="{ bottom: index * 70 + 'px' }">
     </div>
 </div>
 </template>
@@ -12,7 +12,7 @@ export default {
         id: { type: Number, default: 0 },
     },
     data() {
-        const binaries = this.id.toString(2).padStart(6, '0').split('').map((bool) => !!(+bool));
+        const binaries = this.id.toString(2).padStart(6, '0').split('').reverse().map((bool) => !!(+bool));
 
         return {
             binaries,
@@ -22,29 +22,30 @@ export default {
 </script>
 
 <style module>
-.gua {
+.卦 {
+    position: relative;
     width: 240px;
+    height: 390px;
 }
 
-.yao {
-    position: relative;
+.爻 {
+    position: absolute;
     width: 100%;
     height: 40px;
-    margin-bottom: 20px;
 }
 
-.yao::before {
+.爻::before {
     display: block;
     content: '';
     position: absolute;
     left: 0;
     top: 0;
-    width: 42%;
+    width: 100px;
     height: 100%;
     background: black;
 }
 
-.yao::after {
+.爻::after {
     display: block;
     content: '';
     position: absolute;
@@ -55,7 +56,7 @@ export default {
     background: black;
 }
 
-.yao[yang] {
+.爻[阳] {
     background: black;
 }
 </style>

@@ -1,5 +1,8 @@
 <template>
-<u-gua :id="id"></u-gua>
+<div>
+    <h1>地天泰</h1>
+    <u-gua :id="id"></u-gua>
+</div>
 </template>
 
 <script>

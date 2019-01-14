@@ -15,12 +15,12 @@ export default {
                 if (/^\d{8}~/.test(route.path)) {
                     return {
                         path: route.path + '/',
-                        title: decodeURIComponent(route.path.split('~')[1]),
+                        title: route.path.split('~')[1],
                     };
                 } else {
                     return {
                         path: route.path + '/',
-                        title: decodeURIComponent(route.path),
+                        title: route.path,
                     };
                 }
             }),
